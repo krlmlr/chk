@@ -187,24 +187,22 @@ The <code>vld_</code> functions return a flag indicating whether the test was me
     
 <ul>
 <li><p><code>chk_s3_class</code>: Check Inherits from S3 Class</p>
-<p>Checks inherits from S3 class using</p>
-<p><code>!isS4(x) &amp;&amp; <a href='https://rdrr.io/r/base/class.html'>inherits</a>(x, class)</code></p>
+<p>Checks inherits from S3 class using <code>vld_s3_class()</code>.</p>
 <p>Class should be a string.</p></li>
 <li><p><code>vld_s3_class</code>: Validate Inherits from S3 Class</p>
-<p>Validates inherits from S3 class</p>
-<p><code>!isS4(x) &amp;&amp; <a href='https://rdrr.io/r/base/class.html'>inherits</a>(x, class)</code></p>
+<p>Validates inherits from S3 class using</p>
+<p><code>!isS4(x) &amp;&amp; inherits(x, class)</code></p>
 <p>Class should be a string.</p></li>
 <li><p><code>chk_s4_class</code>: Check Inherits from S4 Class</p>
-<p>Checks inherits from S4 class using</p>
-<p><code>isS4(x) &amp;&amp; <a href='https://rdrr.io/r/base/class.html'>inherits</a>(x, class)</code></p>
+<p>Checks inherits from S4 class using <code>vld_s4_class()</code>.</p>
 <p>Class should be a string.</p></li>
 <li><p><code>vld_s4_class</code>: Validate Inherits from S4 Class</p>
-<p>Validates inherits from S4 class</p>
-<p><code>isS4(x) &amp;&amp; <a href='https://rdrr.io/r/base/class.html'>inherits</a>(x, class)</code></p>
+<p>Validates inherits from S4 class using</p>
+<p><code>isS4(x) &amp;&amp; methods::is(x, class)</code></p>
 <p>Class should be a string.</p></li>
 <li><p><code>chk_whole_numeric</code>: Check Whole Numeric</p>
 <p>Checks if integer vector or double equivalent using <code>vld_whole_numeric()</code>.</p>
-<p>The <code><a href='chk_number.html'>chk_whole_number</a>()</code> function checks if
+<p>The <code><a href='chk_number.html'>chk_whole_number()</a></code> function checks if
 non-missing integer scalar or double equivalent.</p></li>
 <li><p><code>vld_whole_numeric</code>: Validate Whole Numeric</p>
 <p>Validates integer vector or double equivalent using</p>
@@ -214,22 +212,33 @@ non-missing integer scalar or double equivalent.</p></li>
 <code>vld_list()</code>.</p></li>
 <li><p><code>vld_list</code>: Validate List</p>
 <p>Validates is a list using</p>
-<p><code><a href='https://rdrr.io/r/base/list.html'>is.list</a>(x)</code></p></li>
+<p><code><a href='https://rdrr.io/r/base/list.html'>is.list(x)</a></code></p></li>
 <li><p><code>chk_function</code>: Check Function</p>
 <p>Checks if is a function using <code>vld_function()</code>.</p></li>
 <li><p><code>vld_function</code>: Validate Function</p>
 <p>Validates is a function using:</p>
-<p><code><a href='https://rdrr.io/r/base/is.function.html'>is.function</a>(x) &amp;&amp; (is.null(formals) || length(formals(x)) == formals)</code></p></li>
+<p><code>is.function(x) &amp;&amp; (is.null(formals) || length(formals(x)) == formals)</code></p></li>
 <li><p><code>chk_vector</code>: Check Vector</p>
 <p>Checks if is a vector using <code><a href='https://rdrr.io/r/base/vector.html'>is.vector()</a></code>.</p></li>
 <li><p><code>vld_vector</code>: Validate Vector</p>
 <p>Validates is a vector using:</p>
-<p><code><a href='https://rdrr.io/r/base/vector.html'>is.vector</a>(x)</code></p></li>
+<p><code><a href='https://rdrr.io/r/base/vector.html'>is.vector(x)</a></code></p></li>
 <li><p><code>chk_scalar</code>: Check Scalar</p>
 <p>Checks if is a vector using <code>length(x) == 1L</code>.</p></li>
 <li><p><code>vld_scalar</code>: Validate Scalar</p>
 <p>Validates is <code>length(x) == 1L</code>.</p></li>
 </ul>
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'><p><code><a href='https://rdrr.io/r/base/isS4.html'>isS4()</a></code></p>
+<p><code><a href='https://rdrr.io/r/base/class.html'>inherits()</a></code></p>
+<p><code><a href='https://rdrr.io/r/base/isS4.html'>isS4()</a></code></p>
+<p><code><a href='https://rdrr.io/r/base/class.html'>inherits()</a></code></p>
+<p><code><a href='https://rdrr.io/r/methods/is.html'>methods::is()</a></code></p>
+<p><code><a href='https://rdrr.io/r/base/list.html'>is.list()</a></code></p>
+<p><code><a href='https://rdrr.io/r/base/is.function.html'>is.function()</a></code></p>
+<p><code><a href='https://rdrr.io/r/base/formals.html'>formals()</a></code></p>
+<p><code><a href='https://rdrr.io/r/base/vector.html'>is.vector()</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
@@ -277,6 +286,7 @@ non-missing integer scalar or double equivalent.</p></li>
       <li><a href="#arguments">Arguments</a></li>
       <li><a href="#value">Value</a></li>
       <li><a href="#functions">Functions</a></li>
+      <li><a href="#see-also">See also</a></li>
       <li><a href="#examples">Examples</a></li>
     </ul>
 

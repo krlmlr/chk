@@ -168,19 +168,23 @@ The <code>vld_</code> functions return a flag indicating whether the test was me
 <li><p><code>chk_file</code>: Check File</p>
 <p>Checks if files exist using <code>vld_file(x)</code>.</p></li>
 <li><p><code>vld_file</code>: Validate File</p>
-<p>Checks if files exist using <code>all(<a href='https://rdrr.io/r/base/files.html'>file.exists</a>(x) &amp;&amp; !dir.exists(x))</code>.</p></li>
+<p>Checks if files exist using <code>all(file.exists(x) &amp;&amp; !dir.exists(x))</code>.</p></li>
 <li><p><code>chk_ext</code>: Check File Extension</p>
 <p>Checks extension exist using <code>vld_ext(x)</code>.</p>
-<p>The user may want to use <code><a href='https://rdrr.io/r/base/chartr.html'>toupper</a>()</code> or <code><a href='https://rdrr.io/r/base/chartr.html'>tolower</a>()</code>
+<p>The user may want to use <code><a href='https://rdrr.io/r/base/chartr.html'>toupper()</a></code> or <code><a href='https://rdrr.io/r/base/chartr.html'>tolower()</a></code>
 to ensure the case matches.</p></li>
 <li><p><code>vld_ext</code>: Validate File Extension</p>
 <p>Checks extension using <code>vld_string(x) &amp;&amp; vld_subset(tools::file_ext(x), ext)</code>.</p></li>
 </ul>
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'><p><code><a href='https://rdrr.io/r/base/files.html'>file.exists()</a></code></p>
+<p><code><a href='https://rdrr.io/r/base/files2.html'>dir.exists()</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
 <span class='co'># chk_file</span>
-<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_file</span>(<span class='fu'><a href='https://rdrr.io/r/base/tempfile.html'>tempfile</a></span>()))</div><div class='output co'>#&gt; Error : `tempfile()` must specify an existing file ('/tmp/Rtmpvnzpw9/file320e72ad437b' can't be found).</div><div class='input'>
+<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_file</span>(<span class='fu'><a href='https://rdrr.io/r/base/tempfile.html'>tempfile</a></span>()))</div><div class='output co'>#&gt; Error : `tempfile()` must specify an existing file ('/tmp/Rtmp9zpVXg/file319d29f87ff8' can't be found).</div><div class='input'>
 <span class='co'># vld_file</span>
 <span class='fu'>vld_file</span>(<span class='fu'><a href='https://rdrr.io/r/base/tempfile.html'>tempfile</a></span>())</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'>
 <span class='co'># chk_ext</span>
@@ -195,6 +199,7 @@ to ensure the case matches.</p></li>
       <li><a href="#value">Value</a></li>
       <li><a href="#details">Details</a></li>
       <li><a href="#functions">Functions</a></li>
+      <li><a href="#see-also">See also</a></li>
       <li><a href="#examples">Examples</a></li>
     </ul>
 

@@ -170,7 +170,7 @@ checks if is equal (identical within tolerance) to y using</p>
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p><code>NULL</code>, invisibly. Called for the side effect of throwing an error
-  if the condition is not met.</p>
+if the condition is not met.</p>
     <h2 class="hasAnchor" id="functions"><a class="anchor" href="#functions"></a>Functions</h2>
 
     
@@ -180,11 +180,13 @@ checks if is equal (identical within tolerance) to y using</p>
 <li><p><code>chk_equivalent</code>: Check Equivalent</p>
 <p><code>chk_equivalent()</code>
 checks if is equivalent (equal ignoring attributes) to y using</p>
-<p><code><a href='chk_true.html'>vld_true</a>(<a href='https://rdrr.io/r/base/all.equal.html'>all.equal</a>(x, y, tolerance, check.attributes = FALSE))</code>.</p></li>
+<p><code><a href='chk_true.html'>vld_true(all.equal(x, y, tolerance, check.attributes = FALSE))</a></code>.</p></li>
 </ul>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code><a href='chk_all.html'>chk_all_identical</a>()</code></p></div>
+    <div class='dont-index'><p><code><a href='chk_all.html'>chk_all_identical()</a></code></p>
+<p><code><a href='chk_true.html'>vld_true()</a></code></p>
+<p><code><a href='https://rdrr.io/r/base/all.equal.html'>all.equal()</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>

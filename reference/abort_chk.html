@@ -36,7 +36,7 @@
 
 
 <meta property="og:title" content="Abort Check — abort_chk" />
-<meta property="og:description" content="A wrapper on err that sets the subclass to be 'chk_error'." />
+<meta property="og:description" content="A wrapper on err() that sets the subclass to be 'chk_error'." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -126,7 +126,7 @@
     </div>
 
     <div class="ref-description">
-    <p>A wrapper on <code><a href='err.html'>err</a></code> that sets the subclass to be 'chk_error'.</p>
+    <p>A wrapper on <code><a href='err.html'>err()</a></code> that sets the subclass to be <code>'chk_error'</code>.</p>
     </div>
 
     <pre class="usage"><span class='fu'>abort_chk</span>(<span class='no'>...</span>, <span class='kw'>n</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>tidy</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
@@ -154,10 +154,10 @@
     <p>Throws an error of class <code>'chk_error'</code>.</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>It is exported to allow users to easily construct their own `chk_` functions.</p>
+    <p>It is exported to allow users to easily construct their own <code>chk_</code> functions.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p>[err()]</p></div>
+    <div class='dont-index'><p><code><a href='err.html'>err()</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>abort_chk</span>(<span class='st'>"x must be NULL"</span>))</div><div class='output co'>#&gt; Error : X must be NULL.</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>abort_chk</span>(<span class='st'>"`x` must be NULL"</span>))</div><div class='output co'>#&gt; Error : `x` must be NULL.</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>abort_chk</span>(<span class='st'>"there %r %n problem value%s"</span>, <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>1</span>))</div><div class='output co'>#&gt; Error : There is 1 problem value.</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>abort_chk</span>(<span class='st'>"there %r %n problem value%s"</span>, <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>1.5</span>))</div><div class='output co'>#&gt; Error : There are 1.5 problem values.</div></pre>
