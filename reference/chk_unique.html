@@ -121,7 +121,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Check/Validate Unique</h1>
-    <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/chk/blob/master/R/chk-unique.R'><code>R/chk-unique.R</code></a>, <a href='https://github.com/poissonconsulting/chk/blob/master/R/deprecated.R'><code>R/deprecated.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/chk/blob/master/R/chk-unique.R'><code>R/chk-unique.R</code></a></small>
     <div class="hidden name"><code>chk_unique.Rd</code></div>
     </div>
 
@@ -139,9 +139,7 @@
 
 <span class='fu'>chk_named</span>(<span class='no'>x</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
 
-<span class='fu'>vld_named</span>(<span class='no'>x</span>)
-
-<span class='fu'>chk_length</span>(<span class='no'>x</span>, <span class='kw'>length</span> <span class='kw'>=</span> <span class='fl'>1L</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+<span class='fu'>vld_named</span>(<span class='no'>x</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -158,10 +156,6 @@ FALSE means that all values can be compared.</p></td>
     <tr>
       <th>x_name</th>
       <td><p>A string of the name of object x or NULL.</p></td>
-    </tr>
-    <tr>
-      <th>length</th>
-      <td><p>A count of the length.</p></td>
     </tr>
     </table>
 
@@ -191,11 +185,6 @@ The <code>vld_</code> functions return a flag indicating whether the test was me
 <li><p><code>vld_named</code>: Validate Named</p>
 <p>Checks if is named using</p>
 <p><code>!is.null(<a href='https://rdrr.io/r/base/names.html'>names</a>(x))</code>.</p></li>
-<li><p><code>chk_length</code>: Check Length</p>
-<p><img src='figures/lifecycle-deprecated.svg' alt='Deprecated lifecycle' /></p>
-<p>Checks if is length length using:</p>
-<p><code>length(x) == length</code></p>
-<p><code>length</code> should be a count.</p></li>
 </ul>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
