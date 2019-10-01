@@ -325,7 +325,7 @@ checks if is equivalent (equal ignoring attributes) to y using</p>
 #&gt;  40.                             └─chk::abort_chk(x_name, " must be equal to: ", y)
 #&gt;  41.                               └─chk::err(..., n = n, tidy = tidy, .subclass = "chk_error")</div><div class='input'><span class='fu'>chk_equal</span>(<span class='fl'>1</span>, <span class='fl'>1L</span>)
 <span class='fu'>chk_equal</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1</span>), <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1L</span>))
-<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_equal</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1</span>), <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='kw'>y</span> <span class='kw'>=</span> <span class='fl'>1L</span>)))</div><div class='output co'>#&gt; Error : `c(x = 1)` must be equal to: c(y = 1L).
+<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_equal</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1</span>), <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='kw'>y</span> <span class='kw'>=</span> <span class='fl'>1L</span>)))</div><div class='output co'>#&gt; Error : `c(x = 1)` must be equal to: structure(1L, .Names = "y").
 #&gt; Backtrace:
 #&gt;      █
 #&gt;   1. ├─base::tryCatch(...)
