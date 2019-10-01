@@ -157,13 +157,10 @@
     <p>It is exported to allow users to easily construct their own `chk_` functions.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code>{err}</code></p></div>
+    <div class='dont-index'><p>[err()]</p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>abort_chk</span>(<span class='st'>"x must be NULL"</span>))
-<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>abort_chk</span>(<span class='st'>"`x` must be NULL"</span>))
-<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>abort_chk</span>(<span class='st'>"there %r %n problem value%s"</span>, <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>1</span>))
-<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>abort_chk</span>(<span class='st'>"there %r %n problem value%s"</span>, <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>1.5</span>))</div></pre>
+    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>abort_chk</span>(<span class='st'>"x must be NULL"</span>))</div><div class='output co'>#&gt; Error : X must be NULL.</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>abort_chk</span>(<span class='st'>"`x` must be NULL"</span>))</div><div class='output co'>#&gt; Error : `x` must be NULL.</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>abort_chk</span>(<span class='st'>"there %r %n problem value%s"</span>, <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>1</span>))</div><div class='output co'>#&gt; Error : There is 1 problem value.</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>abort_chk</span>(<span class='st'>"there %r %n problem value%s"</span>, <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>1.5</span>))</div><div class='output co'>#&gt; Error : There are 1.5 problem values.</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

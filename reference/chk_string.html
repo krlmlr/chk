@@ -181,14 +181,12 @@ The <code>vld_</code> functions return a flag indicating whether the test was me
     <pre class="examples"><div class='input'>
 <span class='co'># chk_string</span>
 <span class='fu'>chk_string</span>(<span class='st'>"1"</span>)
-<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_string</span>(<span class='fl'>1</span>))
-
+<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_string</span>(<span class='fl'>1</span>))</div><div class='output co'>#&gt; Error : `1` must be a string (non-missing character scalar).</div><div class='input'>
 <span class='co'># vld_string</span>
 <span class='fu'>vld_string</span>(<span class='st'>"1"</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_string</span>(<span class='st'>""</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_string</span>(<span class='fl'>1</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>vld_string</span>(<span class='fl'>NA_character_</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>vld_string</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"1"</span>, <span class='st'>"1"</span>))</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'>
 <span class='co'># chk_match</span>
 <span class='fu'>chk_match</span>(<span class='st'>"1"</span>)
-<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_match</span>(<span class='st'>"1"</span>, <span class='kw'>regexp</span> <span class='kw'>=</span> <span class='st'>"2"</span>))
-
+<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_match</span>(<span class='st'>"1"</span>, <span class='kw'>regexp</span> <span class='kw'>=</span> <span class='st'>"2"</span>))</div><div class='output co'>#&gt; Error : `"1"` must match regular expression '2'.</div><div class='input'>
 <span class='co'># vld_match</span>
 <span class='fu'>vld_match</span>(<span class='st'>"1"</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_match</span>(<span class='st'>"a"</span>, <span class='kw'>regexp</span> <span class='kw'>=</span> <span class='st'>"a"</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_match</span>(<span class='st'>""</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>vld_match</span>(<span class='st'>"1"</span>, <span class='kw'>regexp</span> <span class='kw'>=</span> <span class='st'>"2"</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>vld_match</span>(<span class='fl'>NA_character_</span>, <span class='kw'>regexp</span> <span class='kw'>=</span> <span class='st'>".*"</span>)</div><div class='output co'>#&gt; [1] FALSE</div></pre>
   </div>

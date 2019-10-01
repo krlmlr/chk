@@ -175,8 +175,7 @@ The <code>vld_</code> functions return a flag indicating whether the test was me
   <span class='fu'>chk_unused</span>(<span class='no'>...</span>)
   <span class='no'>x</span>
 }
-<span class='fu'>fun</span>(<span class='fl'>1</span>)</div><div class='output co'>#&gt; [1] 1</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>fun</span>(<span class='fl'>1</span>, <span class='fl'>2</span>))
-
+<span class='fu'>fun</span>(<span class='fl'>1</span>)</div><div class='output co'>#&gt; [1] 1</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>fun</span>(<span class='fl'>1</span>, <span class='fl'>2</span>))</div><div class='output co'>#&gt; Error : `...` must be unused.</div><div class='input'>
 <span class='co'># vld_unused</span>
 <span class='no'>fun</span> <span class='kw'>&lt;-</span> <span class='kw'>function</span>(<span class='no'>x</span>, <span class='no'>...</span>) {
   <span class='fu'>vld_unused</span>(<span class='no'>...</span>)
@@ -187,8 +186,7 @@ The <code>vld_</code> functions return a flag indicating whether the test was me
   <span class='fu'>chk_used</span>(<span class='no'>...</span>)
   <span class='no'>x</span>
 }
-<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>fun</span>(<span class='fl'>1</span>))
-<span class='fu'>fun</span>(<span class='fl'>1</span>, <span class='fl'>2</span>)</div><div class='output co'>#&gt; [1] 1</div><div class='input'>
+<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>fun</span>(<span class='fl'>1</span>))</div><div class='output co'>#&gt; Error : `...` must be used.</div><div class='input'><span class='fu'>fun</span>(<span class='fl'>1</span>, <span class='fl'>2</span>)</div><div class='output co'>#&gt; [1] 1</div><div class='input'>
 <span class='co'># vld_used</span>
 <span class='no'>fun</span> <span class='kw'>&lt;-</span> <span class='kw'>function</span>(<span class='no'>x</span>, <span class='no'>...</span>) {
   <span class='fu'>vld_used</span>(<span class='no'>...</span>)

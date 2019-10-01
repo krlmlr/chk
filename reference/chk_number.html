@@ -181,11 +181,10 @@ and <code><a href='chk_type.html'>chk_whole_numeric</a>()</code></p></div>
     <pre class="examples"><div class='input'>
 <span class='co'># chk_number</span>
 <span class='fu'>chk_number</span>(<span class='fl'>1.1</span>)
-<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_number</span>(<span class='fl'>TRUE</span>))
-
+<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_number</span>(<span class='fl'>TRUE</span>))</div><div class='output co'>#&gt; Error : `TRUE` must be a number (non-missing numeric scalar).</div><div class='input'>
 <span class='co'># chk_whole_number</span>
 <span class='fu'>chk_whole_number</span>(<span class='fl'>2</span>)
-<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_whole_number</span>(<span class='fl'>1.1</span>))</div></pre>
+<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_whole_number</span>(<span class='fl'>1.1</span>))</div><div class='output co'>#&gt; Error : `1.1` must be a whole number (non-missing integer scalar or double equivalent).</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

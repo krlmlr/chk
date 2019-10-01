@@ -174,14 +174,12 @@ The <code>vld_</code> functions return a flag indicating whether the test was me
     <pre class="examples"><div class='input'>
 <span class='co'># chk_date</span>
 <span class='fu'>chk_date</span>(<span class='fu'><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.Date</a></span>())
-<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_date</span>(<span class='fl'>1</span>))
-
+<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_date</span>(<span class='fl'>1</span>))</div><div class='output co'>#&gt; Error : `1` must be a date (non-missing Date scalar).</div><div class='input'>
 <span class='co'># vld_date</span>
 <span class='fu'>vld_date</span>(<span class='fu'><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.Date</a></span>())</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_date</span>(<span class='fu'><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.time</a></span>())</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>vld_date</span>(<span class='fl'>1</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'>
 <span class='co'># chk_datetime</span>
 <span class='fu'>chk_datetime</span>(<span class='fu'><a href='https://rdrr.io/r/base/as.POSIXlt.html'>as.POSIXct</a></span>(<span class='st'>"2001-01-02"</span>))
-<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_datetime</span>(<span class='fl'>1</span>))
-
+<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_datetime</span>(<span class='fl'>1</span>))</div><div class='output co'>#&gt; Error : `1` must be a datetime (non-missing POSIXct scalar).</div><div class='input'>
 <span class='co'># vld_datetime</span>
 <span class='fu'>vld_datetime</span>(<span class='fu'><a href='https://rdrr.io/r/base/as.POSIXlt.html'>as.POSIXct</a></span>(<span class='st'>"2001-01-02"</span>))</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_datetime</span>(<span class='fu'><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.time</a></span>())</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_datetime</span>(<span class='fl'>1</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>vld_datetime</span>(<span class='st'>"2001-01-02"</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>vld_datetime</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.time</a></span>(), <span class='fu'><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.time</a></span>()))</div><div class='output co'>#&gt; [1] FALSE</div></pre>
   </div>

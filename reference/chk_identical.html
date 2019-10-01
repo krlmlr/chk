@@ -190,21 +190,16 @@ checks if is equivalent (equal ignoring attributes) to y using</p>
     <pre class="examples"><div class='input'>
 <span class='co'># chk_identical</span>
 <span class='fu'>chk_identical</span>(<span class='fl'>1</span>, <span class='fl'>1</span>)
-<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_identical</span>(<span class='fl'>1</span>, <span class='fl'>1L</span>))
-<span class='fu'>chk_identical</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>, <span class='fl'>1</span>), <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>, <span class='fl'>1</span>))
-<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_identical</span>(<span class='fl'>1</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>, <span class='fl'>1</span>)))
-
+<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_identical</span>(<span class='fl'>1</span>, <span class='fl'>1L</span>))</div><div class='output co'>#&gt; Error : `1` must be identical to: 1L.</div><div class='input'><span class='fu'>chk_identical</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>, <span class='fl'>1</span>), <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>, <span class='fl'>1</span>))
+<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_identical</span>(<span class='fl'>1</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>, <span class='fl'>1</span>)))</div><div class='output co'>#&gt; Error : `1` must be identical to: c(1, 1).</div><div class='input'>
 <span class='co'># chk_equal</span>
 <span class='fu'>chk_equal</span>(<span class='fl'>1</span>, <span class='fl'>1.00000001</span>)
-<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_equal</span>(<span class='fl'>1</span>, <span class='fl'>1.0000001</span>))
-<span class='fu'>chk_equal</span>(<span class='fl'>1</span>, <span class='fl'>1L</span>)
+<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_equal</span>(<span class='fl'>1</span>, <span class='fl'>1.0000001</span>))</div><div class='output co'>#&gt; Error : `1` must be equal to: 1.0000001.</div><div class='input'><span class='fu'>chk_equal</span>(<span class='fl'>1</span>, <span class='fl'>1L</span>)
 <span class='fu'>chk_equal</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1</span>), <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1L</span>))
-<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_equal</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1</span>), <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='kw'>y</span> <span class='kw'>=</span> <span class='fl'>1L</span>)))
-
+<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_equal</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1</span>), <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='kw'>y</span> <span class='kw'>=</span> <span class='fl'>1L</span>)))</div><div class='output co'>#&gt; Error : `c(x = 1)` must be equal to: c(y = 1L).</div><div class='input'>
 <span class='co'># chk_equivalent</span>
 <span class='fu'>chk_equivalent</span>(<span class='fl'>1</span>, <span class='fl'>1.00000001</span>)
-<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_equivalent</span>(<span class='fl'>1</span>, <span class='fl'>1.0000001</span>))
-<span class='fu'>chk_equivalent</span>(<span class='fl'>1</span>, <span class='fl'>1L</span>)
+<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_equivalent</span>(<span class='fl'>1</span>, <span class='fl'>1.0000001</span>))</div><div class='output co'>#&gt; Error : `1` must be equivalent to: 1.0000001.</div><div class='input'><span class='fu'>chk_equivalent</span>(<span class='fl'>1</span>, <span class='fl'>1L</span>)
 <span class='fu'>chk_equivalent</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1</span>), <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='kw'>y</span> <span class='kw'>=</span> <span class='fl'>1</span>))</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

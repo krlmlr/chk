@@ -180,8 +180,7 @@ to selectively handle the conditions signalled by your functions.</p></td>
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
 <span class='co'># err</span>
-<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>err</span>(<span class='st'>"there %r %n problem value%s"</span>, <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>2</span>))
-
+<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>err</span>(<span class='st'>"there %r %n problem value%s"</span>, <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>2</span>))</div><div class='output co'>#&gt; Error : There are 2 problem values.</div><div class='input'>
 <span class='co'># wrn</span>
 <span class='fu'>wrn</span>(<span class='st'>"there %r %n problem value%s"</span>, <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>2</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: There are 2 problem values.</span></div><div class='input'>
 <span class='co'># msg</span>
