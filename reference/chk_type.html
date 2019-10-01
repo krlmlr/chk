@@ -235,46 +235,340 @@ non-missing integer scalar or double equivalent.</p></li>
     <pre class="examples"><div class='input'>
 <span class='co'># chk_s3_class</span>
 <span class='fu'>chk_s3_class</span>(<span class='fl'>1</span>, <span class='st'>"numeric"</span>)
-<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_s3_class</span>(<span class='fu'>getClass</span>(<span class='st'>"MethodDefinition"</span>), <span class='st'>"classRepresentation"</span>))
-
+<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_s3_class</span>(<span class='fu'>getClass</span>(<span class='st'>"MethodDefinition"</span>), <span class='st'>"classRepresentation"</span>))</div><div class='output co'>#&gt; Error : `getClass("MethodDefinition")` must inherit from S3 class 'classRepresentation'.
+#&gt; Backtrace:
+#&gt;      █
+#&gt;   1. ├─base::tryCatch(...)
+#&gt;   2. │ └─base:::tryCatchList(expr, classes, parentenv, handlers)
+#&gt;   3. │   ├─base:::tryCatchOne(...)
+#&gt;   4. │   │ └─base:::doTryCatch(return(expr), name, parentenv, handler)
+#&gt;   5. │   └─base:::tryCatchList(expr, names[-nh], parentenv, handlers[-nh])
+#&gt;   6. │     └─base:::tryCatchOne(expr, names, parentenv, handlers[[1L]])
+#&gt;   7. │       └─base:::doTryCatch(return(expr), name, parentenv, handler)
+#&gt;   8. ├─base::withCallingHandlers(...)
+#&gt;   9. ├─base::saveRDS(...)
+#&gt;  10. ├─base::do.call(...)
+#&gt;  11. ├─(function (what, args, quote = FALSE, envir = parent.frame()) ...
+#&gt;  12. └─(function (..., crayon_enabled, crayon_colors, pkgdown_internet) ...
+#&gt;  13.   └─pkgdown::build_site(...)
+#&gt;  14.     └─pkgdown:::build_site_local(...)
+#&gt;  15.       └─pkgdown::build_reference(...)
+#&gt;  16.         └─purrr::map(...)
+#&gt;  17.           └─pkgdown:::.f(.x[[i]], ...)
+#&gt;  18.             └─pkgdown:::data_reference_topic(...)
+#&gt;  19.               └─pkgdown:::run_examples(...)
+#&gt;  20.                 └─pkgdown:::highlight_examples(code, topic, env = env)
+#&gt;  21.                   └─evaluate::evaluate(x, child_env(env), new_device = TRUE)
+#&gt;  22.                     └─evaluate:::evaluate_call(...)
+#&gt;  23.                       ├─evaluate:::timing_fn(...)
+#&gt;  24.                       ├─evaluate:::handle(...)
+#&gt;  25.                       │ └─base::try(f, silent = TRUE)
+#&gt;  26.                       │   └─base::tryCatch(...)
+#&gt;  27.                       │     └─base:::tryCatchList(expr, classes, parentenv, handlers)
+#&gt;  28.                       │       └─base:::tryCatchOne(expr, names, parentenv, handlers[[1L]])
+#&gt;  29.                       │         └─base:::doTryCatch(return(expr), name, parentenv, handler)
+#&gt;  30.                       ├─base::withCallingHandlers(...)
+#&gt;  31.                       ├─base::withVisible(eval(expr, envir, enclos))
+#&gt;  32.                       └─base::eval(expr, envir, enclos)
+#&gt;  33.                         └─base::eval(expr, envir, enclos)
+#&gt;  34.                           ├─base::try(chk_s3_class(getClass("MethodDefinition"), "classRepresentation"))
+#&gt;  35.                           │ └─base::tryCatch(...)
+#&gt;  36.                           │   └─base:::tryCatchList(expr, classes, parentenv, handlers)
+#&gt;  37.                           │     └─base:::tryCatchOne(expr, names, parentenv, handlers[[1L]])
+#&gt;  38.                           │       └─base:::doTryCatch(return(expr), name, parentenv, handler)
+#&gt;  39.                           └─chk::chk_s3_class(getClass("MethodDefinition"), "classRepresentation")
+#&gt;  40.                             └─chk::abort_chk(...)
+#&gt;  41.                               └─chk::err(..., n = n, tidy = tidy, .subclass = "chk_error")</div><div class='input'>
 <span class='co'># vld_s3_class</span>
 <span class='fu'>vld_s3_class</span>(<span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></span>(<span class='fl'>0</span>), <span class='st'>"numeric"</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_s3_class</span>(<span class='fu'>getClass</span>(<span class='st'>"MethodDefinition"</span>), <span class='st'>"classRepresentation"</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'>
 <span class='co'># chk_s4_class</span>
-<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_s4_class</span>(<span class='fl'>1</span>, <span class='st'>"numeric"</span>))
-<span class='fu'>chk_s4_class</span>(<span class='fu'>getClass</span>(<span class='st'>"MethodDefinition"</span>), <span class='st'>"classRepresentation"</span>)
+<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_s4_class</span>(<span class='fl'>1</span>, <span class='st'>"numeric"</span>))</div><div class='output co'>#&gt; Error : `1` must inherit from S4 class 'numeric'.
+#&gt; Backtrace:
+#&gt;      █
+#&gt;   1. ├─base::tryCatch(...)
+#&gt;   2. │ └─base:::tryCatchList(expr, classes, parentenv, handlers)
+#&gt;   3. │   ├─base:::tryCatchOne(...)
+#&gt;   4. │   │ └─base:::doTryCatch(return(expr), name, parentenv, handler)
+#&gt;   5. │   └─base:::tryCatchList(expr, names[-nh], parentenv, handlers[-nh])
+#&gt;   6. │     └─base:::tryCatchOne(expr, names, parentenv, handlers[[1L]])
+#&gt;   7. │       └─base:::doTryCatch(return(expr), name, parentenv, handler)
+#&gt;   8. ├─base::withCallingHandlers(...)
+#&gt;   9. ├─base::saveRDS(...)
+#&gt;  10. ├─base::do.call(...)
+#&gt;  11. ├─(function (what, args, quote = FALSE, envir = parent.frame()) ...
+#&gt;  12. └─(function (..., crayon_enabled, crayon_colors, pkgdown_internet) ...
+#&gt;  13.   └─pkgdown::build_site(...)
+#&gt;  14.     └─pkgdown:::build_site_local(...)
+#&gt;  15.       └─pkgdown::build_reference(...)
+#&gt;  16.         └─purrr::map(...)
+#&gt;  17.           └─pkgdown:::.f(.x[[i]], ...)
+#&gt;  18.             └─pkgdown:::data_reference_topic(...)
+#&gt;  19.               └─pkgdown:::run_examples(...)
+#&gt;  20.                 └─pkgdown:::highlight_examples(code, topic, env = env)
+#&gt;  21.                   └─evaluate::evaluate(x, child_env(env), new_device = TRUE)
+#&gt;  22.                     └─evaluate:::evaluate_call(...)
+#&gt;  23.                       ├─evaluate:::timing_fn(...)
+#&gt;  24.                       ├─evaluate:::handle(...)
+#&gt;  25.                       │ └─base::try(f, silent = TRUE)
+#&gt;  26.                       │   └─base::tryCatch(...)
+#&gt;  27.                       │     └─base:::tryCatchList(expr, classes, parentenv, handlers)
+#&gt;  28.                       │       └─base:::tryCatchOne(expr, names, parentenv, handlers[[1L]])
+#&gt;  29.                       │         └─base:::doTryCatch(return(expr), name, parentenv, handler)
+#&gt;  30.                       ├─base::withCallingHandlers(...)
+#&gt;  31.                       ├─base::withVisible(eval(expr, envir, enclos))
+#&gt;  32.                       └─base::eval(expr, envir, enclos)
+#&gt;  33.                         └─base::eval(expr, envir, enclos)
+#&gt;  34.                           ├─base::try(chk_s4_class(1, "numeric"))
+#&gt;  35.                           │ └─base::tryCatch(...)
+#&gt;  36.                           │   └─base:::tryCatchList(expr, classes, parentenv, handlers)
+#&gt;  37.                           │     └─base:::tryCatchOne(expr, names, parentenv, handlers[[1L]])
+#&gt;  38.                           │       └─base:::doTryCatch(return(expr), name, parentenv, handler)
+#&gt;  39.                           └─chk::chk_s4_class(1, "numeric")
+#&gt;  40.                             └─chk::abort_chk(...)
+#&gt;  41.                               └─chk::err(..., n = n, tidy = tidy, .subclass = "chk_error")</div><div class='input'><span class='fu'>chk_s4_class</span>(<span class='fu'>getClass</span>(<span class='st'>"MethodDefinition"</span>), <span class='st'>"classRepresentation"</span>)
 
 <span class='co'># vld_s4_class</span>
 <span class='fu'>vld_s4_class</span>(<span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></span>(<span class='fl'>0</span>), <span class='st'>"numeric"</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>vld_s4_class</span>(<span class='fu'>getClass</span>(<span class='st'>"MethodDefinition"</span>), <span class='st'>"classRepresentation"</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
 <span class='co'># chk_whole_numeric</span>
 <span class='fu'>chk_whole_numeric</span>(<span class='fl'>1</span>)
-<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_whole_numeric</span>(<span class='fl'>1.1</span>))
-
+<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_whole_numeric</span>(<span class='fl'>1.1</span>))</div><div class='output co'>#&gt; Error : `1.1` must be a whole numeric vector (integer vector or double equivalent).
+#&gt; Backtrace:
+#&gt;      █
+#&gt;   1. ├─base::tryCatch(...)
+#&gt;   2. │ └─base:::tryCatchList(expr, classes, parentenv, handlers)
+#&gt;   3. │   ├─base:::tryCatchOne(...)
+#&gt;   4. │   │ └─base:::doTryCatch(return(expr), name, parentenv, handler)
+#&gt;   5. │   └─base:::tryCatchList(expr, names[-nh], parentenv, handlers[-nh])
+#&gt;   6. │     └─base:::tryCatchOne(expr, names, parentenv, handlers[[1L]])
+#&gt;   7. │       └─base:::doTryCatch(return(expr), name, parentenv, handler)
+#&gt;   8. ├─base::withCallingHandlers(...)
+#&gt;   9. ├─base::saveRDS(...)
+#&gt;  10. ├─base::do.call(...)
+#&gt;  11. ├─(function (what, args, quote = FALSE, envir = parent.frame()) ...
+#&gt;  12. └─(function (..., crayon_enabled, crayon_colors, pkgdown_internet) ...
+#&gt;  13.   └─pkgdown::build_site(...)
+#&gt;  14.     └─pkgdown:::build_site_local(...)
+#&gt;  15.       └─pkgdown::build_reference(...)
+#&gt;  16.         └─purrr::map(...)
+#&gt;  17.           └─pkgdown:::.f(.x[[i]], ...)
+#&gt;  18.             └─pkgdown:::data_reference_topic(...)
+#&gt;  19.               └─pkgdown:::run_examples(...)
+#&gt;  20.                 └─pkgdown:::highlight_examples(code, topic, env = env)
+#&gt;  21.                   └─evaluate::evaluate(x, child_env(env), new_device = TRUE)
+#&gt;  22.                     └─evaluate:::evaluate_call(...)
+#&gt;  23.                       ├─evaluate:::timing_fn(...)
+#&gt;  24.                       ├─evaluate:::handle(...)
+#&gt;  25.                       │ └─base::try(f, silent = TRUE)
+#&gt;  26.                       │   └─base::tryCatch(...)
+#&gt;  27.                       │     └─base:::tryCatchList(expr, classes, parentenv, handlers)
+#&gt;  28.                       │       └─base:::tryCatchOne(expr, names, parentenv, handlers[[1L]])
+#&gt;  29.                       │         └─base:::doTryCatch(return(expr), name, parentenv, handler)
+#&gt;  30.                       ├─base::withCallingHandlers(...)
+#&gt;  31.                       ├─base::withVisible(eval(expr, envir, enclos))
+#&gt;  32.                       └─base::eval(expr, envir, enclos)
+#&gt;  33.                         └─base::eval(expr, envir, enclos)
+#&gt;  34.                           ├─base::try(chk_whole_numeric(1.1))
+#&gt;  35.                           │ └─base::tryCatch(...)
+#&gt;  36.                           │   └─base:::tryCatchList(expr, classes, parentenv, handlers)
+#&gt;  37.                           │     └─base:::tryCatchOne(expr, names, parentenv, handlers[[1L]])
+#&gt;  38.                           │       └─base:::doTryCatch(return(expr), name, parentenv, handler)
+#&gt;  39.                           └─chk::chk_whole_numeric(1.1)
+#&gt;  40.                             └─chk::abort_chk(x_name, " must be a whole numeric vector (integer vector or double equivalent)")
+#&gt;  41.                               └─chk::err(..., n = n, tidy = tidy, .subclass = "chk_error")</div><div class='input'>
 <span class='co'># vld_whole_numeric</span>
 <span class='fu'>vld_whole_numeric</span>(<span class='fl'>1</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_whole_numeric</span>(<span class='fl'>NA_real_</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_whole_numeric</span>(<span class='fl'>1</span>:<span class='fl'>2</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_whole_numeric</span>(<span class='fu'><a href='https://rdrr.io/r/base/double.html'>double</a></span>(<span class='fl'>0</span>))</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_whole_numeric</span>(<span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>vld_whole_numeric</span>(<span class='fl'>1.5</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'>
 <span class='co'># chk_list</span>
 <span class='fu'>chk_list</span>(<span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>())
-<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_list</span>(<span class='fl'>1</span>))
-
+<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_list</span>(<span class='fl'>1</span>))</div><div class='output co'>#&gt; Error : `1` must be a list.
+#&gt; Backtrace:
+#&gt;      █
+#&gt;   1. ├─base::tryCatch(...)
+#&gt;   2. │ └─base:::tryCatchList(expr, classes, parentenv, handlers)
+#&gt;   3. │   ├─base:::tryCatchOne(...)
+#&gt;   4. │   │ └─base:::doTryCatch(return(expr), name, parentenv, handler)
+#&gt;   5. │   └─base:::tryCatchList(expr, names[-nh], parentenv, handlers[-nh])
+#&gt;   6. │     └─base:::tryCatchOne(expr, names, parentenv, handlers[[1L]])
+#&gt;   7. │       └─base:::doTryCatch(return(expr), name, parentenv, handler)
+#&gt;   8. ├─base::withCallingHandlers(...)
+#&gt;   9. ├─base::saveRDS(...)
+#&gt;  10. ├─base::do.call(...)
+#&gt;  11. ├─(function (what, args, quote = FALSE, envir = parent.frame()) ...
+#&gt;  12. └─(function (..., crayon_enabled, crayon_colors, pkgdown_internet) ...
+#&gt;  13.   └─pkgdown::build_site(...)
+#&gt;  14.     └─pkgdown:::build_site_local(...)
+#&gt;  15.       └─pkgdown::build_reference(...)
+#&gt;  16.         └─purrr::map(...)
+#&gt;  17.           └─pkgdown:::.f(.x[[i]], ...)
+#&gt;  18.             └─pkgdown:::data_reference_topic(...)
+#&gt;  19.               └─pkgdown:::run_examples(...)
+#&gt;  20.                 └─pkgdown:::highlight_examples(code, topic, env = env)
+#&gt;  21.                   └─evaluate::evaluate(x, child_env(env), new_device = TRUE)
+#&gt;  22.                     └─evaluate:::evaluate_call(...)
+#&gt;  23.                       ├─evaluate:::timing_fn(...)
+#&gt;  24.                       ├─evaluate:::handle(...)
+#&gt;  25.                       │ └─base::try(f, silent = TRUE)
+#&gt;  26.                       │   └─base::tryCatch(...)
+#&gt;  27.                       │     └─base:::tryCatchList(expr, classes, parentenv, handlers)
+#&gt;  28.                       │       └─base:::tryCatchOne(expr, names, parentenv, handlers[[1L]])
+#&gt;  29.                       │         └─base:::doTryCatch(return(expr), name, parentenv, handler)
+#&gt;  30.                       ├─base::withCallingHandlers(...)
+#&gt;  31.                       ├─base::withVisible(eval(expr, envir, enclos))
+#&gt;  32.                       └─base::eval(expr, envir, enclos)
+#&gt;  33.                         └─base::eval(expr, envir, enclos)
+#&gt;  34.                           ├─base::try(chk_list(1))
+#&gt;  35.                           │ └─base::tryCatch(...)
+#&gt;  36.                           │   └─base:::tryCatchList(expr, classes, parentenv, handlers)
+#&gt;  37.                           │     └─base:::tryCatchOne(expr, names, parentenv, handlers[[1L]])
+#&gt;  38.                           │       └─base:::doTryCatch(return(expr), name, parentenv, handler)
+#&gt;  39.                           └─chk::chk_list(1)
+#&gt;  40.                             └─chk::abort_chk(x_name, " must be a list")
+#&gt;  41.                               └─chk::err(..., n = n, tidy = tidy, .subclass = "chk_error")</div><div class='input'>
 <span class='co'># vld_list</span>
 <span class='fu'>vld_list</span>(<span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>())</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_list</span>(<span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1</span>))</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_list</span>(<span class='no'>mtcars</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_list</span>(<span class='fl'>1</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>vld_list</span>(<span class='kw'>NULL</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'>
 <span class='co'># chk_function</span>
 <span class='fu'>chk_function</span>(<span class='no'>mean</span>)
-<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_function</span>(<span class='fl'>1</span>))
-
+<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_function</span>(<span class='fl'>1</span>))</div><div class='output co'>#&gt; Error : `1` must be a function.
+#&gt; Backtrace:
+#&gt;      █
+#&gt;   1. ├─base::tryCatch(...)
+#&gt;   2. │ └─base:::tryCatchList(expr, classes, parentenv, handlers)
+#&gt;   3. │   ├─base:::tryCatchOne(...)
+#&gt;   4. │   │ └─base:::doTryCatch(return(expr), name, parentenv, handler)
+#&gt;   5. │   └─base:::tryCatchList(expr, names[-nh], parentenv, handlers[-nh])
+#&gt;   6. │     └─base:::tryCatchOne(expr, names, parentenv, handlers[[1L]])
+#&gt;   7. │       └─base:::doTryCatch(return(expr), name, parentenv, handler)
+#&gt;   8. ├─base::withCallingHandlers(...)
+#&gt;   9. ├─base::saveRDS(...)
+#&gt;  10. ├─base::do.call(...)
+#&gt;  11. ├─(function (what, args, quote = FALSE, envir = parent.frame()) ...
+#&gt;  12. └─(function (..., crayon_enabled, crayon_colors, pkgdown_internet) ...
+#&gt;  13.   └─pkgdown::build_site(...)
+#&gt;  14.     └─pkgdown:::build_site_local(...)
+#&gt;  15.       └─pkgdown::build_reference(...)
+#&gt;  16.         └─purrr::map(...)
+#&gt;  17.           └─pkgdown:::.f(.x[[i]], ...)
+#&gt;  18.             └─pkgdown:::data_reference_topic(...)
+#&gt;  19.               └─pkgdown:::run_examples(...)
+#&gt;  20.                 └─pkgdown:::highlight_examples(code, topic, env = env)
+#&gt;  21.                   └─evaluate::evaluate(x, child_env(env), new_device = TRUE)
+#&gt;  22.                     └─evaluate:::evaluate_call(...)
+#&gt;  23.                       ├─evaluate:::timing_fn(...)
+#&gt;  24.                       ├─evaluate:::handle(...)
+#&gt;  25.                       │ └─base::try(f, silent = TRUE)
+#&gt;  26.                       │   └─base::tryCatch(...)
+#&gt;  27.                       │     └─base:::tryCatchList(expr, classes, parentenv, handlers)
+#&gt;  28.                       │       └─base:::tryCatchOne(expr, names, parentenv, handlers[[1L]])
+#&gt;  29.                       │         └─base:::doTryCatch(return(expr), name, parentenv, handler)
+#&gt;  30.                       ├─base::withCallingHandlers(...)
+#&gt;  31.                       ├─base::withVisible(eval(expr, envir, enclos))
+#&gt;  32.                       └─base::eval(expr, envir, enclos)
+#&gt;  33.                         └─base::eval(expr, envir, enclos)
+#&gt;  34.                           ├─base::try(chk_function(1))
+#&gt;  35.                           │ └─base::tryCatch(...)
+#&gt;  36.                           │   └─base:::tryCatchList(expr, classes, parentenv, handlers)
+#&gt;  37.                           │     └─base:::tryCatchOne(expr, names, parentenv, handlers[[1L]])
+#&gt;  38.                           │       └─base:::doTryCatch(return(expr), name, parentenv, handler)
+#&gt;  39.                           └─chk::chk_function(1)
+#&gt;  40.                             └─chk::abort_chk(x_name, " must be a function")
+#&gt;  41.                               └─chk::err(..., n = n, tidy = tidy, .subclass = "chk_error")</div><div class='input'>
 <span class='co'># vld_function</span>
 <span class='fu'>vld_function</span>(<span class='no'>mean</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_function</span>(<span class='kw'>function</span>(<span class='no'>x</span>) <span class='no'>x</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_function</span>(<span class='fl'>1</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>vld_function</span>(<span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='fl'>1</span>))</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'>
 <span class='co'># chk_vector</span>
 <span class='fu'>chk_vector</span>(<span class='fl'>1</span>)
 <span class='fu'>chk_vector</span>(<span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>())
-<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_vector</span>(<span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span>(<span class='fl'>1</span>)))
-
+<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_vector</span>(<span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span>(<span class='fl'>1</span>)))</div><div class='output co'>#&gt; Error : `matrix(1)` must be a vector.
+#&gt; Backtrace:
+#&gt;      █
+#&gt;   1. ├─base::tryCatch(...)
+#&gt;   2. │ └─base:::tryCatchList(expr, classes, parentenv, handlers)
+#&gt;   3. │   ├─base:::tryCatchOne(...)
+#&gt;   4. │   │ └─base:::doTryCatch(return(expr), name, parentenv, handler)
+#&gt;   5. │   └─base:::tryCatchList(expr, names[-nh], parentenv, handlers[-nh])
+#&gt;   6. │     └─base:::tryCatchOne(expr, names, parentenv, handlers[[1L]])
+#&gt;   7. │       └─base:::doTryCatch(return(expr), name, parentenv, handler)
+#&gt;   8. ├─base::withCallingHandlers(...)
+#&gt;   9. ├─base::saveRDS(...)
+#&gt;  10. ├─base::do.call(...)
+#&gt;  11. ├─(function (what, args, quote = FALSE, envir = parent.frame()) ...
+#&gt;  12. └─(function (..., crayon_enabled, crayon_colors, pkgdown_internet) ...
+#&gt;  13.   └─pkgdown::build_site(...)
+#&gt;  14.     └─pkgdown:::build_site_local(...)
+#&gt;  15.       └─pkgdown::build_reference(...)
+#&gt;  16.         └─purrr::map(...)
+#&gt;  17.           └─pkgdown:::.f(.x[[i]], ...)
+#&gt;  18.             └─pkgdown:::data_reference_topic(...)
+#&gt;  19.               └─pkgdown:::run_examples(...)
+#&gt;  20.                 └─pkgdown:::highlight_examples(code, topic, env = env)
+#&gt;  21.                   └─evaluate::evaluate(x, child_env(env), new_device = TRUE)
+#&gt;  22.                     └─evaluate:::evaluate_call(...)
+#&gt;  23.                       ├─evaluate:::timing_fn(...)
+#&gt;  24.                       ├─evaluate:::handle(...)
+#&gt;  25.                       │ └─base::try(f, silent = TRUE)
+#&gt;  26.                       │   └─base::tryCatch(...)
+#&gt;  27.                       │     └─base:::tryCatchList(expr, classes, parentenv, handlers)
+#&gt;  28.                       │       └─base:::tryCatchOne(expr, names, parentenv, handlers[[1L]])
+#&gt;  29.                       │         └─base:::doTryCatch(return(expr), name, parentenv, handler)
+#&gt;  30.                       ├─base::withCallingHandlers(...)
+#&gt;  31.                       ├─base::withVisible(eval(expr, envir, enclos))
+#&gt;  32.                       └─base::eval(expr, envir, enclos)
+#&gt;  33.                         └─base::eval(expr, envir, enclos)
+#&gt;  34.                           ├─base::try(chk_vector(matrix(1)))
+#&gt;  35.                           │ └─base::tryCatch(...)
+#&gt;  36.                           │   └─base:::tryCatchList(expr, classes, parentenv, handlers)
+#&gt;  37.                           │     └─base:::tryCatchOne(expr, names, parentenv, handlers[[1L]])
+#&gt;  38.                           │       └─base:::doTryCatch(return(expr), name, parentenv, handler)
+#&gt;  39.                           └─chk::chk_vector(matrix(1))
+#&gt;  40.                             └─chk::abort_chk(x_name, " must be a vector")
+#&gt;  41.                               └─chk::err(..., n = n, tidy = tidy, .subclass = "chk_error")</div><div class='input'>
 <span class='co'># vld_vector</span>
 <span class='fu'>vld_vector</span>(<span class='fl'>1</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
 <span class='co'># chk_scalar</span>
 <span class='fu'>chk_scalar</span>(<span class='fl'>1</span>)
 <span class='fu'>chk_scalar</span>(<span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='fl'>1</span>))
-<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_scalar</span>(<span class='fl'>1</span>:<span class='fl'>2</span>))
-
+<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_scalar</span>(<span class='fl'>1</span>:<span class='fl'>2</span>))</div><div class='output co'>#&gt; Error : `1:2` must be a scalar (length 1).
+#&gt; Backtrace:
+#&gt;      █
+#&gt;   1. ├─base::tryCatch(...)
+#&gt;   2. │ └─base:::tryCatchList(expr, classes, parentenv, handlers)
+#&gt;   3. │   ├─base:::tryCatchOne(...)
+#&gt;   4. │   │ └─base:::doTryCatch(return(expr), name, parentenv, handler)
+#&gt;   5. │   └─base:::tryCatchList(expr, names[-nh], parentenv, handlers[-nh])
+#&gt;   6. │     └─base:::tryCatchOne(expr, names, parentenv, handlers[[1L]])
+#&gt;   7. │       └─base:::doTryCatch(return(expr), name, parentenv, handler)
+#&gt;   8. ├─base::withCallingHandlers(...)
+#&gt;   9. ├─base::saveRDS(...)
+#&gt;  10. ├─base::do.call(...)
+#&gt;  11. ├─(function (what, args, quote = FALSE, envir = parent.frame()) ...
+#&gt;  12. └─(function (..., crayon_enabled, crayon_colors, pkgdown_internet) ...
+#&gt;  13.   └─pkgdown::build_site(...)
+#&gt;  14.     └─pkgdown:::build_site_local(...)
+#&gt;  15.       └─pkgdown::build_reference(...)
+#&gt;  16.         └─purrr::map(...)
+#&gt;  17.           └─pkgdown:::.f(.x[[i]], ...)
+#&gt;  18.             └─pkgdown:::data_reference_topic(...)
+#&gt;  19.               └─pkgdown:::run_examples(...)
+#&gt;  20.                 └─pkgdown:::highlight_examples(code, topic, env = env)
+#&gt;  21.                   └─evaluate::evaluate(x, child_env(env), new_device = TRUE)
+#&gt;  22.                     └─evaluate:::evaluate_call(...)
+#&gt;  23.                       ├─evaluate:::timing_fn(...)
+#&gt;  24.                       ├─evaluate:::handle(...)
+#&gt;  25.                       │ └─base::try(f, silent = TRUE)
+#&gt;  26.                       │   └─base::tryCatch(...)
+#&gt;  27.                       │     └─base:::tryCatchList(expr, classes, parentenv, handlers)
+#&gt;  28.                       │       └─base:::tryCatchOne(expr, names, parentenv, handlers[[1L]])
+#&gt;  29.                       │         └─base:::doTryCatch(return(expr), name, parentenv, handler)
+#&gt;  30.                       ├─base::withCallingHandlers(...)
+#&gt;  31.                       ├─base::withVisible(eval(expr, envir, enclos))
+#&gt;  32.                       └─base::eval(expr, envir, enclos)
+#&gt;  33.                         └─base::eval(expr, envir, enclos)
+#&gt;  34.                           ├─base::try(chk_scalar(1:2))
+#&gt;  35.                           │ └─base::tryCatch(...)
+#&gt;  36.                           │   └─base:::tryCatchList(expr, classes, parentenv, handlers)
+#&gt;  37.                           │     └─base:::tryCatchOne(expr, names, parentenv, handlers[[1L]])
+#&gt;  38.                           │       └─base:::doTryCatch(return(expr), name, parentenv, handler)
+#&gt;  39.                           └─chk::chk_scalar(1:2)
+#&gt;  40.                             └─chk::abort_chk(x_name, " must be a scalar (length 1)")
+#&gt;  41.                               └─chk::err(..., n = n, tidy = tidy, .subclass = "chk_error")</div><div class='input'>
 <span class='co'># vld_scalar</span>
 <span class='fu'>vld_scalar</span>(<span class='fl'>1</span>)</div><div class='output co'>#&gt; [1] TRUE</div></pre>
   </div>

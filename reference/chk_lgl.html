@@ -166,8 +166,50 @@ is.logical(x) &amp;amp;&amp;amp; length(x) == 1L." />
     <pre class="examples"><div class='input'>
 <span class='co'># chk_lgl</span>
 <span class='fu'>chk_lgl</span>(<span class='fl'>NA</span>)
-<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_lgl</span>(<span class='fl'>1</span>))
-
+<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_lgl</span>(<span class='fl'>1</span>))</div><div class='output co'>#&gt; Error : `1` must be a logical scalar (TRUE, FALSE or NA).
+#&gt; Backtrace:
+#&gt;      █
+#&gt;   1. ├─base::tryCatch(...)
+#&gt;   2. │ └─base:::tryCatchList(expr, classes, parentenv, handlers)
+#&gt;   3. │   ├─base:::tryCatchOne(...)
+#&gt;   4. │   │ └─base:::doTryCatch(return(expr), name, parentenv, handler)
+#&gt;   5. │   └─base:::tryCatchList(expr, names[-nh], parentenv, handlers[-nh])
+#&gt;   6. │     └─base:::tryCatchOne(expr, names, parentenv, handlers[[1L]])
+#&gt;   7. │       └─base:::doTryCatch(return(expr), name, parentenv, handler)
+#&gt;   8. ├─base::withCallingHandlers(...)
+#&gt;   9. ├─base::saveRDS(...)
+#&gt;  10. ├─base::do.call(...)
+#&gt;  11. ├─(function (what, args, quote = FALSE, envir = parent.frame()) ...
+#&gt;  12. └─(function (..., crayon_enabled, crayon_colors, pkgdown_internet) ...
+#&gt;  13.   └─pkgdown::build_site(...)
+#&gt;  14.     └─pkgdown:::build_site_local(...)
+#&gt;  15.       └─pkgdown::build_reference(...)
+#&gt;  16.         └─purrr::map(...)
+#&gt;  17.           └─pkgdown:::.f(.x[[i]], ...)
+#&gt;  18.             └─pkgdown:::data_reference_topic(...)
+#&gt;  19.               └─pkgdown:::run_examples(...)
+#&gt;  20.                 └─pkgdown:::highlight_examples(code, topic, env = env)
+#&gt;  21.                   └─evaluate::evaluate(x, child_env(env), new_device = TRUE)
+#&gt;  22.                     └─evaluate:::evaluate_call(...)
+#&gt;  23.                       ├─evaluate:::timing_fn(...)
+#&gt;  24.                       ├─evaluate:::handle(...)
+#&gt;  25.                       │ └─base::try(f, silent = TRUE)
+#&gt;  26.                       │   └─base::tryCatch(...)
+#&gt;  27.                       │     └─base:::tryCatchList(expr, classes, parentenv, handlers)
+#&gt;  28.                       │       └─base:::tryCatchOne(expr, names, parentenv, handlers[[1L]])
+#&gt;  29.                       │         └─base:::doTryCatch(return(expr), name, parentenv, handler)
+#&gt;  30.                       ├─base::withCallingHandlers(...)
+#&gt;  31.                       ├─base::withVisible(eval(expr, envir, enclos))
+#&gt;  32.                       └─base::eval(expr, envir, enclos)
+#&gt;  33.                         └─base::eval(expr, envir, enclos)
+#&gt;  34.                           ├─base::try(chk_lgl(1))
+#&gt;  35.                           │ └─base::tryCatch(...)
+#&gt;  36.                           │   └─base:::tryCatchList(expr, classes, parentenv, handlers)
+#&gt;  37.                           │     └─base:::tryCatchOne(expr, names, parentenv, handlers[[1L]])
+#&gt;  38.                           │       └─base:::doTryCatch(return(expr), name, parentenv, handler)
+#&gt;  39.                           └─chk::chk_lgl(1)
+#&gt;  40.                             └─chk::abort_chk(x_name, " must be a logical scalar (TRUE, FALSE or NA)")
+#&gt;  41.                               └─chk::err(..., n = n, tidy = tidy, .subclass = "chk_error")</div><div class='input'>
 <span class='co'># vld_lgl</span>
 <span class='fu'>vld_lgl</span>(<span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_lgl</span>(<span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_lgl</span>(<span class='fl'>NA</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_lgl</span>(<span class='fl'>1</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>vld_lgl</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>TRUE</span>, <span class='fl'>TRUE</span>))</div><div class='output co'>#&gt; [1] FALSE</div></pre>
   </div>
