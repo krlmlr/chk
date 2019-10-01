@@ -157,12 +157,12 @@
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1">chk_flag</a>
 <a class="sourceLine" id="cb6-2" data-line-number="2"><span class="co">#&gt; function(x, x_name = NULL){</span></a>
 <a class="sourceLine" id="cb6-3" data-line-number="3"><span class="co">#&gt;   if(vld_flag(x)) return(invisible())</span></a>
-<a class="sourceLine" id="cb6-4" data-line-number="4"><span class="co">#&gt;   if(is.null(x_name))  x_name &lt;- deparse_backtick(substitute(x))</span></a>
+<a class="sourceLine" id="cb6-4" data-line-number="4"><span class="co">#&gt;   if(is.null(x_name))  x_name &lt;- deparse_backtick_chk(substitute(x))</span></a>
 <a class="sourceLine" id="cb6-5" data-line-number="5"><span class="co">#&gt;   abort_chk(x_name, " must be a flag (TRUE or FALSE)")</span></a>
 <a class="sourceLine" id="cb6-6" data-line-number="6"><span class="co">#&gt; }</span></a>
 <a class="sourceLine" id="cb6-7" data-line-number="7"><span class="co">#&gt; &lt;bytecode: 0x7fe802835670&gt;</span></a>
 <a class="sourceLine" id="cb6-8" data-line-number="8"><span class="co">#&gt; &lt;environment: namespace:chk&gt;</span></a></code></pre></div>
-<p>The <code><a href="reference/deparse_backtick_chk.html">deparse_backtick()</a></code> and <code><a href="reference/abort_chk.html">abort_chk()</a></code> functions are exported to make it easy for programmers to develop their own <code>chk_</code> functions.</p>
+<p>The <code><a href="reference/deparse_backtick_chk.html">deparse_backtick_chk()</a></code> and <code><a href="reference/abort_chk.html">abort_chk()</a></code> functions are exported to make it easy for programmers to develop their own <code>chk_</code> functions.</p>
 </div>
 <div id="custom-error-messages" class="section level4">
 <h4 class="hasAnchor">
@@ -240,7 +240,7 @@
 <a href="#contribution" class="anchor"></a>Contribution</h2>
 <p>Please report any <a href="https://github.com/poissonconsulting/chk/issues">issues</a>.</p>
 <p><a href="https://github.com/poissonconsulting/chk/pulls">Pull requests</a> are always welcome.</p>
-<p>Please note that this project is released with a <a href="https://github.com/poissonconsulting/chk/blob/master/CODE_OF_CONDUCT.md">Contributor Code of Conduct</a>. By contributing, you agree to abide by its terms.</p>
+<p>Please note that this project is released with a <a href="https://github.com/poissonconsulting/chk/blob/master/CODE_OF_CONDUCT.md">Contributor Code of Conduct</a>. By contributing, you agree to abide by its terms</p>
 </div>
 </div>
   </div>
