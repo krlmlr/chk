@@ -5,12 +5,12 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Getting Started with chk • chk</title>
+<title>Using chk • chk</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../pkgdown.js"></script><meta property="og:title" content="Getting Started with chk">
+<script src="../pkgdown.js"></script><meta property="og:title" content="Using chk">
 <meta property="og:description" content="">
 <meta name="twitter:card" content="summary">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
@@ -85,7 +85,7 @@
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1>Getting Started with chk</h1>
+      <h1>Using chk</h1>
             
       
       <small class="dont-index">Source: <a href="https://github.com/poissonconsulting/chk/blob/master/vignettes/chk.Rmd"><code>vignettes/chk.Rmd</code></a></small>
@@ -95,14 +95,14 @@
 
     
     
-<p><code>chk</code> is an R package for developers to check user-supplied function arguments. It is designed to be simple, customizable and fast.</p>
-<div id="overview" class="section level2">
+<div id="introduction" class="section level2">
 <h2 class="hasAnchor">
-<a href="#overview" class="anchor"></a>Overview</h2>
+<a href="#introduction" class="anchor"></a>Introduction</h2>
+<p><code>chk</code> is an R package for developers to check user-supplied function arguments. It is designed to be simple, customizable and fast.</p>
 <div id="chk_-functions" class="section level3">
 <h3 class="hasAnchor">
 <a href="#chk_-functions" class="anchor"></a><code>chk_</code> Functions</h3>
-<p>The <code>chk</code> package provides a series of <code>chk_</code> functions which check the properties of individual objects. For example <code><a href="../reference/chk_flag.html">chk_flag(x)</a></code> checks whether <code>x</code> is a flag, i.e., a non-missing logical vector of length 1.</p>
+<p><code>chk_</code> functions check the properties of individual objects. For example <code><a href="../reference/chk_flag.html">chk_flag(x)</a></code> checks whether <code>x</code> is a flag, i.e., a non-missing logical vector of length 1.</p>
 <p><code>chk_</code> functions are called for their side-effects, i.e., they throw an informative error if the object fails the check.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(chk)</a>
 <a class="sourceLine" id="cb1-2" data-line-number="2">y &lt;-<span class="st"> </span><span class="ot">TRUE</span></a>
@@ -110,17 +110,17 @@
 <a class="sourceLine" id="cb1-4" data-line-number="4">y &lt;-<span class="st"> </span><span class="ot">NA</span></a>
 <a class="sourceLine" id="cb1-5" data-line-number="5"><span class="kw"><a href="../reference/chk_flag.html">chk_flag</a></span>(y)</a>
 <a class="sourceLine" id="cb1-6" data-line-number="6"><span class="co">#&gt; `y` must be a flag (TRUE or FALSE).</span></a></code></pre></div>
-<p>The error messages, which follow the <a href="https://style.tidyverse.org/error-messages.html">tidyverse style guide</a>, are designed to allow the user to quickly identify the problem with the argument value(s) they are providing. The errors are <a href="https://rlang.r-lib.org/reference/abort.html">rlang errors</a> of subclass <code>chk_error</code>.</p>
+<p>The error messages, which follow the <a href="https://style.tidyverse.org/error-messages.html">tidyverse style guide</a>, are designed to allow the user to quickly identify the problem with the argument value(s) they are providing. The errors are <a href="https://rlang.r-lib.org/reference/abort.html">rlang errors</a> of subclass <code>'chk_error'</code>.</p>
 </div>
 <div id="vld_-functions" class="section level3">
 <h3 class="hasAnchor">
 <a href="#vld_-functions" class="anchor"></a><code>vld_</code> Functions</h3>
-<p>Each <code>chk_</code> function has a corresponding <code>vld_</code> function which returns a flag indicating whether the object passed the check.</p>
+<p>Each <code>chk_</code> function has a matching <code>vld_</code> function which returns a flag indicating whether the object passed the check.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw"><a href="../reference/chk_flag.html">vld_flag</a></span>(<span class="ot">TRUE</span>)</a>
 <a class="sourceLine" id="cb2-2" data-line-number="2"><span class="co">#&gt; [1] TRUE</span></a>
 <a class="sourceLine" id="cb2-3" data-line-number="3"><span class="kw"><a href="../reference/chk_flag.html">vld_flag</a></span>(<span class="ot">NA</span>)</a>
 <a class="sourceLine" id="cb2-4" data-line-number="4"><span class="co">#&gt; [1] FALSE</span></a></code></pre></div>
-<p>The <code>vld_</code> functions are exported to allow developers to provide their own error messages.</p>
+<p>The <code>vld_</code> functions allow developers to provide their own error messages.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="cf">if</span>(<span class="op">!</span><span class="kw"><a href="../reference/chk_flag.html">vld_flag</a></span>(<span class="ot">NA</span>)) <span class="kw"><a href="https://rdrr.io/r/base/stop.html">stop</a></span>(<span class="st">"NA is not TRUE or FALSE!!"</span>)</a>
 <a class="sourceLine" id="cb3-2" data-line-number="2"><span class="co">#&gt; Error in eval(expr, envir, enclos): NA is not TRUE or FALSE!!</span></a></code></pre></div>
 </div>
@@ -128,7 +128,7 @@
 <div id="using-chk" class="section level2">
 <h2 class="hasAnchor">
 <a href="#using-chk" class="anchor"></a>Using chk</h2>
-<p>The <code>chk_</code> functions are designed to be used within functions. Consequently, when constructing their error messages they use the name of the object that they received as this is expected to be the name of the argument.</p>
+<p>The <code>chk_</code> functions are designed to be used within functions. Consequently, when constructing an error message they use the name of the object that they received as this is expected to be the name of the argument.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">fun1 &lt;-<span class="st"> </span><span class="cf">function</span>(x) {</a>
 <a class="sourceLine" id="cb4-2" data-line-number="2">  <span class="kw"><a href="../reference/chk_number.html">chk_whole_number</a></span>(x)</a>
 <a class="sourceLine" id="cb4-3" data-line-number="3">  <span class="co"># use x</span></a>
@@ -136,7 +136,7 @@
 <a class="sourceLine" id="cb4-5" data-line-number="5"></a>
 <a class="sourceLine" id="cb4-6" data-line-number="6"><span class="kw">fun1</span>(<span class="dv">1</span>)</a>
 <a class="sourceLine" id="cb4-7" data-line-number="7">y &lt;-<span class="st"> </span><span class="fl">1.3</span></a>
-<a class="sourceLine" id="cb4-8" data-line-number="8"><span class="kw">fun1</span>(y)</a>
+<a class="sourceLine" id="cb4-8" data-line-number="8"><span class="kw">fun1</span>(<span class="dt">x =</span> y)</a>
 <a class="sourceLine" id="cb4-9" data-line-number="9"><span class="co">#&gt; `x` must be a whole number (non-missing integer scalar or double</span></a>
 <a class="sourceLine" id="cb4-10" data-line-number="10"><span class="co">#&gt; equivalent).</span></a></code></pre></div>
 <p>If this is not the case, developers can provide a different name using the <code>x_name</code> argument.</p>
@@ -149,7 +149,7 @@
 <div id="extending-chk" class="section level2">
 <h2 class="hasAnchor">
 <a href="#extending-chk" class="anchor"></a>Extending chk</h2>
-<p>The <code><a href="../reference/chk_flag.html">chk_flag()</a></code> function illustrates the general structure of most <code>chk_</code> functions.</p>
+<p>The <code><a href="../reference/chk_flag.html">chk_flag()</a></code> function illustrates the general structure of a <code>chk_</code> function.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1">chk_flag</a>
 <a class="sourceLine" id="cb6-2" data-line-number="2"><span class="co">#&gt; function(x, x_name = NULL){</span></a>
 <a class="sourceLine" id="cb6-3" data-line-number="3"><span class="co">#&gt;   if(vld_flag(x)) return(invisible())</span></a>
@@ -158,7 +158,7 @@
 <a class="sourceLine" id="cb6-6" data-line-number="6"><span class="co">#&gt; }</span></a>
 <a class="sourceLine" id="cb6-7" data-line-number="7"><span class="co">#&gt; &lt;bytecode: 0x7fe802835670&gt;</span></a>
 <a class="sourceLine" id="cb6-8" data-line-number="8"><span class="co">#&gt; &lt;environment: namespace:chk&gt;</span></a></code></pre></div>
-<p>To optimize the speed, each <code>chk_</code> function initially checks the object (using its <code>vld_</code> partner) and if the object passes the check immediately returns (an invisible <code>NULL</code>). If, and only if, the object fails the check does it construct and then throw an informative error message.</p>
+<p>A <code>chk_</code> function initially checks the object (using its <code>vld_</code> partner) and if the object passes the check immediately returns (an invisible <code>NULL</code>). If, and only if, the object fails the check does it construct and then throw an informative error message.</p>
 <p>The <code><a href="../reference/deparse_backtick_chk.html">deparse_backtick_chk()</a></code> and <code><a href="../reference/abort_chk.html">abort_chk()</a></code> functions are exported to make it easy for programmers to develop their own <code>chk_</code> functions.</p>
 <div id="abort_chk" class="section level3">
 <h3 class="hasAnchor">
@@ -238,7 +238,7 @@
       <h2 class="hasAnchor">
 <a href="#tocnav" class="anchor"></a>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
-<li><a href="#overview">Overview</a></li>
+<li><a href="#introduction">Introduction</a></li>
       <li><a href="#using-chk">Using chk</a></li>
       <li><a href="#extending-chk">Extending chk</a></li>
       <li><a href="#chk_-families"><code>chk_</code> Families</a></li>
