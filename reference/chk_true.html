@@ -70,7 +70,7 @@ or a lgl (TRUE, FALSE, or NA)." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">chk</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.1.9027</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.1.9028</span>
       </span>
     </div>
 
@@ -168,13 +168,13 @@ The <code>vld_</code> functions return a flag indicating whether the test was me
 <code>vld_true(x)</code>.</p></li>
 <li><p><code>vld_true</code>: Validate TRUE</p>
 <p>Validates if TRUE using</p>
-<p><code><a href='https://rdrr.io/r/base/identical.html'>identical(unname(x), TRUE)</a></code>.</p></li>
+<p><code>is.logical(x) &amp;&amp; length(x) == 1L &amp;&amp; !anyNA(x) &amp;&amp; x</code>.</p></li>
 <li><p><code>chk_false</code>: Check FALSE</p>
 <p>Checks if FALSE using
 <code>vld_false(x)</code>.</p></li>
 <li><p><code>vld_false</code>: Validate FALSE</p>
 <p>Validates if FALSE using</p>
-<p><code><a href='https://rdrr.io/r/base/identical.html'>identical(unname(x), FALSE)</a></code>.</p></li>
+<p><code>is.logical(x) &amp;&amp; length(x) == 1L &amp;&amp; !anyNA(x) &amp;&amp; x</code>.</p></li>
 </ul>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>

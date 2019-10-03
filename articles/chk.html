@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">chk</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.1.9027</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.1.9028</span>
       </span>
     </div>
 
@@ -186,19 +186,19 @@
 <tbody>
 <tr class="odd">
 <td align="left"><code><a href="../reference/chk_true.html">chk_true(x)</a></code></td>
-<td align="left"><code><a href="https://rdrr.io/r/base/Logic.html">isTRUE(x)</a></code></td>
+<td align="left"><code>is.logical(x) &amp;&amp; length(x) == 1L &amp;&amp; !anyNA(x) &amp;&amp; x</code></td>
 </tr>
 <tr class="even">
 <td align="left"><code><a href="../reference/chk_true.html">chk_false(x)</a></code></td>
-<td align="left"><code><a href="https://rdrr.io/r/base/Logic.html">isFALSE(x)</a></code></td>
+<td align="left"><code>is.logical(x) &amp;&amp; length(x) == 1L &amp;&amp; !anyNA(x) &amp;&amp; !x</code></td>
 </tr>
 <tr class="odd">
 <td align="left"><code><a href="../reference/chk_flag.html">chk_flag(x)</a></code></td>
-<td align="left"><code>is.logical(x) &amp;&amp; length(x) == 1 &amp;&amp; !anyNA(x)</code></td>
+<td align="left"><code>is.logical(x) &amp;&amp; length(x) == 1L &amp;&amp; !anyNA(x)</code></td>
 </tr>
 <tr class="even">
 <td align="left"><code><a href="../reference/chk_lgl.html">chk_lgl(x)</a></code></td>
-<td align="left"><code>is.logical(x) &amp;&amp; length(x) == 1</code></td>
+<td align="left"><code>is.logical(x) &amp;&amp; length(x) == 1L</code></td>
 </tr>
 </tbody>
 </table>
