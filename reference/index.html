@@ -67,7 +67,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">chk</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.1.9029</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.1.9030</span>
       </span>
     </div>
 
@@ -135,17 +135,11 @@
     <tbody>
       <tr>
         <th colspan="2">
-          <h2 id="section-scalar-checkers" class="hasAnchor"><a href="#section-scalar-checkers" class="anchor"></a>Scalar checkers</h2>
-          <p class="section-desc"><p>Checking scalars</p></p>
+          <h2 id="section-logical-scalar-checkers" class="hasAnchor"><a href="#section-logical-scalar-checkers" class="anchor"></a>Logical Scalar Checkers</h2>
+          <p class="section-desc"><p>Checking logical scalars</p></p>
         </th>
       </tr>
       <tr>
-        
-        <td>
-          <p><code><a href="chk_null.html">chk_null()</a></code> <code><a href="chk_null.html">vld_null()</a></code> <code><a href="chk_null.html">chk_not_null()</a></code> <code><a href="chk_null.html">vld_not_null()</a></code> </p>
-        </td>
-        <td><p>Check/Validate NULL or not NULL</p></td>
-      </tr><tr>
         
         <td>
           <p><code><a href="chk_true.html">chk_true()</a></code> <code><a href="chk_true.html">vld_true()</a></code> <code><a href="chk_true.html">chk_false()</a></code> <code><a href="chk_true.html">vld_false()</a></code> </p>
@@ -154,15 +148,35 @@
       </tr><tr>
         
         <td>
-          <p><code><a href="chk_number.html">chk_number()</a></code> <code><a href="chk_number.html">chk_whole_number()</a></code> </p>
+          <p><code><a href="chk_flag.html">chk_flag()</a></code> <code><a href="chk_flag.html">vld_flag()</a></code> </p>
         </td>
-        <td><p>Check Number or Whole Number</p></td>
+        <td><p>Check Flag</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="chk_range.html">chk_range()</a></code> <code><a href="chk_range.html">vld_range()</a></code> <code><a href="chk_range.html">chk_lt()</a></code> <code><a href="chk_range.html">vld_lt()</a></code> <code><a href="chk_range.html">chk_lte()</a></code> <code><a href="chk_range.html">vld_lte()</a></code> <code><a href="chk_range.html">chk_gt()</a></code> <code><a href="chk_range.html">vld_gt()</a></code> <code><a href="chk_range.html">chk_gte()</a></code> <code><a href="chk_range.html">vld_gte()</a></code> </p>
+          <p><code><a href="chk_lgl.html">chk_lgl()</a></code> <code><a href="chk_lgl.html">vld_lgl()</a></code> </p>
         </td>
-        <td><p>Check/Validate Range</p></td>
+        <td><p>Check Logical Scalar</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-scalar-checkers" class="hasAnchor"><a href="#section-scalar-checkers" class="anchor"></a>Scalar Checkers</h2>
+          <p class="section-desc"><p>Checking scalars</p></p>
+        </th>
+      </tr>
+      <tr>
+        
+        <td>
+          <p><code><a href="chk_type.html">chk_s3_class()</a></code> <code><a href="chk_type.html">vld_s3_class()</a></code> <code><a href="chk_type.html">chk_s4_class()</a></code> <code><a href="chk_type.html">vld_s4_class()</a></code> <code><a href="chk_type.html">chk_whole_numeric()</a></code> <code><a href="chk_type.html">vld_whole_numeric()</a></code> <code><a href="chk_type.html">chk_list()</a></code> <code><a href="chk_type.html">vld_list()</a></code> <code><a href="chk_type.html">chk_function()</a></code> <code><a href="chk_type.html">vld_function()</a></code> <code><a href="chk_type.html">chk_vector()</a></code> <code><a href="chk_type.html">vld_vector()</a></code> <code><a href="chk_type.html">chk_scalar()</a></code> <code><a href="chk_type.html">vld_scalar()</a></code> </p>
+        </td>
+        <td><p>Check Type</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="chk_number.html">chk_number()</a></code> <code><a href="chk_number.html">chk_whole_number()</a></code> </p>
+        </td>
+        <td><p>Check Number or Whole Number</p></td>
       </tr><tr>
         
         <td>
@@ -175,13 +189,57 @@
           <p><code><a href="chk_date.html">chk_date()</a></code> <code><a href="chk_date.html">vld_date()</a></code> <code><a href="chk_date.html">chk_datetime()</a></code> <code><a href="chk_date.html">vld_datetime()</a></code> </p>
         </td>
         <td><p>Check/Validate Date or DateTime</p></td>
-      </tr><tr>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-range-checkers" class="hasAnchor"><a href="#section-range-checkers" class="anchor"></a>Range Checkers</h2>
+          <p class="section-desc"><p>Checking ranges</p></p>
+        </th>
+      </tr>
+      <tr>
+        
+        <td>
+          <p><code><a href="chk_range.html">chk_range()</a></code> <code><a href="chk_range.html">vld_range()</a></code> <code><a href="chk_range.html">chk_lt()</a></code> <code><a href="chk_range.html">vld_lt()</a></code> <code><a href="chk_range.html">chk_lte()</a></code> <code><a href="chk_range.html">vld_lte()</a></code> <code><a href="chk_range.html">chk_gt()</a></code> <code><a href="chk_range.html">vld_gt()</a></code> <code><a href="chk_range.html">chk_gte()</a></code> <code><a href="chk_range.html">vld_gte()</a></code> </p>
+        </td>
+        <td><p>Check/Validate Range</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-equal-checkers" class="hasAnchor"><a href="#section-equal-checkers" class="anchor"></a>Equal Checkers</h2>
+          <p class="section-desc"><p>Checking equal</p></p>
+        </th>
+      </tr>
+      <tr>
         
         <td>
           <p><code><a href="chk_identical.html">chk_identical()</a></code> <code><a href="chk_identical.html">chk_equal()</a></code> <code><a href="chk_identical.html">chk_equivalent()</a></code> </p>
         </td>
         <td><p>Check Identical, Equal or Equivalent</p></td>
-      </tr><tr>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-all-checkers" class="hasAnchor"><a href="#section-all-checkers" class="anchor"></a>All Checkers</h2>
+          <p class="section-desc"><p>Checking all</p></p>
+        </th>
+      </tr>
+      <tr>
+        
+        <td>
+          <p><code><a href="chk_all.html">chk_all()</a></code> <code><a href="chk_all.html">chk_all_identical()</a></code> <code><a href="chk_all.html">chk_all_equal()</a></code> <code><a href="chk_all.html">chk_all_equivalent()</a></code> </p>
+        </td>
+        <td><p>Check All or Check All Identical, Equal or Equivalent</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-set-checkers" class="hasAnchor"><a href="#section-set-checkers" class="anchor"></a>Set Checkers</h2>
+          <p class="section-desc"><p>Checking sets</p></p>
+        </th>
+      </tr>
+      <tr>
         
         <td>
           <p><code><a href="chk_subset.html">chk_subset()</a></code> <code><a href="chk_subset.html">vld_subset()</a></code> <code><a href="chk_subset.html">chk_superset()</a></code> <code><a href="chk_subset.html">vld_superset()</a></code> </p>
@@ -191,11 +249,85 @@
     </tbody><tbody>
       <tr>
         <th colspan="2">
-          <h2 id="section-complex-checkers" class="hasAnchor"><a href="#section-complex-checkers" class="anchor"></a>Complex checkers</h2>
-          <p class="section-desc"><p>Checking vectors or combining checks</p></p>
+          <h2 id="section-identity-checkers" class="hasAnchor"><a href="#section-identity-checkers" class="anchor"></a>Identity Checkers</h2>
+          <p class="section-desc"><p>Checking identity</p></p>
         </th>
       </tr>
       <tr>
+        
+        <td>
+          <p><code><a href="chk_type.html">chk_s3_class()</a></code> <code><a href="chk_type.html">vld_s3_class()</a></code> <code><a href="chk_type.html">chk_s4_class()</a></code> <code><a href="chk_type.html">vld_s4_class()</a></code> <code><a href="chk_type.html">chk_whole_numeric()</a></code> <code><a href="chk_type.html">vld_whole_numeric()</a></code> <code><a href="chk_type.html">chk_list()</a></code> <code><a href="chk_type.html">vld_list()</a></code> <code><a href="chk_type.html">chk_function()</a></code> <code><a href="chk_type.html">vld_function()</a></code> <code><a href="chk_type.html">chk_vector()</a></code> <code><a href="chk_type.html">vld_vector()</a></code> <code><a href="chk_type.html">chk_scalar()</a></code> <code><a href="chk_type.html">vld_scalar()</a></code> </p>
+        </td>
+        <td><p>Check Type</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="chk_atomic.html">chk_atomic()</a></code> <code><a href="chk_atomic.html">vld_atomic()</a></code> </p>
+        </td>
+        <td><p>Check Atomic</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-null-checkers" class="hasAnchor"><a href="#section-null-checkers" class="anchor"></a>Null Checkers</h2>
+          <p class="section-desc"><p>Checking null</p></p>
+        </th>
+      </tr>
+      <tr>
+        
+        <td>
+          <p><code><a href="chk_null.html">chk_null()</a></code> <code><a href="chk_null.html">vld_null()</a></code> <code><a href="chk_null.html">chk_not_null()</a></code> <code><a href="chk_null.html">vld_not_null()</a></code> </p>
+        </td>
+        <td><p>Check/Validate NULL or not NULL</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section--checkers" class="hasAnchor"><a href="#section--checkers" class="anchor"></a>... Checkers</h2>
+          <p class="section-desc"><p>Checking …</p></p>
+        </th>
+      </tr>
+      <tr>
+        
+        <td>
+          <p><code><a href="chk_unused.html">chk_unused()</a></code> <code><a href="chk_unused.html">vld_unused()</a></code> <code><a href="chk_unused.html">chk_used()</a></code> <code><a href="chk_unused.html">vld_used()</a></code> </p>
+        </td>
+        <td><p>Check/Validate ... Unused or Used</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-file-checkers" class="hasAnchor"><a href="#section-file-checkers" class="anchor"></a>File Checkers</h2>
+          <p class="section-desc"><p>Checking files</p></p>
+        </th>
+      </tr>
+      <tr>
+        
+        <td>
+          <p><code><a href="chk_file.html">chk_file()</a></code> <code><a href="chk_file.html">vld_file()</a></code> <code><a href="chk_file.html">chk_ext()</a></code> <code><a href="chk_file.html">vld_ext()</a></code> </p>
+        </td>
+        <td><p>Check/Validate File or Directory Exist</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="chk_dir.html">chk_dir()</a></code> <code><a href="chk_dir.html">vld_dir()</a></code> </p>
+        </td>
+        <td><p>Check Directory Exists</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-miscellaneous-checkers" class="hasAnchor"><a href="#section-miscellaneous-checkers" class="anchor"></a>Miscellaneous Checkers</h2>
+          <p class="section-desc"><p>Checking miscellaneous</p></p>
+        </th>
+      </tr>
+      <tr>
+        
+        <td>
+          <p><code><a href="chk_string.html">chk_string()</a></code> <code><a href="chk_string.html">vld_string()</a></code> <code><a href="chk_string.html">chk_match()</a></code> <code><a href="chk_string.html">vld_match()</a></code> </p>
+        </td>
+        <td><p>Check/Validate String or Matches</p></td>
+      </tr><tr>
         
         <td>
           <p><code><a href="chk_unique.html">chk_unique()</a></code> <code><a href="chk_unique.html">vld_unique()</a></code> <code><a href="chk_unique.html">chk_no_missing()</a></code> <code><a href="chk_unique.html">vld_no_missing()</a></code> <code><a href="chk_unique.html">chk_named()</a></code> <code><a href="chk_unique.html">vld_named()</a></code> </p>
@@ -204,47 +336,41 @@
       </tr><tr>
         
         <td>
-          <p><code><a href="chk_all.html">chk_all()</a></code> <code><a href="chk_all.html">chk_all_identical()</a></code> <code><a href="chk_all.html">chk_all_equal()</a></code> <code><a href="chk_all.html">chk_all_equivalent()</a></code> </p>
-        </td>
-        <td><p>Check All or Check All Identical, Equal or Equivalent</p></td>
-      </tr><tr>
-        
-        <td>
           <p><code><a href="chkor.html">chkor()</a></code> </p>
         </td>
         <td><p>Check OR</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="chk_unused.html">chk_unused()</a></code> <code><a href="chk_unused.html">vld_unused()</a></code> <code><a href="chk_unused.html">chk_used()</a></code> <code><a href="chk_unused.html">vld_used()</a></code> </p>
-        </td>
-        <td><p>Check/Validate ... Unused or Used</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="chk_file.html">chk_file()</a></code> <code><a href="chk_file.html">vld_file()</a></code> <code><a href="chk_file.html">chk_ext()</a></code> <code><a href="chk_file.html">vld_ext()</a></code> </p>
-        </td>
-        <td><p>Check/Validate File or Directory Exist</p></td>
       </tr>
     </tbody><tbody>
       <tr>
         <th colspan="2">
-          <h2 id="section-control" class="hasAnchor"><a href="#section-control" class="anchor"></a>Control</h2>
-          <p class="section-desc"><p>Disabling the package’s functionality</p></p>
+          <h2 id="section-chk-function-extenders" class="hasAnchor"><a href="#section-chk-function-extenders" class="anchor"></a>chk_ Function Extenders</h2>
+          <p class="section-desc"><p>Extending chk_ functions</p></p>
         </th>
       </tr>
       <tr>
         
         <td>
-          <p><code><a href="chk_on.html">chk_on()</a></code> <code><a href="chk_on.html">chk_off()</a></code> <code><a href="chk_on.html">is_chk_on()</a></code> </p>
+          <p><code><a href="deparse_backtick_chk.html">deparse_backtick()</a></code> <code><a href="deparse_backtick_chk.html">deparse_backtick_chk()</a></code> <code><a href="deparse_backtick_chk.html">backtick_chk()</a></code> <code><a href="deparse_backtick_chk.html">unbacktick_chk()</a></code> </p>
         </td>
-        <td><p>Turn checking on and off</p></td>
+        <td><p>Deparse Back Tick</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="message_chk.html">message_chk()</a></code> </p>
+        </td>
+        <td><p>Construct Tidyverse Style Message</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="abort_chk.html">abort_chk()</a></code> </p>
+        </td>
+        <td><p>Abort Check</p></td>
       </tr>
     </tbody><tbody>
       <tr>
         <th colspan="2">
-          <h2 id="section-templated-errors" class="hasAnchor"><a href="#section-templated-errors" class="anchor"></a>Templated errors</h2>
-          <p class="section-desc"><p>Creating error messages from a template</p></p>
+          <h2 id="section-message-generators" class="hasAnchor"><a href="#section-message-generators" class="anchor"></a>Message Generators</h2>
+          <p class="section-desc"><p>Generating messages</p></p>
         </th>
       </tr>
       <tr>
@@ -257,8 +383,8 @@
     </tbody><tbody>
       <tr>
         <th colspan="2">
-          <h2 id="section-string-manipulation" class="hasAnchor"><a href="#section-string-manipulation" class="anchor"></a>String manipulation</h2>
-          <p class="section-desc"><p>Helper functions for handling strings</p></p>
+          <h2 id="section-string-manipulators" class="hasAnchor"><a href="#section-string-manipulators" class="anchor"></a>String Manipulators</h2>
+          <p class="section-desc"><p>Manipulating strings</p></p>
         </th>
       </tr>
       <tr>
@@ -281,11 +407,20 @@
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#section-scalar-checkers">Scalar checkers</a></li>
-      <li><a href="#section-complex-checkers">Complex checkers</a></li>
-      <li><a href="#section-control">Control</a></li>
-      <li><a href="#section-templated-errors">Templated errors</a></li>
-      <li><a href="#section-string-manipulation">String manipulation</a></li>
+      <li><a href="#section-logical-scalar-checkers">Logical Scalar Checkers</a></li>
+      <li><a href="#section-scalar-checkers">Scalar Checkers</a></li>
+      <li><a href="#section-range-checkers">Range Checkers</a></li>
+      <li><a href="#section-equal-checkers">Equal Checkers</a></li>
+      <li><a href="#section-all-checkers">All Checkers</a></li>
+      <li><a href="#section-set-checkers">Set Checkers</a></li>
+      <li><a href="#section-identity-checkers">Identity Checkers</a></li>
+      <li><a href="#section-null-checkers">Null Checkers</a></li>
+      <li><a href="#section--checkers">... Checkers</a></li>
+      <li><a href="#section-file-checkers">File Checkers</a></li>
+      <li><a href="#section-miscellaneous-checkers">Miscellaneous Checkers</a></li>
+      <li><a href="#section-chk-function-extenders">chk_ Function Extenders</a></li>
+      <li><a href="#section-message-generators">Message Generators</a></li>
+      <li><a href="#section-string-manipulators">String Manipulators</a></li>
     </ul>
   </div>
 </div>

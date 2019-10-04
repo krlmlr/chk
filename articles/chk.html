@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">chk</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.1.9029</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.1.9030</span>
       </span>
     </div>
 
@@ -381,18 +381,22 @@
 <td align="left"><code>isS4(x) &amp;&amp; inherits(x, class)</code></td>
 </tr>
 <tr class="odd">
+<td align="left"><code><a href="../reference/chk_type.html">chk_vector(x)</a></code></td>
+<td align="left"><code><a href="https://rdrr.io/r/base/vector.html">is.vector(x)</a></code></td>
+</tr>
+<tr class="even">
+<td align="left"><code><a href="../reference/chk_atomic.html">chk_atomic(x)</a></code></td>
+<td align="left"><code><a href="https://rdrr.io/r/base/is.recursive.html">is.atomic(x)</a></code></td>
+</tr>
+<tr class="odd">
 <td align="left"><code><a href="../reference/chk_type.html">chk_list(x)</a></code></td>
 <td align="left"><code><a href="https://rdrr.io/r/base/list.html">is.list(x)</a></code></td>
 </tr>
 <tr class="even">
-<td align="left"><code><a href="../reference/chk_type.html">chk_vector(x)</a></code></td>
-<td align="left"><code><a href="https://rdrr.io/r/base/vector.html">is.vector(x)</a></code></td>
-</tr>
-<tr class="odd">
 <td align="left"><code><a href="../reference/chk_type.html">chk_function(x, formals = NULL)</a></code></td>
 <td align="left"><code>is.function(x) &amp;&amp; (is.null(formals) || length(formals(x)) == formals)</code></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code><a href="../reference/chk_type.html">chk_whole_numeric(x)</a></code></td>
 <td align="left"><code>is.integer(x) || (is.double(x) &amp;&amp; vld_true(all.equal(x, as.integer(x))))</code></td>
 </tr>
@@ -477,20 +481,20 @@
 </tr></thead>
 <tbody>
 <tr class="odd">
+<td align="left"><code><a href="../reference/chk_string.html">chk_match(x, regexp = ".+")</a></code></td>
+<td align="left"><code><a href="https://rdrr.io/r/base/all.html">all(grepl(regexp, x[!is.na(x)]))</a></code></td>
+</tr>
+<tr class="even">
 <td align="left"><code><a href="../reference/chk_unique.html">chk_named(x)</a></code></td>
 <td align="left"><code>!is.null(names(x))</code></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code><a href="../reference/chk_unique.html">chk_no_missing(x)</a></code></td>
 <td align="left"><code>!anyNA(x)</code></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code><a href="../reference/chk_unique.html">chk_unique(x, incomparables = FALSE)</a></code></td>
 <td align="left"><code>!anyDuplicated(x, incomparables = incomparables)</code></td>
-</tr>
-<tr class="even">
-<td align="left"><code><a href="../reference/chk_string.html">chk_match(x, regexp = ".+")</a></code></td>
-<td align="left"><code><a href="https://rdrr.io/r/base/all.html">all(grepl(regexp, x[!is.na(x)]))</a></code></td>
 </tr>
 </tbody>
 </table>
