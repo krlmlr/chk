@@ -8,6 +8,13 @@
 
 <title>Check Directory Exists — chk_dir • chk</title>
 
+<!-- favicons -->
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png" />
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -38,6 +45,7 @@
 <meta property="og:title" content="Check Directory Exists — chk_dir" />
 <meta property="og:description" content="Checks if directory exists using
 vld_string(x) &amp;amp;&amp;amp; all(dir.exists(x))." />
+<meta property="og:image" content="/logo.png" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -171,7 +179,7 @@ vld_string(x) &amp;amp;&amp;amp; all(dir.exists(x))." />
     <pre class="examples"><div class='input'>
 <span class='co'># chk_dir</span>
 <span class='fu'>chk_dir</span>(<span class='fu'><a href='https://rdrr.io/r/base/tempfile.html'>tempdir</a></span>())
-<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_dir</span>(<span class='fu'><a href='https://rdrr.io/r/base/tempfile.html'>tempfile</a></span>()))</div><div class='output co'>#&gt; Error : `tempfile()` must specify an existing directory ('/tmp/RtmpvMGgKG/file327f7cb7eeba' can't be found).</div><div class='input'>
+<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_dir</span>(<span class='fu'><a href='https://rdrr.io/r/base/tempfile.html'>tempfile</a></span>()))</div><div class='output co'>#&gt; Error : `tempfile()` must specify an existing directory ('/tmp/RtmpSHd9We/file318519645dde' can't be found).</div><div class='input'>
 <span class='co'># vld_dir</span>
 <span class='fu'>vld_dir</span>(<span class='fl'>1</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>vld_dir</span>(<span class='fu'><a href='https://rdrr.io/r/base/tempfile.html'>tempdir</a></span>())</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_dir</span>(<span class='fu'><a href='https://rdrr.io/r/base/tempfile.html'>tempfile</a></span>())</div><div class='output co'>#&gt; [1] FALSE</div></pre>
   </div>
