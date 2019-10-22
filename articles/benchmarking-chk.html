@@ -38,7 +38,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">chk</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.1.9032</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.1.9033</span>
       </span>
     </div>
 
@@ -137,11 +137,11 @@
 <a class="sourceLine" id="cb3-5" data-line-number="5">)</a>
 <a class="sourceLine" id="cb3-6" data-line-number="6"><span class="co">#&gt; Unit: microseconds</span></a>
 <a class="sourceLine" id="cb3-7" data-line-number="7"><span class="co">#&gt;                                       expr   min    lq      mean median</span></a>
-<a class="sourceLine" id="cb3-8" data-line-number="8"><span class="co">#&gt;              wrapper_on_fun_checking(TRUE) 1.961 2.057 191.08629 2.1635</span></a>
-<a class="sourceLine" id="cb3-9" data-line-number="9"><span class="co">#&gt;  wrapper_on_fun_conditional_checking(TRUE) 5.190 5.540  48.81628 5.7495</span></a>
+<a class="sourceLine" id="cb3-8" data-line-number="8"><span class="co">#&gt;              wrapper_on_fun_checking(TRUE) 1.932 2.102 205.33757 2.2455</span></a>
+<a class="sourceLine" id="cb3-9" data-line-number="9"><span class="co">#&gt;  wrapper_on_fun_conditional_checking(TRUE) 5.121 5.415  52.87714 5.6910</span></a>
 <a class="sourceLine" id="cb3-10" data-line-number="10"><span class="co">#&gt;      uq       max neval</span></a>
-<a class="sourceLine" id="cb3-11" data-line-number="11"><span class="co">#&gt;  2.3310 18692.814   100</span></a>
-<a class="sourceLine" id="cb3-12" data-line-number="12"><span class="co">#&gt;  6.1245  4201.484   100</span></a>
+<a class="sourceLine" id="cb3-11" data-line-number="11"><span class="co">#&gt;  2.5455 20077.255   100</span></a>
+<a class="sourceLine" id="cb3-12" data-line-number="12"><span class="co">#&gt;  6.1740  4612.344   100</span></a>
 <a class="sourceLine" id="cb3-13" data-line-number="13"></a>
 <a class="sourceLine" id="cb3-14" data-line-number="14"><span class="kw"><a href="../reference/chk_on.html">chk_off</a></span>()</a>
 <a class="sourceLine" id="cb3-15" data-line-number="15"><span class="kw"><a href="https://rdrr.io/pkg/microbenchmark/man/microbenchmark.html">microbenchmark</a></span>(</a>
@@ -150,11 +150,11 @@
 <a class="sourceLine" id="cb3-18" data-line-number="18">)</a>
 <a class="sourceLine" id="cb3-19" data-line-number="19"><span class="co">#&gt; Unit: microseconds</span></a>
 <a class="sourceLine" id="cb3-20" data-line-number="20"><span class="co">#&gt;                                       expr   min    lq    mean median</span></a>
-<a class="sourceLine" id="cb3-21" data-line-number="21"><span class="co">#&gt;              wrapper_on_fun_checking(TRUE) 1.973 2.071 2.39622 2.1355</span></a>
-<a class="sourceLine" id="cb3-22" data-line-number="22"><span class="co">#&gt;  wrapper_on_fun_conditional_checking(TRUE) 2.307 2.493 3.09361 2.5795</span></a>
+<a class="sourceLine" id="cb3-21" data-line-number="21"><span class="co">#&gt;              wrapper_on_fun_checking(TRUE) 1.896 2.006 2.43861 2.0765</span></a>
+<a class="sourceLine" id="cb3-22" data-line-number="22"><span class="co">#&gt;  wrapper_on_fun_conditional_checking(TRUE) 2.313 2.573 3.21721 2.6670</span></a>
 <a class="sourceLine" id="cb3-23" data-line-number="23"><span class="co">#&gt;      uq    max neval</span></a>
-<a class="sourceLine" id="cb3-24" data-line-number="24"><span class="co">#&gt;  2.2945 19.830   100</span></a>
-<a class="sourceLine" id="cb3-25" data-line-number="25"><span class="co">#&gt;  2.8095 41.203   100</span></a></code></pre></div>
+<a class="sourceLine" id="cb3-24" data-line-number="24"><span class="co">#&gt;  2.3745 21.406   100</span></a>
+<a class="sourceLine" id="cb3-25" data-line-number="25"><span class="co">#&gt;  2.9325 39.510   100</span></a></code></pre></div>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">true &lt;-<span class="st"> </span><span class="ot">TRUE</span></a>
 <a class="sourceLine" id="cb4-2" data-line-number="2">false &lt;-<span class="st"> </span><span class="ot">FALSE</span></a>
 <a class="sourceLine" id="cb4-3" data-line-number="3">one &lt;-<span class="st"> </span><span class="dv">1</span></a>
@@ -209,85 +209,85 @@
 <a class="sourceLine" id="cb5-41" data-line-number="41">)</a>
 <a class="sourceLine" id="cb5-42" data-line-number="42"><span class="co">#&gt; Unit: nanoseconds</span></a>
 <a class="sourceLine" id="cb5-43" data-line-number="43"><span class="co">#&gt;                                         expr    min       lq      mean</span></a>
-<a class="sourceLine" id="cb5-44" data-line-number="44"><span class="co">#&gt;                               chk_true(true)    990   1341.0   2160.11</span></a>
-<a class="sourceLine" id="cb5-45" data-line-number="45"><span class="co">#&gt;                             chk_false(false)   1017   1589.0   2697.39</span></a>
-<a class="sourceLine" id="cb5-46" data-line-number="46"><span class="co">#&gt;                               chk_flag(true)    934   1429.5   2087.21</span></a>
-<a class="sourceLine" id="cb5-47" data-line-number="47"><span class="co">#&gt;                                chk_lgl(true)    808   1416.5   2497.22</span></a>
-<a class="sourceLine" id="cb5-48" data-line-number="48"><span class="co">#&gt;                             chk_number(oneL)   1075   1297.5   2037.32</span></a>
-<a class="sourceLine" id="cb5-49" data-line-number="49"><span class="co">#&gt;                              chk_number(one)   1019   1307.5   2081.74</span></a>
-<a class="sourceLine" id="cb5-50" data-line-number="50"><span class="co">#&gt;                       chk_whole_number(oneL)   1387   2003.5   3502.36</span></a>
-<a class="sourceLine" id="cb5-51" data-line-number="51"><span class="co">#&gt;                        chk_whole_number(one)  18200  25008.0  29981.29</span></a>
-<a class="sourceLine" id="cb5-52" data-line-number="52"><span class="co">#&gt;                           chk_string(string)    646   1074.5   2012.22</span></a>
-<a class="sourceLine" id="cb5-53" data-line-number="53"><span class="co">#&gt;                               chk_date(date)   5582   8390.0  11541.87</span></a>
-<a class="sourceLine" id="cb5-54" data-line-number="54"><span class="co">#&gt;                       chk_datetime(datetime)   6635  10862.0  14802.26</span></a>
-<a class="sourceLine" id="cb5-55" data-line-number="55"><span class="co">#&gt;                      chk_whole_numeric(oneL)    712    997.5   2054.72</span></a>
-<a class="sourceLine" id="cb5-56" data-line-number="56"><span class="co">#&gt;                       chk_whole_numeric(one)  15991  25554.5  30881.70</span></a>
-<a class="sourceLine" id="cb5-57" data-line-number="57"><span class="co">#&gt;                          chk_no_missing(one)    845   1368.5   2517.35</span></a>
-<a class="sourceLine" id="cb5-58" data-line-number="58"><span class="co">#&gt;                              chk_unique(one)   5427   8083.0  10413.87</span></a>
-<a class="sourceLine" id="cb5-59" data-line-number="59"><span class="co">#&gt;                             chk_unique(data)  15629  23873.0  29872.47</span></a>
-<a class="sourceLine" id="cb5-60" data-line-number="60"><span class="co">#&gt;         chk_unique(data, incomparables = NA) 287322 332596.5 366321.14</span></a>
-<a class="sourceLine" id="cb5-61" data-line-number="61"><span class="co">#&gt;                               chk_null(null)    700   1151.5   2024.42</span></a>
-<a class="sourceLine" id="cb5-62" data-line-number="62"><span class="co">#&gt;                            chk_not_null(one)    731   1173.5   2557.54</span></a>
-<a class="sourceLine" id="cb5-63" data-line-number="63"><span class="co">#&gt;                             chk_named(named)    999   1517.5   2563.64</span></a>
-<a class="sourceLine" id="cb5-64" data-line-number="64"><span class="co">#&gt;                                 chk_unused()    473   1090.0   1419.01</span></a>
-<a class="sourceLine" id="cb5-65" data-line-number="65"><span class="co">#&gt;                                chk_used(one)    795   1665.5   2662.71</span></a>
-<a class="sourceLine" id="cb5-66" data-line-number="66"><span class="co">#&gt;                            chk_function(fun)   1046   1844.0   3453.17</span></a>
-<a class="sourceLine" id="cb5-67" data-line-number="67"><span class="co">#&gt;                 chk_s3_class(one, "numeric")   1266   2381.0   3854.44</span></a>
-<a class="sourceLine" id="cb5-68" data-line-number="68"><span class="co">#&gt;                      chk_identical(one, one)    846   1360.0   2514.45</span></a>
-<a class="sourceLine" id="cb5-69" data-line-number="69"><span class="co">#&gt;                          chk_equal(one, one)  16843  24575.0  32936.23</span></a>
-<a class="sourceLine" id="cb5-70" data-line-number="70"><span class="co">#&gt;                     chk_equivalent(one, one)  14766  20069.5  28026.99</span></a>
-<a class="sourceLine" id="cb5-71" data-line-number="71"><span class="co">#&gt;                               chk_lt(one, 2)   1494   2576.0   4356.96</span></a>
-<a class="sourceLine" id="cb5-72" data-line-number="72"><span class="co">#&gt;                            chk_lte(one, one)   1570   2375.0   4401.73</span></a>
-<a class="sourceLine" id="cb5-73" data-line-number="73"><span class="co">#&gt;                               chk_gt(one, 0)   1498   2435.5   3952.04</span></a>
-<a class="sourceLine" id="cb5-74" data-line-number="74"><span class="co">#&gt;                            chk_gte(one, one)   1531   2228.5   4358.81</span></a>
-<a class="sourceLine" id="cb5-75" data-line-number="75"><span class="co">#&gt;                               chk_range(one)   2547   4387.0   6845.27</span></a>
-<a class="sourceLine" id="cb5-76" data-line-number="76"><span class="co">#&gt;                         chk_subset(one, one)   1912   2940.5   5062.84</span></a>
-<a class="sourceLine" id="cb5-77" data-line-number="77"><span class="co">#&gt;                       chk_superset(one, one)   1994   3022.5   5224.98</span></a>
-<a class="sourceLine" id="cb5-78" data-line-number="78"><span class="co">#&gt;                            chk_match(string)   7274  11578.0  15705.39</span></a>
-<a class="sourceLine" id="cb5-79" data-line-number="79"><span class="co">#&gt;                      chk_all(true, chk_true)  26144  36302.0  46153.77</span></a>
-<a class="sourceLine" id="cb5-80" data-line-number="80"><span class="co">#&gt;                                      chkor()  47244  61582.5  75239.83</span></a>
-<a class="sourceLine" id="cb5-81" data-line-number="81"><span class="co">#&gt;                       chkor(chk_number(one)) 105489 141007.0 177763.52</span></a>
-<a class="sourceLine" id="cb5-82" data-line-number="82"><span class="co">#&gt;  chkor(chk_number(one), chk_proportion(one)) 105604 137515.0 190272.19</span></a>
+<a class="sourceLine" id="cb5-44" data-line-number="44"><span class="co">#&gt;                               chk_true(true)    914   1263.0   3801.54</span></a>
+<a class="sourceLine" id="cb5-45" data-line-number="45"><span class="co">#&gt;                             chk_false(false)    938   1728.0   2886.67</span></a>
+<a class="sourceLine" id="cb5-46" data-line-number="46"><span class="co">#&gt;                               chk_flag(true)    902   1535.0   2385.99</span></a>
+<a class="sourceLine" id="cb5-47" data-line-number="47"><span class="co">#&gt;                                chk_lgl(true)    828   1275.0   2712.48</span></a>
+<a class="sourceLine" id="cb5-48" data-line-number="48"><span class="co">#&gt;                             chk_number(oneL)   1085   1383.5   2697.99</span></a>
+<a class="sourceLine" id="cb5-49" data-line-number="49"><span class="co">#&gt;                              chk_number(one)   1111   1365.5   2282.37</span></a>
+<a class="sourceLine" id="cb5-50" data-line-number="50"><span class="co">#&gt;                       chk_whole_number(oneL)   1509   1938.5   4190.02</span></a>
+<a class="sourceLine" id="cb5-51" data-line-number="51"><span class="co">#&gt;                        chk_whole_number(one)  20113  26577.5  32586.14</span></a>
+<a class="sourceLine" id="cb5-52" data-line-number="52"><span class="co">#&gt;                           chk_string(string)    668   1099.5   2115.89</span></a>
+<a class="sourceLine" id="cb5-53" data-line-number="53"><span class="co">#&gt;                               chk_date(date)   5367   9281.5  12628.95</span></a>
+<a class="sourceLine" id="cb5-54" data-line-number="54"><span class="co">#&gt;                       chk_datetime(datetime)   6913  11042.0  14487.39</span></a>
+<a class="sourceLine" id="cb5-55" data-line-number="55"><span class="co">#&gt;                      chk_whole_numeric(oneL)    701    966.5   1729.26</span></a>
+<a class="sourceLine" id="cb5-56" data-line-number="56"><span class="co">#&gt;                       chk_whole_numeric(one)  18770  27059.5  39516.66</span></a>
+<a class="sourceLine" id="cb5-57" data-line-number="57"><span class="co">#&gt;                          chk_no_missing(one)    799   1349.0   2670.90</span></a>
+<a class="sourceLine" id="cb5-58" data-line-number="58"><span class="co">#&gt;                              chk_unique(one)   5507   8191.5  11261.53</span></a>
+<a class="sourceLine" id="cb5-59" data-line-number="59"><span class="co">#&gt;                             chk_unique(data)  18723  26348.5  34442.90</span></a>
+<a class="sourceLine" id="cb5-60" data-line-number="60"><span class="co">#&gt;         chk_unique(data, incomparables = NA) 304643 352457.5 434956.55</span></a>
+<a class="sourceLine" id="cb5-61" data-line-number="61"><span class="co">#&gt;                               chk_null(null)    740   1208.0   2332.86</span></a>
+<a class="sourceLine" id="cb5-62" data-line-number="62"><span class="co">#&gt;                            chk_not_null(one)    726   1296.0   2507.93</span></a>
+<a class="sourceLine" id="cb5-63" data-line-number="63"><span class="co">#&gt;                             chk_named(named)    771   1400.5   2993.55</span></a>
+<a class="sourceLine" id="cb5-64" data-line-number="64"><span class="co">#&gt;                                 chk_unused()    467   1266.0   1877.71</span></a>
+<a class="sourceLine" id="cb5-65" data-line-number="65"><span class="co">#&gt;                                chk_used(one)    815   1699.5   2713.98</span></a>
+<a class="sourceLine" id="cb5-66" data-line-number="66"><span class="co">#&gt;                            chk_function(fun)   1079   1947.5   3513.17</span></a>
+<a class="sourceLine" id="cb5-67" data-line-number="67"><span class="co">#&gt;                 chk_s3_class(one, "numeric")   1364   2518.0   4561.93</span></a>
+<a class="sourceLine" id="cb5-68" data-line-number="68"><span class="co">#&gt;                      chk_identical(one, one)    801   1378.5   2800.83</span></a>
+<a class="sourceLine" id="cb5-69" data-line-number="69"><span class="co">#&gt;                          chk_equal(one, one)  20024  27241.5  33068.70</span></a>
+<a class="sourceLine" id="cb5-70" data-line-number="70"><span class="co">#&gt;                     chk_equivalent(one, one)  16017  20987.0  26877.89</span></a>
+<a class="sourceLine" id="cb5-71" data-line-number="71"><span class="co">#&gt;                               chk_lt(one, 2)   1726   2824.0   4915.75</span></a>
+<a class="sourceLine" id="cb5-72" data-line-number="72"><span class="co">#&gt;                            chk_lte(one, one)   1597   2546.0   4645.02</span></a>
+<a class="sourceLine" id="cb5-73" data-line-number="73"><span class="co">#&gt;                               chk_gt(one, 0)   1456   2488.5   4361.99</span></a>
+<a class="sourceLine" id="cb5-74" data-line-number="74"><span class="co">#&gt;                            chk_gte(one, one)   1485   2632.0   4629.84</span></a>
+<a class="sourceLine" id="cb5-75" data-line-number="75"><span class="co">#&gt;                               chk_range(one)   2729   4569.0   8005.63</span></a>
+<a class="sourceLine" id="cb5-76" data-line-number="76"><span class="co">#&gt;                         chk_subset(one, one)   1996   2861.5   5586.41</span></a>
+<a class="sourceLine" id="cb5-77" data-line-number="77"><span class="co">#&gt;                       chk_superset(one, one)   1836   3076.5   5276.22</span></a>
+<a class="sourceLine" id="cb5-78" data-line-number="78"><span class="co">#&gt;                            chk_match(string)   6825  13504.0  17902.85</span></a>
+<a class="sourceLine" id="cb5-79" data-line-number="79"><span class="co">#&gt;                      chk_all(true, chk_true)  25785  41176.5  48580.51</span></a>
+<a class="sourceLine" id="cb5-80" data-line-number="80"><span class="co">#&gt;                                      chkor()  42535  64927.0  80208.70</span></a>
+<a class="sourceLine" id="cb5-81" data-line-number="81"><span class="co">#&gt;                       chkor(chk_number(one)) 105875 140509.0 186379.59</span></a>
+<a class="sourceLine" id="cb5-82" data-line-number="82"><span class="co">#&gt;  chkor(chk_number(one), chk_proportion(one)) 116601 152892.0 178838.41</span></a>
 <a class="sourceLine" id="cb5-83" data-line-number="83"><span class="co">#&gt;    median       uq     max neval</span></a>
-<a class="sourceLine" id="cb5-84" data-line-number="84"><span class="co">#&gt;    1703.5   2029.0    8928   100</span></a>
-<a class="sourceLine" id="cb5-85" data-line-number="85"><span class="co">#&gt;    1852.0   2227.0   63422   100</span></a>
-<a class="sourceLine" id="cb5-86" data-line-number="86"><span class="co">#&gt;    1812.5   2104.5    7145   100</span></a>
-<a class="sourceLine" id="cb5-87" data-line-number="87"><span class="co">#&gt;    1672.5   1899.0   65417   100</span></a>
-<a class="sourceLine" id="cb5-88" data-line-number="88"><span class="co">#&gt;    1444.5   1920.0    8439   100</span></a>
-<a class="sourceLine" id="cb5-89" data-line-number="89"><span class="co">#&gt;    1476.5   1861.5   16173   100</span></a>
-<a class="sourceLine" id="cb5-90" data-line-number="90"><span class="co">#&gt;    2333.0   2795.0   69885   100</span></a>
-<a class="sourceLine" id="cb5-91" data-line-number="91"><span class="co">#&gt;   28950.5  33109.5   79779   100</span></a>
-<a class="sourceLine" id="cb5-92" data-line-number="92"><span class="co">#&gt;    1329.5   1614.5   58751   100</span></a>
-<a class="sourceLine" id="cb5-93" data-line-number="93"><span class="co">#&gt;   10982.0  12096.5  105379   100</span></a>
-<a class="sourceLine" id="cb5-94" data-line-number="94"><span class="co">#&gt;   13470.0  16413.5   95754   100</span></a>
-<a class="sourceLine" id="cb5-95" data-line-number="95"><span class="co">#&gt;    1341.0   1535.5   67498   100</span></a>
-<a class="sourceLine" id="cb5-96" data-line-number="96"><span class="co">#&gt;   29859.0  33893.0   76631   100</span></a>
-<a class="sourceLine" id="cb5-97" data-line-number="97"><span class="co">#&gt;    1682.5   2077.5   47039   100</span></a>
-<a class="sourceLine" id="cb5-98" data-line-number="98"><span class="co">#&gt;    9962.5  12292.5   24341   100</span></a>
-<a class="sourceLine" id="cb5-99" data-line-number="99"><span class="co">#&gt;   27078.5  31238.5  244602   100</span></a>
-<a class="sourceLine" id="cb5-100" data-line-number="100"><span class="co">#&gt;  366367.0 397697.0  540115   100</span></a>
-<a class="sourceLine" id="cb5-101" data-line-number="101"><span class="co">#&gt;    1458.5   1618.0   49785   100</span></a>
-<a class="sourceLine" id="cb5-102" data-line-number="102"><span class="co">#&gt;    1365.0   1798.5   71837   100</span></a>
-<a class="sourceLine" id="cb5-103" data-line-number="103"><span class="co">#&gt;    1825.0   2146.0   58947   100</span></a>
-<a class="sourceLine" id="cb5-104" data-line-number="104"><span class="co">#&gt;    1278.0   1445.5   11500   100</span></a>
-<a class="sourceLine" id="cb5-105" data-line-number="105"><span class="co">#&gt;    1948.5   2244.5   48480   100</span></a>
-<a class="sourceLine" id="cb5-106" data-line-number="106"><span class="co">#&gt;    2150.5   2666.5   90109   100</span></a>
-<a class="sourceLine" id="cb5-107" data-line-number="107"><span class="co">#&gt;    2805.0   3241.0   62071   100</span></a>
-<a class="sourceLine" id="cb5-108" data-line-number="108"><span class="co">#&gt;    1580.5   1928.0   51628   100</span></a>
-<a class="sourceLine" id="cb5-109" data-line-number="109"><span class="co">#&gt;   30199.0  34169.0  319364   100</span></a>
-<a class="sourceLine" id="cb5-110" data-line-number="110"><span class="co">#&gt;   23974.5  26582.0  441600   100</span></a>
-<a class="sourceLine" id="cb5-111" data-line-number="111"><span class="co">#&gt;    3129.0   3528.5   77144   100</span></a>
-<a class="sourceLine" id="cb5-112" data-line-number="112"><span class="co">#&gt;    2976.5   4031.0   80499   100</span></a>
-<a class="sourceLine" id="cb5-113" data-line-number="113"><span class="co">#&gt;    2969.5   3419.0   81934   100</span></a>
-<a class="sourceLine" id="cb5-114" data-line-number="114"><span class="co">#&gt;    2868.5   3501.0   87527   100</span></a>
-<a class="sourceLine" id="cb5-115" data-line-number="115"><span class="co">#&gt;    5136.5   6156.5  120518   100</span></a>
-<a class="sourceLine" id="cb5-116" data-line-number="116"><span class="co">#&gt;    3524.0   4365.5   92296   100</span></a>
-<a class="sourceLine" id="cb5-117" data-line-number="117"><span class="co">#&gt;    3505.0   4590.5   77130   100</span></a>
-<a class="sourceLine" id="cb5-118" data-line-number="118"><span class="co">#&gt;   14798.0  17062.5   91891   100</span></a>
-<a class="sourceLine" id="cb5-119" data-line-number="119"><span class="co">#&gt;   42239.0  47840.0  394594   100</span></a>
-<a class="sourceLine" id="cb5-120" data-line-number="120"><span class="co">#&gt;   73831.0  85150.5  135858   100</span></a>
-<a class="sourceLine" id="cb5-121" data-line-number="121"><span class="co">#&gt;  164363.5 182900.5 1650623   100</span></a>
-<a class="sourceLine" id="cb5-122" data-line-number="122"><span class="co">#&gt;  156097.0 173693.0 3471167   100</span></a></code></pre></div>
+<a class="sourceLine" id="cb5-84" data-line-number="84"><span class="co">#&gt;    1673.5   2206.5  159336   100</span></a>
+<a class="sourceLine" id="cb5-85" data-line-number="85"><span class="co">#&gt;    1966.0   2497.0   40150   100</span></a>
+<a class="sourceLine" id="cb5-86" data-line-number="86"><span class="co">#&gt;    1939.0   2496.5    9217   100</span></a>
+<a class="sourceLine" id="cb5-87" data-line-number="87"><span class="co">#&gt;    1648.0   2050.5   71057   100</span></a>
+<a class="sourceLine" id="cb5-88" data-line-number="88"><span class="co">#&gt;    1689.0   2312.0   13666   100</span></a>
+<a class="sourceLine" id="cb5-89" data-line-number="89"><span class="co">#&gt;    1570.5   2108.5   10605   100</span></a>
+<a class="sourceLine" id="cb5-90" data-line-number="90"><span class="co">#&gt;    2441.5   3411.0   82179   100</span></a>
+<a class="sourceLine" id="cb5-91" data-line-number="91"><span class="co">#&gt;   31232.5  36549.0   61033   100</span></a>
+<a class="sourceLine" id="cb5-92" data-line-number="92"><span class="co">#&gt;    1398.0   1815.0   45728   100</span></a>
+<a class="sourceLine" id="cb5-93" data-line-number="93"><span class="co">#&gt;   11131.5  12903.5   94464   100</span></a>
+<a class="sourceLine" id="cb5-94" data-line-number="94"><span class="co">#&gt;   13056.5  14919.5   93857   100</span></a>
+<a class="sourceLine" id="cb5-95" data-line-number="95"><span class="co">#&gt;    1246.0   1533.0   10645   100</span></a>
+<a class="sourceLine" id="cb5-96" data-line-number="96"><span class="co">#&gt;   32304.5  37425.5  720384   100</span></a>
+<a class="sourceLine" id="cb5-97" data-line-number="97"><span class="co">#&gt;    1602.5   1991.5   55911   100</span></a>
+<a class="sourceLine" id="cb5-98" data-line-number="98"><span class="co">#&gt;   10466.0  12806.0   37726   100</span></a>
+<a class="sourceLine" id="cb5-99" data-line-number="99"><span class="co">#&gt;   29992.5  36340.0  286545   100</span></a>
+<a class="sourceLine" id="cb5-100" data-line-number="100"><span class="co">#&gt;  394017.0 417038.5 4787283   100</span></a>
+<a class="sourceLine" id="cb5-101" data-line-number="101"><span class="co">#&gt;    1456.5   1838.0   50174   100</span></a>
+<a class="sourceLine" id="cb5-102" data-line-number="102"><span class="co">#&gt;    1444.5   1723.0   68653   100</span></a>
+<a class="sourceLine" id="cb5-103" data-line-number="103"><span class="co">#&gt;    1686.0   2118.5   73013   100</span></a>
+<a class="sourceLine" id="cb5-104" data-line-number="104"><span class="co">#&gt;    1394.0   1550.0   27174   100</span></a>
+<a class="sourceLine" id="cb5-105" data-line-number="105"><span class="co">#&gt;    1919.0   2222.5   48463   100</span></a>
+<a class="sourceLine" id="cb5-106" data-line-number="106"><span class="co">#&gt;    2171.5   2609.0   89732   100</span></a>
+<a class="sourceLine" id="cb5-107" data-line-number="107"><span class="co">#&gt;    2930.5   3603.0   73526   100</span></a>
+<a class="sourceLine" id="cb5-108" data-line-number="108"><span class="co">#&gt;    1621.5   2142.0   57448   100</span></a>
+<a class="sourceLine" id="cb5-109" data-line-number="109"><span class="co">#&gt;   30546.5  37038.5  114071   100</span></a>
+<a class="sourceLine" id="cb5-110" data-line-number="110"><span class="co">#&gt;   25356.5  30048.0  111645   100</span></a>
+<a class="sourceLine" id="cb5-111" data-line-number="111"><span class="co">#&gt;    3290.5   4389.0   81357   100</span></a>
+<a class="sourceLine" id="cb5-112" data-line-number="112"><span class="co">#&gt;    3063.5   3706.5   94391   100</span></a>
+<a class="sourceLine" id="cb5-113" data-line-number="113"><span class="co">#&gt;    3249.0   3799.5   83477   100</span></a>
+<a class="sourceLine" id="cb5-114" data-line-number="114"><span class="co">#&gt;    3135.0   4024.0   88566   100</span></a>
+<a class="sourceLine" id="cb5-115" data-line-number="115"><span class="co">#&gt;    5236.5   6311.5  201750   100</span></a>
+<a class="sourceLine" id="cb5-116" data-line-number="116"><span class="co">#&gt;    3613.5   4699.0   93390   100</span></a>
+<a class="sourceLine" id="cb5-117" data-line-number="117"><span class="co">#&gt;    3538.5   4546.5  101720   100</span></a>
+<a class="sourceLine" id="cb5-118" data-line-number="118"><span class="co">#&gt;   16179.0  19534.0  100833   100</span></a>
+<a class="sourceLine" id="cb5-119" data-line-number="119"><span class="co">#&gt;   45754.5  52341.0  213165   100</span></a>
+<a class="sourceLine" id="cb5-120" data-line-number="120"><span class="co">#&gt;   76055.5  87860.5  243503   100</span></a>
+<a class="sourceLine" id="cb5-121" data-line-number="121"><span class="co">#&gt;  170508.5 190114.0 1896825   100</span></a>
+<a class="sourceLine" id="cb5-122" data-line-number="122"><span class="co">#&gt;  175281.5 201406.5  302499   100</span></a></code></pre></div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
