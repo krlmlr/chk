@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Check DateTime — chk_datetime • chk</title>
+<title>Parameter Descriptions — params • chk</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -42,9 +42,9 @@
 
 
 
-<meta property="og:title" content="Check DateTime — chk_datetime" />
-<meta property="og:description" content="Checks if non-missing POSIXct scalar using
-inherits(x, &quot;POSIXct&quot;) &amp;amp;&amp;amp; length(x) == 1L &amp;amp;&amp;amp; !anyNA(x)" />
+<meta property="og:title" content="Parameter Descriptions — params" />
+<meta property="og:description" content="A non-exported dummy function with key parameter descriptions
+that can be inherited by other functions." />
 <meta property="og:image" content="/logo.png" />
 <meta name="twitter:card" content="summary" />
 
@@ -132,19 +132,17 @@ inherits(x, &quot;POSIXct&quot;) &amp;amp;&amp;amp; length(x) == 1L &amp;amp;&am
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Check DateTime</h1>
-    <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/chk/blob/master/R/chk-datetime.R'><code>R/chk-datetime.R</code></a></small>
-    <div class="hidden name"><code>chk_datetime.Rd</code></div>
+    <h1>Parameter Descriptions</h1>
+    <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/chk/blob/master/R/params.R'><code>R/params.R</code></a></small>
+    <div class="hidden name"><code>params.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Checks if non-missing POSIXct scalar using</p>
-<p><code>inherits(x, "POSIXct") &amp;&amp; length(x) == 1L &amp;&amp; !anyNA(x)</code></p>
+    <p>A non-exported dummy function with key parameter descriptions
+that can be inherited by other functions.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>chk_datetime</span>(<span class='no'>x</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
-
-<span class='fu'>vld_datetime</span>(<span class='no'>x</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre class="usage"><span class='fu'>params</span>(<span class='no'>x</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>chk</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -157,38 +155,18 @@ inherits(x, &quot;POSIXct&quot;) &amp;amp;&amp;amp; length(x) == 1L &amp;amp;&am
       <th>x_name</th>
       <td><p>A string of the name of object x or NULL.</p></td>
     </tr>
+    <tr>
+      <th>chk</th>
+      <td><p>A flag specifying whether to check the other parameters.</p></td>
+    </tr>
     </table>
 
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>The <code>chk_</code> functions throw an informative error if the test fails.</p>
-<p>The <code>vld_</code> functions return a flag indicating whether the test was met.</p>
-    <h2 class="hasAnchor" id="functions"><a class="anchor" href="#functions"></a>Functions</h2>
-
-    
-<ul>
-<li><p><code>vld_datetime</code>: Validate DateTime</p></li>
-</ul>
-    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
-
-    <div class='dont-index'><p>Other chk_scalars: <code><a href='chk_date.html'>chk_date</a></code></p></div>
-
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'>
-<span class='co'># chk_datetime</span>
-<span class='fu'>chk_datetime</span>(<span class='fu'><a href='https://rdrr.io/r/base/as.POSIXlt.html'>as.POSIXct</a></span>(<span class='st'>"2001-01-02"</span>))
-<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_datetime</span>(<span class='fl'>1</span>))</div><div class='output co'>#&gt; Error : `1` must be a datetime (non-missing POSIXct scalar).</div><div class='input'>
-<span class='co'># vld_datetime</span>
-<span class='fu'>vld_datetime</span>(<span class='fu'><a href='https://rdrr.io/r/base/as.POSIXlt.html'>as.POSIXct</a></span>(<span class='st'>"2001-01-02"</span>))</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_datetime</span>(<span class='fu'><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.time</a></span>())</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_datetime</span>(<span class='fl'>1</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>vld_datetime</span>(<span class='st'>"2001-01-02"</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>vld_datetime</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.time</a></span>(), <span class='fu'><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.time</a></span>()))</div><div class='output co'>#&gt; [1] FALSE</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-      <li><a href="#value">Value</a></li>
-      <li><a href="#functions">Functions</a></li>
-      <li><a href="#see-also">See also</a></li>
-      <li><a href="#examples">Examples</a></li>
     </ul>
 
   </div>
