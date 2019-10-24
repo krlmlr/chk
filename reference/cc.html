@@ -78,7 +78,7 @@ and the last value separated by a conjunction." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">chk</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.1.9033</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.1.9034</span>
       </span>
     </div>
 
@@ -143,7 +143,7 @@ and the last value separated by a conjunction.</p>
     </div>
 
     <pre class="usage"><span class='fu'>cc</span>(<span class='no'>x</span>, <span class='kw'>conj</span> <span class='kw'>=</span> <span class='st'>", "</span>, <span class='kw'>sep</span> <span class='kw'>=</span> <span class='st'>", "</span>, <span class='kw'>brac</span> <span class='kw'>=</span> <span class='kw'>if</span> (<span class='fu'><a href='https://rdrr.io/r/base/character.html'>is.character</a></span>(<span class='no'>x</span>) <span class='kw'>||</span>
-  <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>is.factor</a></span>(<span class='no'>x</span>)) <span class='st'>"'"</span> <span class='kw'>else</span> <span class='st'>""</span>, <span class='kw'>ellipsis</span> <span class='kw'>=</span> <span class='fl'>10L</span>)</pre>
+  <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>is.factor</a></span>(<span class='no'>x</span>)) <span class='st'>"'"</span> <span class='kw'>else</span> <span class='st'>""</span>, <span class='kw'>ellipsis</span> <span class='kw'>=</span> <span class='fl'>10L</span>, <span class='kw'>chk</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -168,6 +168,10 @@ and the last value separated by a conjunction.</p>
       <th>ellipsis</th>
       <td><p>A numeric scalar of the maximum number of values to display
 before using an ellipsis.</p></td>
+    </tr>
+    <tr>
+      <th>chk</th>
+      <td><p>A flag specifying whether to check the other arguments.</p></td>
     </tr>
     </table>
 
