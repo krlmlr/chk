@@ -44,7 +44,9 @@
 
 <meta property="og:title" content="Check Flag — chk_flag" />
 <meta property="og:description" content="Checks if non-missing logical scalar using
-is.logical(x) &amp;amp;&amp;amp; length(x) == 1L &amp;amp;&amp;amp; !anyNA(x)" />
+is.logical(x) &amp;amp;&amp;amp; length(x) == 1L &amp;amp;&amp;amp; !anyNA(x)
+Good: TRUE, FALSE, NA.
+Bad: logical(0), c(TRUE, TRUE), &quot;TRUE&quot;, 1, NA_real_." />
 <meta property="og:image" content="/logo.png" />
 <meta name="twitter:card" content="summary" />
 
@@ -78,7 +80,7 @@ is.logical(x) &amp;amp;&amp;amp; length(x) == 1L &amp;amp;&amp;amp; !anyNA(x)" /
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">chk</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.1.9036</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.1.9037</span>
       </span>
     </div>
 
@@ -143,6 +145,8 @@ is.logical(x) &amp;amp;&amp;amp; length(x) == 1L &amp;amp;&amp;amp; !anyNA(x)" /
     <div class="ref-description">
     <p>Checks if non-missing logical scalar using</p>
 <p><code>is.logical(x) &amp;&amp; length(x) == 1L &amp;&amp; !anyNA(x)</code></p>
+<p><strong>Good</strong>: <code>TRUE</code>, <code>FALSE</code>, <code>NA</code>.</p>
+<p><strong>Bad</strong>: <code><a href='https://rdrr.io/r/base/logical.html'>logical(0)</a></code>, <code><a href='https://rdrr.io/r/base/c.html'>c(TRUE, TRUE)</a></code>, <code>"TRUE"</code>, <code>1</code>, <code>NA_real_</code>.</p>
     </div>
 
     <pre class="usage"><span class='fu'>chk_flag</span>(<span class='no'>x</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
@@ -182,7 +186,7 @@ is.logical(x) &amp;amp;&amp;amp; length(x) == 1L &amp;amp;&amp;amp; !anyNA(x)" /
 <span class='fu'>chk_flag</span>(<span class='fl'>TRUE</span>)
 <span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>vld_flag</span>(<span class='fl'>1</span>))</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'>
 <span class='co'># vld_flag</span>
-<span class='fu'>vld_flag</span>(<span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_flag</span>(<span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_flag</span>(<span class='fl'>NA</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>vld_flag</span>(<span class='fl'>1</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>vld_flag</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>TRUE</span>, <span class='fl'>TRUE</span>))</div><div class='output co'>#&gt; [1] FALSE</div></pre>
+<span class='fu'>vld_flag</span>(<span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_flag</span>(<span class='fl'>1</span>)</div><div class='output co'>#&gt; [1] FALSE</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

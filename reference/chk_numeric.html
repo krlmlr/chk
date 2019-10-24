@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Check Number or Whole Number — chk_number • chk</title>
+<title>Check Numeric — chk_numeric • chk</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -42,19 +42,11 @@
 
 
 
-<meta property="og:title" content="Check Number or Whole Number — chk_number" />
-<meta property="og:description" content="chk_number()
-checks if non-missing numeric scalar using
-is.numeric(x) &amp;amp;&amp;amp; length(x) == 1L &amp;amp;&amp;amp; !anyNA(x).
-Good: 1, 2L, log(10), -Inf.
-Bad: &quot;a&quot;, 1:3, NA_real_.
-chk_whole_number()
-checks if non-missing integer scalar or double equivalent using
-vld_number(x) and is.integer(x) || vld_true(all.equal(x, trunc(x))).
-Good: 1, 2L, 1e10, -Inf.
-Bad: &quot;a&quot;, 1:3, NA_integer_, log(10).
-The chk_whole_numeric() function checks if
-integer vector of any length or double equivalent." />
+<meta property="og:title" content="Check Numeric — chk_numeric" />
+<meta property="og:description" content="Checks if numeric using
+is.numeric(x)
+Good: 1, 1:2, NA_real_, integer(0), matrix(1:3).
+Bad: TRUE, &quot;1&quot;, NA, NULL." />
 <meta property="og:image" content="/logo.png" />
 <meta name="twitter:card" content="summary" />
 
@@ -145,29 +137,21 @@ integer vector of any length or double equivalent." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Check Number or Whole Number</h1>
-    <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/chk/blob/master/R/chk-number.R'><code>R/chk-number.R</code></a></small>
-    <div class="hidden name"><code>chk_number.Rd</code></div>
+    <h1>Check Numeric</h1>
+    <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/chk/blob/master/R/chk-numeric.R'><code>R/chk-numeric.R</code></a></small>
+    <div class="hidden name"><code>chk_numeric.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p><code>chk_number()</code>
-checks if non-missing numeric scalar using</p>
-<p><code>is.numeric(x) &amp;&amp; length(x) == 1L &amp;&amp; !anyNA(x)</code>.</p>
-<p><strong>Good</strong>: <code>1</code>, <code>2L</code>, <code><a href='https://rdrr.io/r/base/Log.html'>log(10)</a></code>, <code>-Inf</code>.</p>
-<p><strong>Bad</strong>: <code>"a"</code>, <code>1:3</code>, <code>NA_real_</code>.</p>
-<p><code>chk_whole_number()</code>
-checks if non-missing integer scalar or double equivalent using</p>
-<p><code><a href='vld.html'>vld_number(x)</a></code> and <code>is.integer(x) || vld_true(all.equal(x, trunc(x)))</code>.</p>
-<p><strong>Good</strong>: <code>1</code>, <code>2L</code>, <code>1e10</code>, <code>-Inf</code>.</p>
-<p><strong>Bad</strong>: <code>"a"</code>, <code>1:3</code>, <code>NA_integer_</code>, <code><a href='https://rdrr.io/r/base/Log.html'>log(10)</a></code>.</p>
-<p>The <code><a href='chk_type.html'>chk_whole_numeric()</a></code> function checks if
-integer vector of any length or double equivalent.</p>
+    <p>Checks if numeric using</p>
+<p><code><a href='https://rdrr.io/r/base/numeric.html'>is.numeric(x)</a></code></p>
+<p><strong>Good</strong>: <code>1</code>, <code>1:2</code>, <code>NA_real_</code>, <code><a href='https://rdrr.io/r/base/integer.html'>integer(0)</a></code>, <code><a href='https://rdrr.io/r/base/matrix.html'>matrix(1:3)</a></code>.</p>
+<p><strong>Bad</strong>: <code>TRUE</code>, <code>"1"</code>, <code>NA</code>, <code>NULL</code>.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>chk_number</span>(<span class='no'>x</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
+    <pre class="usage"><span class='fu'>chk_numeric</span>(<span class='no'>x</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
 
-<span class='fu'>chk_whole_number</span>(<span class='no'>x</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+<span class='fu'>vld_numeric</span>(<span class='no'>x</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -184,27 +168,33 @@ integer vector of any length or double equivalent.</p>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p><code>NULL</code>, invisibly. Called for the side effect of throwing an error
-if the condition is not met.</p>
+    <p>The <code>chk_</code> function throws an informative error if the test fails.</p>
+<p>The <code>vld_</code> function returns a flag indicating whether the test was met.</p>
+    <h2 class="hasAnchor" id="functions"><a class="anchor" href="#functions"></a>Functions</h2>
+
+    
+<ul>
+<li><p><code>vld_numeric</code>: Validate Numeric</p></li>
+</ul>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code><a href='chk_true.html'>chk_true()</a></code>, <code><a href='chk_range.html'>chk_range()</a></code>
-and <code><a href='chk_type.html'>chk_whole_numeric()</a></code></p></div>
+    <div class='dont-index'><p>Other chk_is: <code><a href='chk_atomic.html'>chk_atomic</a></code>,
+  <code><a href='chk_environment.html'>chk_environment</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='co'># chk_number</span>
-<span class='fu'>chk_number</span>(<span class='fl'>1.1</span>)
-<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_number</span>(<span class='fl'>TRUE</span>))</div><div class='output co'>#&gt; Error : `TRUE` must be a number (non-missing numeric scalar).</div><div class='input'>
-<span class='co'># chk_whole_number</span>
-<span class='fu'>chk_whole_number</span>(<span class='fl'>2</span>)
-<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_whole_number</span>(<span class='fl'>1.1</span>))</div><div class='output co'>#&gt; Error : `1.1` must be a whole number (non-missing integer scalar or double equivalent).</div></pre>
+<span class='co'># chk_numeric</span>
+<span class='fu'>chk_numeric</span>(<span class='fl'>1</span>)
+<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_numeric</span>(<span class='st'>"1"</span>))</div><div class='output co'>#&gt; Error : `"1"` must be numeric.</div><div class='input'>
+<span class='co'># vld_numeric</span>
+<span class='fu'>vld_numeric</span>(<span class='fl'>1</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_numeric</span>(<span class='fl'>1</span>:<span class='fl'>2</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_numeric</span>(<span class='fl'>NA_real_</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_numeric</span>(<span class='fu'><a href='https://rdrr.io/r/base/integer.html'>integer</a></span>(<span class='fl'>0</span>))</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_numeric</span>(<span class='st'>"1"</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>vld_numeric</span>(<span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; [1] FALSE</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
       <li><a href="#value">Value</a></li>
+      <li><a href="#functions">Functions</a></li>
       <li><a href="#see-also">See also</a></li>
       <li><a href="#examples">Examples</a></li>
     </ul>
