@@ -120,7 +120,7 @@
 <td align="left"><code>is.logical(x) &amp;&amp; length(x) == 1L &amp;&amp; !anyNA(x) &amp;&amp; x</code></td>
 </tr>
 <tr class="even">
-<td align="left"><code><a href="../reference/chk_true.html">chk_false(x)</a></code></td>
+<td align="left"><code><a href="../reference/chk_false.html">chk_false(x)</a></code></td>
 <td align="left"><code>is.logical(x) &amp;&amp; length(x) == 1L &amp;&amp; !anyNA(x) &amp;&amp; !x</code></td>
 </tr>
 <tr class="odd">
@@ -156,7 +156,7 @@
 <td align="left"><code>is.numeric(x) &amp;&amp; length(x) == 1L &amp;&amp; !anyNA(x)</code></td>
 </tr>
 <tr class="odd">
-<td align="left"><code><a href="../reference/chk_number.html">chk_whole_number(x)</a></code></td>
+<td align="left"><code><a href="../reference/chk_whole_number.html">chk_whole_number(x)</a></code></td>
 <td align="left"><code>vld_number(x) &amp;&amp; (is.integer(x) || vld_true(all.equal(x, trunc(x))))</code></td>
 </tr>
 <tr class="even">
@@ -228,11 +228,11 @@
 <td align="left"><code><a href="https://rdrr.io/r/base/identical.html">identical(x, y)</a></code></td>
 </tr>
 <tr class="even">
-<td align="left"><code><a href="../reference/chk_identical.html">chk_equal(x, y, tolerance = sqrt(.Machine$double.eps))</a></code></td>
+<td align="left"><code><a href="../reference/chk_equal.html">chk_equal(x, y, tolerance = sqrt(.Machine$double.eps))</a></code></td>
 <td align="left"><code><a href="../reference/chk_true.html">vld_true(all.equal(x, y, tolerance))</a></code></td>
 </tr>
 <tr class="odd">
-<td align="left"><code><a href="../reference/chk_identical.html">chk_equivalent(x, y, tolerance = sqrt(.Machine$double.eps))</a></code></td>
+<td align="left"><code><a href="../reference/chk_equivalent.html">chk_equivalent(x, y, tolerance = sqrt(.Machine$double.eps))</a></code></td>
 <td align="left"><code><a href="../reference/chk_true.html">vld_true(all.equal(x, y, tolerance, check.attributes = FALSE))</a></code></td>
 </tr>
 </tbody>
@@ -256,15 +256,15 @@
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left"><code><a href="../reference/chk_all.html">chk_all_identical(x)</a></code></td>
+<td align="left"><code><a href="../reference/chk_all_identical.html">chk_all_identical(x)</a></code></td>
 <td align="left"><code>length(x) &lt; 2L || all(vapply(x, vld_identical, TRUE, y = x[[1]]))</code></td>
 </tr>
 <tr class="odd">
-<td align="left"><code><a href="../reference/chk_all.html">chk_all_equal(x, tolerance = sqrt(.Machine$double.eps))</a></code></td>
+<td align="left"><code><a href="../reference/chk_all_equal.html">chk_all_equal(x, tolerance = sqrt(.Machine$double.eps))</a></code></td>
 <td align="left"><code>length(x) &lt; 2L || all(vapply(x, vld_equal, TRUE, y = x[[1]], tolerance = tolerance))</code></td>
 </tr>
 <tr class="even">
-<td align="left"><code><a href="../reference/chk_all.html">chk_all_equivalent(x, tolerance = sqrt(.Machine$double.eps))</a></code></td>
+<td align="left"><code><a href="../reference/chk_all_equivalent.html">chk_all_equivalent(x, tolerance = sqrt(.Machine$double.eps))</a></code></td>
 <td align="left"><code>length(x) &lt; 2L || all(vapply(x, vld_equivalent, TRUE, y = x[[1]], tolerance = tolerance))</code></td>
 </tr>
 </tbody>
@@ -356,7 +356,7 @@
 <td align="left"><code><a href="https://rdrr.io/r/base/NULL.html">is.null(x)</a></code></td>
 </tr>
 <tr class="even">
-<td align="left"><code><a href="../reference/chk_null.html">chk_not_null(x)</a></code></td>
+<td align="left"><code><a href="../reference/chk_not_null.html">chk_not_null(x)</a></code></td>
 <td align="left"><code>!is.null(x)</code></td>
 </tr>
 </tbody>

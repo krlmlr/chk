@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Check Directory Exists — chk_dir • chk</title>
+<title>Check Equal — chk_equal • chk</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -42,9 +42,9 @@
 
 
 
-<meta property="og:title" content="Check Directory Exists — chk_dir" />
-<meta property="og:description" content="Checks if directory exists using
-vld_string(x) &amp;amp;&amp;amp; dir.exists(x)" />
+<meta property="og:title" content="Check Equal — chk_equal" />
+<meta property="og:description" content="Checks if is equal (identical within tolerance) to y using
+vld_true(all.equal(x, y, tolerance))" />
 <meta property="og:image" content="/logo.png" />
 <meta name="twitter:card" content="summary" />
 
@@ -135,19 +135,19 @@ vld_string(x) &amp;amp;&amp;amp; dir.exists(x)" />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Check Directory Exists</h1>
-    <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/chk/blob/master/R/chk-dir.R'><code>R/chk-dir.R</code></a></small>
-    <div class="hidden name"><code>chk_dir.Rd</code></div>
+    <h1>Check Equal</h1>
+    <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/chk/blob/master/R/chk-equal.R'><code>R/chk-equal.R</code></a></small>
+    <div class="hidden name"><code>chk_equal.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Checks if directory exists using</p>
-<p><code>vld_string(x) &amp;&amp; dir.exists(x)</code></p>
+    <p>Checks if is equal (identical within tolerance) to y using</p>
+<p><code><a href='chk_true.html'>vld_true(all.equal(x, y, tolerance))</a></code></p>
     </div>
 
-    <pre class="usage"><span class='fu'>chk_dir</span>(<span class='no'>x</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
+    <pre class="usage"><span class='fu'>chk_equal</span>(<span class='no'>x</span>, <span class='no'>y</span>, <span class='kw'>tolerance</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/MathFun.html'>sqrt</a></span>(<span class='no'>.Machine</span>$<span class='no'>double.eps</span>), <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
 
-<span class='fu'>vld_dir</span>(<span class='no'>x</span>)</pre>
+<span class='fu'>vld_equal</span>(<span class='no'>x</span>, <span class='no'>y</span>, <span class='kw'>tolerance</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/MathFun.html'>sqrt</a></span>(<span class='no'>.Machine</span>$<span class='no'>double.eps</span>))</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -155,6 +155,14 @@ vld_string(x) &amp;amp;&amp;amp; dir.exists(x)" />
     <tr>
       <th>x</th>
       <td><p>The object to check.</p></td>
+    </tr>
+    <tr>
+      <th>y</th>
+      <td><p>An object to check against.</p></td>
+    </tr>
+    <tr>
+      <th>tolerance</th>
+      <td><p>A non-negative numeric scalar.</p></td>
     </tr>
     <tr>
       <th>x_name</th>
@@ -170,20 +178,21 @@ vld_string(x) &amp;amp;&amp;amp; dir.exists(x)" />
 
     
 <ul>
-<li><p><code>vld_dir</code>: Validate Directory Exists</p></li>
+<li><p><code>vld_equal</code>: Validate Equal</p></li>
 </ul>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p>Other chk_files: <code><a href='chk_ext.html'>chk_ext</a></code>,
-  <code><a href='chk_file.html'>chk_file</a></code></p></div>
+    <div class='dont-index'><p>Other chk_equal: <code><a href='chk_equivalent.html'>chk_equivalent</a></code>,
+  <code><a href='chk_identical.html'>chk_identical</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='co'># chk_dir</span>
-<span class='fu'>chk_dir</span>(<span class='fu'><a href='https://rdrr.io/r/base/tempfile.html'>tempdir</a></span>())
-<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_dir</span>(<span class='fu'><a href='https://rdrr.io/r/base/tempfile.html'>tempfile</a></span>()))</div><div class='output co'>#&gt; Error : `tempfile()` must specify an existing directory ('/tmp/RtmpESMjLJ/file31df51d54802' can't be found).</div><div class='input'>
-<span class='co'># vld_dir</span>
-<span class='fu'>vld_dir</span>(<span class='fl'>1</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>vld_dir</span>(<span class='fu'><a href='https://rdrr.io/r/base/tempfile.html'>tempdir</a></span>())</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_dir</span>(<span class='fu'><a href='https://rdrr.io/r/base/tempfile.html'>tempfile</a></span>())</div><div class='output co'>#&gt; [1] FALSE</div></pre>
+<span class='co'># chk_equal</span>
+<span class='fu'>chk_equal</span>(<span class='fl'>1</span>, <span class='fl'>1.00000001</span>)
+<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_equal</span>(<span class='fl'>1</span>, <span class='fl'>1.0000001</span>))</div><div class='output co'>#&gt; Error : `1` must be equal to: 1.0000001.</div><div class='input'><span class='fu'>chk_equal</span>(<span class='fl'>1</span>, <span class='fl'>1L</span>)
+<span class='fu'>chk_equal</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1</span>), <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1L</span>))
+<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_equal</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1</span>), <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='kw'>y</span> <span class='kw'>=</span> <span class='fl'>1L</span>)))</div><div class='output co'>#&gt; Error : `c(x = 1)` must be equal to: c(y = 1L).</div><div class='input'>
+<span class='fu'>vld_equal</span>(<span class='fl'>1</span>, <span class='fl'>1.00000001</span>)</div><div class='output co'>#&gt; [1] TRUE</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

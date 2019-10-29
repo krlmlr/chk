@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Validators — vld_all • chk</title>
+<title>Validators — vld • chk</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -42,7 +42,7 @@
 
 
 
-<meta property="og:title" content="Validators — vld_all" />
+<meta property="og:title" content="Validators — vld" />
 <meta property="og:description" content="Each chk_() function has a corresponding vld_() function." />
 <meta property="og:image" content="/logo.png" />
 <meta name="twitter:card" content="summary" />
@@ -135,7 +135,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Validators</h1>
-    <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/chk/blob/master/R/chk-all.R'><code>R/chk-all.R</code></a>, <a href='https://github.com/poissonconsulting/chk/blob/master/R/chk-identical.R'><code>R/chk-identical.R</code></a>, <a href='https://github.com/poissonconsulting/chk/blob/master/R/chk-number.R'><code>R/chk-number.R</code></a>, and 2 more</small>
+    <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/chk/blob/master/R/vld.R'><code>R/vld.R</code></a></small>
     <div class="hidden name"><code>vld.Rd</code></div>
     </div>
 
@@ -143,23 +143,6 @@
     <p>Each <code>chk_()</code> function has a corresponding <code>vld_()</code> function.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>vld_all</span>(<span class='no'>x</span>, <span class='no'>vld_fun</span>, <span class='no'>...</span>)
-
-<span class='fu'>vld_all_identical</span>(<span class='no'>x</span>)
-
-<span class='fu'>vld_all_equal</span>(<span class='no'>x</span>, <span class='kw'>tolerance</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/MathFun.html'>sqrt</a></span>(<span class='no'>.Machine</span>$<span class='no'>double.eps</span>))
-
-<span class='fu'>vld_all_equivalent</span>(<span class='no'>x</span>, <span class='kw'>tolerance</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/MathFun.html'>sqrt</a></span>(<span class='no'>.Machine</span>$<span class='no'>double.eps</span>))
-
-<span class='fu'>vld_identical</span>(<span class='no'>x</span>, <span class='no'>y</span>)
-
-<span class='fu'>vld_equal</span>(<span class='no'>x</span>, <span class='no'>y</span>, <span class='kw'>tolerance</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/MathFun.html'>sqrt</a></span>(<span class='no'>.Machine</span>$<span class='no'>double.eps</span>))
-
-<span class='fu'>vld_equivalent</span>(<span class='no'>x</span>, <span class='no'>y</span>, <span class='kw'>tolerance</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/MathFun.html'>sqrt</a></span>(<span class='no'>.Machine</span>$<span class='no'>double.eps</span>))
-
-<span class='fu'>vld_number</span>(<span class='no'>x</span>)
-
-<span class='fu'>vld_whole_number</span>(<span class='no'>x</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -169,20 +152,20 @@
       <td><p>The object to check.</p></td>
     </tr>
     <tr>
-      <th>vld_fun</th>
-      <td><p>A vld_ function.</p></td>
+      <th>y</th>
+      <td><p>An object to check against.</p></td>
     </tr>
     <tr>
-      <th>...</th>
-      <td><p>Additional arguments.</p></td>
+      <th>vld_fun</th>
+      <td><p>A vld_ function.</p></td>
     </tr>
     <tr>
       <th>tolerance</th>
       <td><p>A non-negative numeric scalar.</p></td>
     </tr>
     <tr>
-      <th>y</th>
-      <td><p>An object to check against.</p></td>
+      <th>...</th>
+      <td><p>Additional arguments.</p></td>
     </tr>
     </table>
 
@@ -190,15 +173,12 @@
 
     <p>A flag indicating whether the object passed the test.</p>
 
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>vld_all</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>TRUE</span>, <span class='fl'>NA</span>), <span class='no'>vld_lgl</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_all_identical</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>, <span class='fl'>1</span>))</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_all_equal</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>, <span class='fl'>1L</span>))</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_all_equivalent</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='fl'>1</span>))</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_identical</span>(<span class='fl'>1</span>, <span class='fl'>1</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_equal</span>(<span class='fl'>1</span>, <span class='fl'>1.00000001</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_equivalent</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1</span>), <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='kw'>y</span> <span class='kw'>=</span> <span class='fl'>1L</span>))</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_number</span>(<span class='fl'>1.1</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_whole_number</span>(<span class='fl'>2</span>)</div><div class='output co'>#&gt; [1] TRUE</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
       <li><a href="#value">Value</a></li>
-      <li><a href="#examples">Examples</a></li>
     </ul>
 
   </div>

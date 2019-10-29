@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Check/Validate TRUE, FALSE, Flag or Logical Scalar — chk_true • chk</title>
+<title>Check TRUE — chk_true • chk</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -42,9 +42,9 @@
 
 
 
-<meta property="og:title" content="Check/Validate TRUE, FALSE, Flag or Logical Scalar — chk_true" />
-<meta property="og:description" content="Checks/validates if TRUE, FALSE, a flag (TRUE or FALSE)
-or a lgl (TRUE, FALSE, or NA)." />
+<meta property="og:title" content="Check TRUE — chk_true" />
+<meta property="og:description" content="Checks if TRUE using
+is.logical(x) &amp;amp;&amp;amp; length(x) == 1L &amp;amp;&amp;amp; !anyNA(x) &amp;amp;&amp;amp; x" />
 <meta property="og:image" content="/logo.png" />
 <meta name="twitter:card" content="summary" />
 
@@ -135,23 +135,19 @@ or a lgl (TRUE, FALSE, or NA)." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Check/Validate TRUE, FALSE, Flag or Logical Scalar</h1>
+    <h1>Check TRUE</h1>
     <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/chk/blob/master/R/chk-true.R'><code>R/chk-true.R</code></a></small>
     <div class="hidden name"><code>chk_true.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Checks/validates if TRUE, FALSE, a flag (TRUE or FALSE)
-or a lgl (TRUE, FALSE, or NA).</p>
+    <p>Checks if TRUE using</p>
+<p><code>is.logical(x) &amp;&amp; length(x) == 1L &amp;&amp; !anyNA(x) &amp;&amp; x</code></p>
     </div>
 
     <pre class="usage"><span class='fu'>chk_true</span>(<span class='no'>x</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
 
-<span class='fu'>vld_true</span>(<span class='no'>x</span>)
-
-<span class='fu'>chk_false</span>(<span class='no'>x</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
-
-<span class='fu'>vld_false</span>(<span class='no'>x</span>)</pre>
+<span class='fu'>vld_true</span>(<span class='no'>x</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -168,25 +164,17 @@ or a lgl (TRUE, FALSE, or NA).</p>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>The <code>chk_</code> functions throw an informative error if the test fails.
-The <code>vld_</code> functions return a flag indicating whether the test was met.</p>
+    <p>The <code>chk_</code> functions throw an informative error if the test fails.</p>
+<p>The <code>vld_</code> functions return a flag indicating whether the test was met.</p>
     <h2 class="hasAnchor" id="functions"><a class="anchor" href="#functions"></a>Functions</h2>
 
     
 <ul>
-<li><p><code>chk_true</code>: Check TRUE</p>
-<p>Checks if TRUE using
-<code>vld_true(x)</code>.</p></li>
-<li><p><code>vld_true</code>: Validate TRUE</p>
-<p>Validates if TRUE using</p>
-<p><code>is.logical(x) &amp;&amp; length(x) == 1L &amp;&amp; !anyNA(x) &amp;&amp; x</code>.</p></li>
-<li><p><code>chk_false</code>: Check FALSE</p>
-<p>Checks if FALSE using
-<code>vld_false(x)</code>.</p></li>
-<li><p><code>vld_false</code>: Validate FALSE</p>
-<p>Validates if FALSE using</p>
-<p><code>is.logical(x) &amp;&amp; length(x) == 1L &amp;&amp; !anyNA(x) &amp;&amp; x</code>.</p></li>
+<li><p><code>vld_true</code>: Validate TRUE</p></li>
 </ul>
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'><p>Other chk_logicalscalars: <code><a href='chk_false.html'>chk_false</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
@@ -194,12 +182,7 @@ The <code>vld_</code> functions return a flag indicating whether the test was me
 <span class='fu'>chk_true</span>(<span class='fl'>TRUE</span>)
 <span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_true</span>(<span class='fl'>1</span>))</div><div class='output co'>#&gt; Error : `1` must be TRUE.</div><div class='input'>
 <span class='co'># vld_true</span>
-<span class='fu'>vld_true</span>(<span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_true</span>(<span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>vld_true</span>(<span class='fl'>NA</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>vld_false</span>(<span class='fl'>0</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>vld_true</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>TRUE</span>, <span class='fl'>TRUE</span>))</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'>
-<span class='co'># chk_false</span>
-<span class='fu'>chk_false</span>(<span class='fl'>FALSE</span>)
-<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_false</span>(<span class='fl'>0</span>))</div><div class='output co'>#&gt; Error : `0` must be FALSE.</div><div class='input'>
-<span class='co'># vld_false</span>
-<span class='fu'>vld_false</span>(<span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>vld_false</span>(<span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_false</span>(<span class='fl'>NA</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>vld_false</span>(<span class='fl'>0</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>vld_false</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>FALSE</span>, <span class='fl'>FALSE</span>))</div><div class='output co'>#&gt; [1] FALSE</div></pre>
+<span class='fu'>vld_true</span>(<span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_true</span>(<span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>vld_true</span>(<span class='fl'>NA</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>vld_true</span>(<span class='fl'>0</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>vld_true</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>TRUE</span>, <span class='fl'>TRUE</span>))</div><div class='output co'>#&gt; [1] FALSE</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -207,6 +190,7 @@ The <code>vld_</code> functions return a flag indicating whether the test was me
       <li><a href="#arguments">Arguments</a></li>
       <li><a href="#value">Value</a></li>
       <li><a href="#functions">Functions</a></li>
+      <li><a href="#see-also">See also</a></li>
       <li><a href="#examples">Examples</a></li>
     </ul>
 

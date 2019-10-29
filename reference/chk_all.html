@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Check All or Check All Identical, Equal or Equivalent — chk_all • chk</title>
+<title>Check All — chk_all • chk</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -42,21 +42,9 @@
 
 
 
-<meta property="og:title" content="Check All or Check All Identical, Equal or Equivalent — chk_all" />
-<meta property="og:description" content="chk_all()
-checks all elements using
-all(vapply(x, chk_fun, TRUE, ...)).
-chk_all_identical()
-checks all elements in x identical using
-all(vapply(x, chk_identical, TRUE, y = x[[1]])).
-Good: c(1, 1.00000001), list(1, 1).
-Bad: c(1, 1.0000001), list(1, NA).
-chk_all_equal()
-checks all elements in x equal using
-all(vapply(x, chk_equal, TRUE, y = x[[1]]), tolerance = tolerance).
-chk_all_equivalent()
-checks all elements in x equivalent using
-all(vapply(x, chk_equivalent, TRUE, y = x[[1]]), tolerance = tolerance)." />
+<meta property="og:title" content="Check All — chk_all" />
+<meta property="og:description" content="Checks all elements using
+all(vapply(x, chk_fun, TRUE, ...))" />
 <meta property="og:image" content="/logo.png" />
 <meta name="twitter:card" content="summary" />
 
@@ -147,36 +135,19 @@ all(vapply(x, chk_equivalent, TRUE, y = x[[1]]), tolerance = tolerance)." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Check All or Check All Identical, Equal or Equivalent</h1>
+    <h1>Check All</h1>
     <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/chk/blob/master/R/chk-all.R'><code>R/chk-all.R</code></a></small>
     <div class="hidden name"><code>chk_all.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p><code>chk_all()</code>
-checks all elements using</p>
-<p><code><a href='https://rdrr.io/r/base/all.html'>all(vapply(x, chk_fun, TRUE, ...))</a></code>.</p>
-<p><code>chk_all_identical()</code>
-checks all elements in x identical using</p>
-<p><code><a href='https://rdrr.io/r/base/all.html'>all(vapply(x, chk_identical, TRUE, y = x[[1]]))</a></code>.</p>
-<p><strong>Good</strong>: <code><a href='https://rdrr.io/r/base/c.html'>c(1, 1.00000001)</a></code>, <code><a href='https://rdrr.io/r/base/list.html'>list(1, 1)</a></code>.</p>
-<p><strong>Bad</strong>: <code><a href='https://rdrr.io/r/base/c.html'>c(1, 1.0000001)</a></code>, <code><a href='https://rdrr.io/r/base/list.html'>list(1, NA)</a></code>.</p>
-<p><code>chk_all_equal()</code>
-checks all elements in x equal using</p>
-<p><code><a href='https://rdrr.io/r/base/all.html'>all(vapply(x, chk_equal, TRUE, y = x[[1]]), tolerance = tolerance)</a></code>.</p>
-<p><code>chk_all_equivalent()</code>
-checks all elements in x equivalent using</p>
-<p><code><a href='https://rdrr.io/r/base/all.html'>all(vapply(x, chk_equivalent, TRUE, y = x[[1]]), tolerance = tolerance)</a></code>.</p>
+    <p>Checks all elements using</p>
+<p><code><a href='https://rdrr.io/r/base/all.html'>all(vapply(x, chk_fun, TRUE, ...))</a></code></p>
     </div>
 
     <pre class="usage"><span class='fu'>chk_all</span>(<span class='no'>x</span>, <span class='no'>chk_fun</span>, <span class='no'>...</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
 
-<span class='fu'>chk_all_identical</span>(<span class='no'>x</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
-
-<span class='fu'>chk_all_equal</span>(<span class='no'>x</span>, <span class='kw'>tolerance</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/MathFun.html'>sqrt</a></span>(<span class='no'>.Machine</span>$<span class='no'>double.eps</span>), <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
-
-<span class='fu'>chk_all_equivalent</span>(<span class='no'>x</span>, <span class='kw'>tolerance</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/MathFun.html'>sqrt</a></span>(<span class='no'>.Machine</span>$<span class='no'>double.eps</span>),
-  <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+<span class='fu'>vld_all</span>(<span class='no'>x</span>, <span class='no'>vld_fun</span>, <span class='no'>...</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -198,27 +169,26 @@ checks all elements in x equivalent using</p>
       <td><p>A string of the name of object x or NULL.</p></td>
     </tr>
     <tr>
-      <th>tolerance</th>
-      <td><p>A non-negative numeric scalar.</p></td>
+      <th>vld_fun</th>
+      <td><p>A vld_ function.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p><code>NULL</code>, invisibly. Called for the side effect of throwing an error
-if the condition is not met.</p>
+    <p>The <code>chk_</code> function throws an informative error if the test fails.</p>
+<p>The <code>vld_</code> function returns a flag indicating whether the test was met.</p>
     <h2 class="hasAnchor" id="functions"><a class="anchor" href="#functions"></a>Functions</h2>
 
     
 <ul>
-<li><p><code>chk_all</code>: Check All</p></li>
-<li><p><code>chk_all_identical</code>: Check All Identical</p></li>
-<li><p><code>chk_all_equal</code>: Check All Equal</p></li>
-<li><p><code>chk_all_equivalent</code>: Check All Equivalent</p></li>
+<li><p><code>vld_all</code>: Validate All</p></li>
 </ul>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code><a href='chk_identical.html'>chk_identical()</a></code>.</p></div>
+    <div class='dont-index'><p>Other chk_all: <code><a href='chk_all_equal.html'>chk_all_equal</a></code>,
+  <code><a href='chk_all_equivalent.html'>chk_all_equivalent</a></code>,
+  <code><a href='chk_all_identical.html'>chk_all_identical</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
@@ -227,17 +197,8 @@ if the condition is not met.</p>
 <span class='co'># FIXME try(chk_all(1, chk_lgl))</span>
 <span class='fu'>chk_all</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>TRUE</span>, <span class='fl'>NA</span>), <span class='no'>chk_lgl</span>)
 
-<span class='co'># chk_all_identical</span>
-<span class='fu'>chk_all_identical</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>, <span class='fl'>1</span>))
-<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_all_identical</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>, <span class='fl'>1.1</span>)))</div><div class='output co'>#&gt; Error : `c(1, 1.1)` must have identical elements.</div><div class='input'>
-<span class='co'># chk_all_equal</span>
-<span class='fu'>chk_all_equal</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>, <span class='fl'>1.00000001</span>))
-<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_all_equal</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>, <span class='fl'>1.0000001</span>)))</div><div class='output co'>#&gt; Error : `c(1, 1.0000001)` must have equal elements.</div><div class='input'><span class='fu'>chk_all_equal</span>(<span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1</span>), <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1</span>)))
-<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_all_equal</span>(<span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1</span>), <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='kw'>y</span> <span class='kw'>=</span> <span class='fl'>1</span>))))</div><div class='output co'>#&gt; Error : `list(c(x = 1), c(y = 1))` must have equal elements.</div><div class='input'>
-<span class='co'># chk_all_equivalent</span>
-<span class='fu'>chk_all_equivalent</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>, <span class='fl'>1.00000001</span>))
-<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_all_equivalent</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>, <span class='fl'>1.0000001</span>)))</div><div class='output co'>#&gt; Error : `c(1, 1.0000001)` must have equivalent elements.</div><div class='input'><span class='fu'>chk_all_equivalent</span>(<span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1</span>), <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1</span>)))
-<span class='fu'>chk_all_equivalent</span>(<span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1</span>), <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='kw'>y</span> <span class='kw'>=</span> <span class='fl'>1</span>)))</div></pre>
+<span class='co'># vld_all</span>
+<span class='fu'>vld_all</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>TRUE</span>, <span class='fl'>NA</span>), <span class='no'>vld_lgl</span>)</div><div class='output co'>#&gt; [1] TRUE</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
