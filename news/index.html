@@ -76,7 +76,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">chk</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.1.9042</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0</span>
       </span>
     </div>
 
@@ -137,6 +137,89 @@
       <small>Source: <a href='https://github.com/poissonconsulting/chk/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
     </div>
 
+    <div id="chk-0-2-0" class="section level1">
+<h1 class="page-header">
+<a href="#chk-0-2-0" class="anchor"></a>chk 0.2.0</h1>
+<div id="major-changes" class="section level2">
+<h2 class="hasAnchor">
+<a href="#major-changes" class="anchor"></a>Major Changes</h2>
+<ul>
+<li>Added <code>x_name = NULL</code> argument to relevant <code>chk_</code> functions.</li>
+<li>Replaced <code>err = FALSE</code> variant with <code>vld_</code> variant.</li>
+<li>Switched from <code><a href="https://rdrr.io/r/base/stop.html">stop()</a></code>, <code><a href="https://rdrr.io/r/base/warning.html">warning()</a></code> and <code><a href="https://rdrr.io/r/base/message.html">message()</a></code> to rlang variants <code>abort()</code>, <code>warn()</code> and <code>inform()</code>.</li>
+<li>All error messages now start with x_name.</li>
+<li>Err capitalizes first character and adds missing period (tidyverse style).</li>
+</ul>
+</div>
+<div id="new-functions" class="section level2">
+<h2 class="hasAnchor">
+<a href="#new-functions" class="anchor"></a>New Functions</h2>
+<ul>
+<li><code><a href="../reference/chk_all.html">chk_all()</a></code></li>
+<li><code><a href="../reference/chk_atomic.html">chk_atomic()</a></code></li>
+<li><code><a href="../reference/chk_environment.html">chk_environment()</a></code></li>
+<li><code><a href="../reference/chk_ext.html">chk_ext()</a></code></li>
+<li><code><a href="../reference/chk_deprecated.html">chk_has()</a></code></li>
+<li><code><a href="../reference/chk_not_empty.html">chk_not_empty()</a></code></li>
+<li><code><a href="../reference/chk_type.html">chk_s3_class()</a></code></li>
+<li><code><a href="../reference/chk_type.html">chk_s4_class()</a></code></li>
+<li><code><a href="../reference/chk_setequal.html">chk_setequal()</a></code></li>
+</ul>
+</div>
+<div id="newly-exported-functions" class="section level2">
+<h2 class="hasAnchor">
+<a href="#newly-exported-functions" class="anchor"></a>Newly Exported Functions</h2>
+<ul>
+<li><code><a href="../reference/deparse_backtick_chk.html">backtick_chk()</a></code></li>
+<li>
+<code><a href="../reference/deparse_backtick_chk.html">unbacktick_chk()</a></code>.</li>
+</ul>
+</div>
+<div id="new-arguments" class="section level2">
+<h2 class="hasAnchor">
+<a href="#new-arguments" class="anchor"></a>New Arguments</h2>
+<ul>
+<li>
+<code>formals</code> argument to <code><a href="../reference/chk_type.html">chk_function()</a></code>.</li>
+<li>
+<code>tidy = TRUE</code> argument to errors, warnings and messages.</li>
+<li>
+<code>n = NULL</code> and <code>call. = FALSE</code> args to error message generating funcions.</li>
+<li>
+<code>ellipsis = 10L</code> argument to <code><a href="../reference/cc.html">cc()</a></code>.</li>
+<li>
+<code>sep = ", "</code> arg to <code><a href="../reference/cc.html">cc()</a></code>.</li>
+<li>
+<code>incomparables = FALSE</code> argument to <code><a href="../reference/chk_unique.html">chk_unique()</a></code>.</li>
+<li>
+<code>%y</code> to sprintf-like types.</li>
+</ul>
+</div>
+<div id="soft-deprecated-functions" class="section level2">
+<h2 class="hasAnchor">
+<a href="#soft-deprecated-functions" class="anchor"></a>(Soft) Deprecated Functions</h2>
+<ul>
+<li>
+<code><a href="../reference/chk_deprecated.html">chk_no_missing()</a></code> for <code><a href="../reference/chk_not_any_na.html">chk_not_any_na()</a></code>.</li>
+<li>
+<code><a href="../reference/chk_deprecated.html">chk_files()</a></code> and <code><a href="../reference/chk_deprecated.html">chk_dirs()</a></code> for <code><a href="../reference/chk_all.html">chk_all(x, chk_file)</a></code> etc.</li>
+<li><p><code><a href="../reference/deparse_backtick_chk.html">deparse_backtick()</a></code> for <code><a href="../reference/deparse_backtick_chk.html">deparse_backtick_chk()</a></code>.</p></li>
+<li>
+<code><a href="../reference/chk_deprecated.html">chk_length()</a></code>, <code><a href="../reference/chk_deprecated.html">chk_proportion()</a></code> and <code><a href="../reference/chk_deprecated.html">chk_count()</a></code>.</li>
+<li><p><code><a href="../reference/chk_deprecated.html">chk_on()</a></code>, <code><a href="../reference/chk_deprecated.html">chk_off()</a></code> and <code><a href="../reference/chk_deprecated.html">is_chk_on()</a></code>.</p></li>
+</ul>
+</div>
+<div id="minor-changes" class="section level2">
+<h2 class="hasAnchor">
+<a href="#minor-changes" class="anchor"></a>Minor Changes</h2>
+<ul>
+<li>Changed <code><a href="../reference/chk_string.html">chk_match()</a></code> so ignores missing values.</li>
+<li>Changed <code><a href="../reference/chk_true.html">chk_true()</a></code> (and <code><a href="../reference/chk_false.html">chk_false()</a></code>) to same behaviour as <code>isTRUE</code> in R &gt;= 3.5.</li>
+<li>Extended <code><a href="../reference/chk_unique.html">chk_unique()</a></code> to handle <code>incomparables != FALSE</code> with data frames.</li>
+<li>Changed to <code>range = c(0,1)</code> for <code><a href="../reference/chk_range.html">chk_range()</a></code>.</li>
+</ul>
+</div>
+</div>
     <div id="chk-0-0-1" class="section level1">
 <h1 class="page-header">
 <a href="#chk-0-0-1" class="anchor"></a>chk 0.0.1</h1>
@@ -150,6 +233,7 @@
     <div id="tocnav">
       <h2>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
+        <li><a href="#chk-0-2-0">0.2.0</a></li>
         <li><a href="#chk-0-0-1">0.0.1</a></li>
       </ul>
     </div>

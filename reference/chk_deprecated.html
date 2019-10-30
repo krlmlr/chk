@@ -77,7 +77,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">chk</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.1.9042</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0</span>
       </span>
     </div>
 
@@ -255,14 +255,14 @@
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
 <span class='co'># chk_is</span>
-<span class='fu'>chk_is</span>(<span class='fl'>1</span>, <span class='st'>"numeric"</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: `chk_is()` is deprecated as of lifecycle 0.0.1.9018.</span>
+<span class='fu'>chk_is</span>(<span class='fl'>1</span>, <span class='st'>"numeric"</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: `chk_is()` is deprecated as of lifecycle 0.2.0.</span>
 #&gt; <span class='warning'>Please use `chk_s3_class()` instead.</span>
 #&gt; <span class='warning'>This warning is displayed once per session.</span>
 #&gt; <span class='warning'>Call `lifecycle::last_warnings()` to see where this warning was generated.</span></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_is</span>(<span class='fl'>1</span>, <span class='st'>"character"</span>))</div><div class='output co'>#&gt; Error : `1` must inherit from class 'character'.</div><div class='input'>
 <span class='co'># vld_is</span>
 <span class='fu'>vld_is</span>(<span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></span>(<span class='fl'>0</span>), <span class='st'>"numeric"</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_is</span>(<span class='fl'>1</span>, <span class='st'>"numeric"</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_is</span>(<span class='fl'>NA_real_</span>, <span class='st'>"numeric"</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_is</span>(<span class='fl'>1</span>, <span class='st'>"character"</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>vld_is</span>(<span class='kw'>NULL</span>, <span class='st'>"numeric"</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'>
 <span class='co'># chk_no_missing</span>
-<span class='fu'>chk_no_missing</span>(<span class='fl'>1</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: `chk_no_missing()` is deprecated as of lifecycle 0.0.1.9038.</span>
+<span class='fu'>chk_no_missing</span>(<span class='fl'>1</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: `chk_no_missing()` is deprecated as of lifecycle 0.2.0.</span>
 #&gt; <span class='warning'>Please use `chk_not_any_na()` instead.</span>
 #&gt; <span class='warning'>This warning is displayed once per session.</span>
 #&gt; <span class='warning'>Call `lifecycle::last_warnings()` to see where this warning was generated.</span></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_no_missing</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>, <span class='fl'>NA</span>)))</div><div class='output co'>#&gt; Error : `c(1, NA)` must not have missing values.</div><div class='input'>
