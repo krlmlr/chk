@@ -38,7 +38,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">chk</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0.9000</span>
       </span>
     </div>
 
@@ -135,11 +135,11 @@
 <a class="sourceLine" id="cb3-7" data-line-number="7">))[<span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"expr"</span>, <span class="st">"median"</span>)]</a>
 <a class="sourceLine" id="cb3-8" data-line-number="8"><span class="kw"><a href="https://rdrr.io/r/base/print.html">print</a></span>(times)</a>
 <a class="sourceLine" id="cb3-9" data-line-number="9"><span class="co">#&gt;                                  expr median</span></a>
-<a class="sourceLine" id="cb3-10" data-line-number="10"><span class="co">#&gt; 1                  fun_checking(TRUE)  1.213</span></a>
-<a class="sourceLine" id="cb3-11" data-line-number="11"><span class="co">#&gt; 2                 .fun_checking(TRUE)  0.253</span></a>
-<a class="sourceLine" id="cb3-12" data-line-number="12"><span class="co">#&gt; 3  fun_checking_arg(TRUE, chk = TRUE)  1.328</span></a>
-<a class="sourceLine" id="cb3-13" data-line-number="13"><span class="co">#&gt; 4 fun_checking_arg(TRUE, chk = FALSE)  0.387</span></a></code></pre></div>
-<p>In summary, avoiding <code><a href="../reference/chk_flag.html">chk_flag()</a></code> saves about 0.94 <span class="math inline">\(\mu\)</span>s while conditional checking using a <code>chk</code> argument costs about 0.12 <span class="math inline">\(\mu\)</span>s.</p>
+<a class="sourceLine" id="cb3-10" data-line-number="10"><span class="co">#&gt; 1                  fun_checking(TRUE)  1.220</span></a>
+<a class="sourceLine" id="cb3-11" data-line-number="11"><span class="co">#&gt; 2                 .fun_checking(TRUE)  0.259</span></a>
+<a class="sourceLine" id="cb3-12" data-line-number="12"><span class="co">#&gt; 3  fun_checking_arg(TRUE, chk = TRUE)  1.331</span></a>
+<a class="sourceLine" id="cb3-13" data-line-number="13"><span class="co">#&gt; 4 fun_checking_arg(TRUE, chk = FALSE)  0.390</span></a></code></pre></div>
+<p>In summary, avoiding <code><a href="../reference/chk_flag.html">chk_flag()</a></code> saves about 0.94 <span class="math inline">\(\mu\)</span>s while conditional checking using a <code>chk</code> argument costs about 0.11 <span class="math inline">\(\mu\)</span>s.</p>
 <p>It is recommended to always use unconditional checking unless <a href="http://adv-r.had.co.nz/Profiling.html">profiling</a> indicates the checks are a bottleneck.</p>
 <p>If the bottleneck is due to repeated calls within the package the recommended option is to write an internal version of the function that has no checks. Alternatively if the bottleneck is due to repeated calls by a user or other package then the recommended option is to add a chk argument that the user can explicitly turn off.</p>
 </div>
@@ -200,45 +200,45 @@
 <a class="sourceLine" id="cb5-41" data-line-number="41">  <span class="dt">unit =</span> <span class="st">"us"</span>, <span class="dt">times =</span> 10000L</a>
 <a class="sourceLine" id="cb5-42" data-line-number="42">))[<span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"expr"</span>, <span class="st">"median"</span>)]</a>
 <a class="sourceLine" id="cb5-43" data-line-number="43"><span class="co">#&gt;                                           expr   median</span></a>
-<a class="sourceLine" id="cb5-44" data-line-number="44"><span class="co">#&gt; 1                               chk_true(true)   1.6275</span></a>
-<a class="sourceLine" id="cb5-45" data-line-number="45"><span class="co">#&gt; 2                             chk_false(false)   1.9550</span></a>
-<a class="sourceLine" id="cb5-46" data-line-number="46"><span class="co">#&gt; 3                               chk_flag(true)   1.8660</span></a>
-<a class="sourceLine" id="cb5-47" data-line-number="47"><span class="co">#&gt; 4                                chk_lgl(true)   1.6670</span></a>
-<a class="sourceLine" id="cb5-48" data-line-number="48"><span class="co">#&gt; 5                             chk_number(oneL)   1.6665</span></a>
-<a class="sourceLine" id="cb5-49" data-line-number="49"><span class="co">#&gt; 6                              chk_number(one)   1.6010</span></a>
-<a class="sourceLine" id="cb5-50" data-line-number="50"><span class="co">#&gt; 7                       chk_whole_number(oneL)   2.4540</span></a>
-<a class="sourceLine" id="cb5-51" data-line-number="51"><span class="co">#&gt; 8                        chk_whole_number(one)  26.0950</span></a>
-<a class="sourceLine" id="cb5-52" data-line-number="52"><span class="co">#&gt; 9                           chk_string(string)   1.3460</span></a>
-<a class="sourceLine" id="cb5-53" data-line-number="53"><span class="co">#&gt; 10                              chk_date(date)   9.8985</span></a>
-<a class="sourceLine" id="cb5-54" data-line-number="54"><span class="co">#&gt; 11                      chk_datetime(datetime)  12.7480</span></a>
-<a class="sourceLine" id="cb5-55" data-line-number="55"><span class="co">#&gt; 12                     chk_whole_numeric(oneL)   1.2950</span></a>
-<a class="sourceLine" id="cb5-56" data-line-number="56"><span class="co">#&gt; 13                      chk_whole_numeric(one)  25.1425</span></a>
-<a class="sourceLine" id="cb5-57" data-line-number="57"><span class="co">#&gt; 14                         chk_not_any_na(one)   1.5030</span></a>
-<a class="sourceLine" id="cb5-58" data-line-number="58"><span class="co">#&gt; 15                             chk_unique(one)   9.2475</span></a>
-<a class="sourceLine" id="cb5-59" data-line-number="59"><span class="co">#&gt; 16                            chk_unique(data)  24.3710</span></a>
-<a class="sourceLine" id="cb5-60" data-line-number="60"><span class="co">#&gt; 17        chk_unique(data, incomparables = NA) 323.9930</span></a>
-<a class="sourceLine" id="cb5-61" data-line-number="61"><span class="co">#&gt; 18                              chk_null(null)   1.3650</span></a>
-<a class="sourceLine" id="cb5-62" data-line-number="62"><span class="co">#&gt; 19                           chk_not_null(one)   1.3880</span></a>
-<a class="sourceLine" id="cb5-63" data-line-number="63"><span class="co">#&gt; 20                            chk_named(named)   1.7280</span></a>
-<a class="sourceLine" id="cb5-64" data-line-number="64"><span class="co">#&gt; 21                                chk_unused()   1.2760</span></a>
-<a class="sourceLine" id="cb5-65" data-line-number="65"><span class="co">#&gt; 22                               chk_used(one)   1.7840</span></a>
-<a class="sourceLine" id="cb5-66" data-line-number="66"><span class="co">#&gt; 23                           chk_function(fun)   2.1070</span></a>
-<a class="sourceLine" id="cb5-67" data-line-number="67"><span class="co">#&gt; 24                chk_s3_class(one, "numeric")   2.7680</span></a>
-<a class="sourceLine" id="cb5-68" data-line-number="68"><span class="co">#&gt; 25                     chk_identical(one, one)   1.5810</span></a>
-<a class="sourceLine" id="cb5-69" data-line-number="69"><span class="co">#&gt; 26                         chk_equal(one, one)  26.4595</span></a>
-<a class="sourceLine" id="cb5-70" data-line-number="70"><span class="co">#&gt; 27                    chk_equivalent(one, one)  20.0030</span></a>
-<a class="sourceLine" id="cb5-71" data-line-number="71"><span class="co">#&gt; 28                              chk_lt(one, 2)   2.9710</span></a>
-<a class="sourceLine" id="cb5-72" data-line-number="72"><span class="co">#&gt; 29                           chk_lte(one, one)   3.0470</span></a>
-<a class="sourceLine" id="cb5-73" data-line-number="73"><span class="co">#&gt; 30                              chk_gt(one, 0)   2.9610</span></a>
-<a class="sourceLine" id="cb5-74" data-line-number="74"><span class="co">#&gt; 31                           chk_gte(one, one)   3.0130</span></a>
-<a class="sourceLine" id="cb5-75" data-line-number="75"><span class="co">#&gt; 32                              chk_range(one)   5.0470</span></a>
-<a class="sourceLine" id="cb5-76" data-line-number="76"><span class="co">#&gt; 33                        chk_subset(one, one)   3.4315</span></a>
-<a class="sourceLine" id="cb5-77" data-line-number="77"><span class="co">#&gt; 34                      chk_superset(one, one)   3.4410</span></a>
-<a class="sourceLine" id="cb5-78" data-line-number="78"><span class="co">#&gt; 35                           chk_match(string)  13.4980</span></a>
-<a class="sourceLine" id="cb5-79" data-line-number="79"><span class="co">#&gt; 36                     chk_all(true, chk_true)  38.5740</span></a>
-<a class="sourceLine" id="cb5-80" data-line-number="80"><span class="co">#&gt; 37                                     chkor()  62.1945</span></a>
-<a class="sourceLine" id="cb5-81" data-line-number="81"><span class="co">#&gt; 38                      chkor(chk_number(one)) 135.1030</span></a>
-<a class="sourceLine" id="cb5-82" data-line-number="82"><span class="co">#&gt; 39 chkor(chk_number(one), chk_proportion(one)) 138.1265</span></a></code></pre></div>
+<a class="sourceLine" id="cb5-44" data-line-number="44"><span class="co">#&gt; 1                               chk_true(true)   1.7120</span></a>
+<a class="sourceLine" id="cb5-45" data-line-number="45"><span class="co">#&gt; 2                             chk_false(false)   2.0250</span></a>
+<a class="sourceLine" id="cb5-46" data-line-number="46"><span class="co">#&gt; 3                               chk_flag(true)   2.0020</span></a>
+<a class="sourceLine" id="cb5-47" data-line-number="47"><span class="co">#&gt; 4                                chk_lgl(true)   1.7330</span></a>
+<a class="sourceLine" id="cb5-48" data-line-number="48"><span class="co">#&gt; 5                             chk_number(oneL)   1.7310</span></a>
+<a class="sourceLine" id="cb5-49" data-line-number="49"><span class="co">#&gt; 6                              chk_number(one)   1.6520</span></a>
+<a class="sourceLine" id="cb5-50" data-line-number="50"><span class="co">#&gt; 7                       chk_whole_number(oneL)   2.5370</span></a>
+<a class="sourceLine" id="cb5-51" data-line-number="51"><span class="co">#&gt; 8                        chk_whole_number(one)  26.5350</span></a>
+<a class="sourceLine" id="cb5-52" data-line-number="52"><span class="co">#&gt; 9                           chk_string(string)   1.5100</span></a>
+<a class="sourceLine" id="cb5-53" data-line-number="53"><span class="co">#&gt; 10                              chk_date(date)  10.5970</span></a>
+<a class="sourceLine" id="cb5-54" data-line-number="54"><span class="co">#&gt; 11                      chk_datetime(datetime)  13.3925</span></a>
+<a class="sourceLine" id="cb5-55" data-line-number="55"><span class="co">#&gt; 12                     chk_whole_numeric(oneL)   1.3895</span></a>
+<a class="sourceLine" id="cb5-56" data-line-number="56"><span class="co">#&gt; 13                      chk_whole_numeric(one)  25.7065</span></a>
+<a class="sourceLine" id="cb5-57" data-line-number="57"><span class="co">#&gt; 14                         chk_not_any_na(one)   1.6940</span></a>
+<a class="sourceLine" id="cb5-58" data-line-number="58"><span class="co">#&gt; 15                             chk_unique(one)   9.6030</span></a>
+<a class="sourceLine" id="cb5-59" data-line-number="59"><span class="co">#&gt; 16                            chk_unique(data)  25.2120</span></a>
+<a class="sourceLine" id="cb5-60" data-line-number="60"><span class="co">#&gt; 17        chk_unique(data, incomparables = NA) 338.7195</span></a>
+<a class="sourceLine" id="cb5-61" data-line-number="61"><span class="co">#&gt; 18                              chk_null(null)   1.6120</span></a>
+<a class="sourceLine" id="cb5-62" data-line-number="62"><span class="co">#&gt; 19                           chk_not_null(one)   1.6180</span></a>
+<a class="sourceLine" id="cb5-63" data-line-number="63"><span class="co">#&gt; 20                            chk_named(named)   1.8610</span></a>
+<a class="sourceLine" id="cb5-64" data-line-number="64"><span class="co">#&gt; 21                                chk_unused()   1.3140</span></a>
+<a class="sourceLine" id="cb5-65" data-line-number="65"><span class="co">#&gt; 22                               chk_used(one)   1.9800</span></a>
+<a class="sourceLine" id="cb5-66" data-line-number="66"><span class="co">#&gt; 23                           chk_function(fun)   2.3700</span></a>
+<a class="sourceLine" id="cb5-67" data-line-number="67"><span class="co">#&gt; 24                chk_s3_class(one, "numeric")   3.0920</span></a>
+<a class="sourceLine" id="cb5-68" data-line-number="68"><span class="co">#&gt; 25                     chk_identical(one, one)   1.6760</span></a>
+<a class="sourceLine" id="cb5-69" data-line-number="69"><span class="co">#&gt; 26                         chk_equal(one, one)  27.2840</span></a>
+<a class="sourceLine" id="cb5-70" data-line-number="70"><span class="co">#&gt; 27                    chk_equivalent(one, one)  20.8420</span></a>
+<a class="sourceLine" id="cb5-71" data-line-number="71"><span class="co">#&gt; 28                              chk_lt(one, 2)   3.2770</span></a>
+<a class="sourceLine" id="cb5-72" data-line-number="72"><span class="co">#&gt; 29                           chk_lte(one, one)   3.2800</span></a>
+<a class="sourceLine" id="cb5-73" data-line-number="73"><span class="co">#&gt; 30                              chk_gt(one, 0)   3.1670</span></a>
+<a class="sourceLine" id="cb5-74" data-line-number="74"><span class="co">#&gt; 31                           chk_gte(one, one)   3.2810</span></a>
+<a class="sourceLine" id="cb5-75" data-line-number="75"><span class="co">#&gt; 32                              chk_range(one)   5.5035</span></a>
+<a class="sourceLine" id="cb5-76" data-line-number="76"><span class="co">#&gt; 33                        chk_subset(one, one)   3.7890</span></a>
+<a class="sourceLine" id="cb5-77" data-line-number="77"><span class="co">#&gt; 34                      chk_superset(one, one)   3.7140</span></a>
+<a class="sourceLine" id="cb5-78" data-line-number="78"><span class="co">#&gt; 35                           chk_match(string)  15.2940</span></a>
+<a class="sourceLine" id="cb5-79" data-line-number="79"><span class="co">#&gt; 36                     chk_all(true, chk_true)  40.6085</span></a>
+<a class="sourceLine" id="cb5-80" data-line-number="80"><span class="co">#&gt; 37                                     chkor()  64.0995</span></a>
+<a class="sourceLine" id="cb5-81" data-line-number="81"><span class="co">#&gt; 38                      chkor(chk_number(one)) 139.8545</span></a>
+<a class="sourceLine" id="cb5-82" data-line-number="82"><span class="co">#&gt; 39 chkor(chk_number(one), chk_proportion(one)) 142.2930</span></a></code></pre></div>
 </div>
   </div>
 
