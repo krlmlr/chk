@@ -101,7 +101,7 @@
 <a href="#chk" class="anchor"></a>chk <img src="reference/figures/logo.png" align="right">
 </h1></div>
 <!-- badges: start -->
-
+<p><a href="https://www.tidyverse.org/lifecycle/#maturing"><img src="https://img.shields.io/badge/lifecycle-maturing-blue.svg" alt="Lifecycle: maturing"></a> <a href="https://travis-ci.com/poissonconsulting/chk"><img src="https://travis-ci.com/poissonconsulting/chk.svg?branch=master" alt="Travis build status"></a> <a href="https://ci.appveyor.com/project/poissonconsulting/chk"><img src="https://ci.appveyor.com/api/projects/status/github/poissonconsulting/chk?branch=master&amp;svg=true" alt="AppVeyor build status"></a> <a href="https://codecov.io/gh/poissonconsulting/chk?branch=master"><img src="https://codecov.io/gh/poissonconsulting/chk/branch/master/graph/badge.svg" alt="Codecov test coverage"></a> <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License: MIT"></a> <a href="https://CRAN.R-project.org/package=chk"><img src="https://tinyverse.netlify.com/badge/chk" alt="Tinyverse status"></a> <a href="https://cran.r-project.org/package=chk"><img src="https://www.r-pkg.org/badges/version/chk" alt="CRAN status"></a> <img src="https://cranlogs.r-pkg.org/badges/chk" alt="CRAN downloads"><!-- badges: end --></p>
 <p><code>chk</code> is an R package for developers to check user-supplied function arguments.</p>
 <p>It is designed to be simple, customizable and fast.</p>
 <div id="installation" class="section level2">
@@ -125,16 +125,16 @@
 <a class="sourceLine" id="cb3-4" data-line-number="4"></a>
 <a class="sourceLine" id="cb3-5" data-line-number="5"><span class="kw"><a href="reference/chk_string.html">chk_string</a></span>(y)</a>
 <a class="sourceLine" id="cb3-6" data-line-number="6"><span class="kw"><a href="reference/chk_flag.html">chk_flag</a></span>(y)</a>
-<a class="sourceLine" id="cb3-7" data-line-number="7"><span class="co">#&gt; `y` must be a flag (TRUE or FALSE).</span></a>
+<a class="sourceLine" id="cb3-7" data-line-number="7"><span class="co">#&gt; Error: `y` must be a flag (TRUE or FALSE).</span></a>
 <a class="sourceLine" id="cb3-8" data-line-number="8"></a>
 <a class="sourceLine" id="cb3-9" data-line-number="9"><span class="kw"><a href="reference/chkor.html">chkor</a></span>(<span class="kw"><a href="reference/chk_flag.html">chk_flag</a></span>(y), <span class="kw"><a href="reference/chk_number.html">chk_number</a></span>(y))</a>
-<a class="sourceLine" id="cb3-10" data-line-number="10"><span class="co">#&gt; At least one of the following conditions must be met:</span></a>
+<a class="sourceLine" id="cb3-10" data-line-number="10"><span class="co">#&gt; Error: At least one of the following conditions must be met:</span></a>
 <a class="sourceLine" id="cb3-11" data-line-number="11"><span class="co">#&gt; * `y` must be a flag (TRUE or FALSE).</span></a>
 <a class="sourceLine" id="cb3-12" data-line-number="12"><span class="co">#&gt; * `y` must be a number (non-missing numeric scalar).</span></a>
 <a class="sourceLine" id="cb3-13" data-line-number="13"></a>
 <a class="sourceLine" id="cb3-14" data-line-number="14">data &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span>(<span class="dt">x =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb3-15" data-line-number="15"><span class="kw"><a href="reference/chk_range.html">chk_range</a></span>(<span class="kw"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span>(data), <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="dv">3</span>,<span class="dv">8</span>))</a>
-<a class="sourceLine" id="cb3-16" data-line-number="16"><span class="co">#&gt; `nrow(data)` must be between 3 and 8, not 2.</span></a></code></pre></div>
+<a class="sourceLine" id="cb3-15" data-line-number="15"><span class="kw"><a href="reference/chk_range.html">chk_range</a></span>(<span class="kw"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span>(data), <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="dv">3</span>, <span class="dv">8</span>))</a>
+<a class="sourceLine" id="cb3-16" data-line-number="16"><span class="co">#&gt; Error: `nrow(data)` must be between 3 and 8, not 2.</span></a></code></pre></div>
 <p>Error messages follow the <a href="https://style.tidyverse.org/error-messages.html">tidyverse style guide</a> while the errors themselves are <a href="https://rlang.r-lib.org/reference/abort.html">rlang errors</a> of subclass <code>chk_error</code>.</p>
 </div>
 <div id="information" class="section level2">
@@ -157,7 +157,7 @@
 <a href="#contribution" class="anchor"></a>Contribution</h2>
 <p>Please report any <a href="https://github.com/poissonconsulting/chk/issues">issues</a>.</p>
 <p><a href="https://github.com/poissonconsulting/chk/pulls">Pull requests</a> are always welcome.</p>
-<p>Please note that this project is released with a <a href="https://github.com/poissonconsulting/chk/blob/master/CODE_OF_CONDUCT.md">Contributor Code of Conduct</a>. By contributing, you agree to abide by its terms.</p>
+<p>Please note that this project is released with a <a href="https://github.com/poissonconsulting/chk/blob/master/CODE_OF_CONDUCT.md">Contributor Code of Conduct</a>. By contributing, you agree to abide by its terms</p>
 </div>
 </div>
   </div>
@@ -166,6 +166,8 @@
     <div class="links">
 <h2>Links</h2>
 <ul class="list-unstyled">
+<li>Download from CRAN at <br><a href="https://cloud.r-project.org/package=chk">https://​cloud.r-project.org/​package=chk</a>
+</li>
 <li>Browse source code at <br><a href="https://github.com/poissonconsulting/chk">https://​github.com/​poissonconsulting/​chk</a>
 </li>
 <li>Report a bug at <br><a href="https://github.com/poissonconsulting/chk/issues">https://​github.com/​poissonconsulting/​chk/​issues</a>
@@ -195,17 +197,7 @@
 </ul>
 </div>
 
-  <div class="dev-status">
-<h2>Dev status</h2>
-<ul class="list-unstyled">
-<li><a href="https://www.tidyverse.org/lifecycle/#maturing"><img src="https://img.shields.io/badge/lifecycle-maturing-blue.svg" alt="Lifecycle: maturing"></a></li>
-<li><a href="https://travis-ci.com/poissonconsulting/chk"><img src="https://travis-ci.com/poissonconsulting/chk.svg?branch=master" alt="Travis build status"></a></li>
-<li><a href="https://ci.appveyor.com/project/poissonconsulting/chk"><img src="https://ci.appveyor.com/api/projects/status/github/poissonconsulting/chk?branch=master&amp;svg=true" alt="AppVeyor build status"></a></li>
-<li><a href="https://codecov.io/gh/poissonconsulting/chk?branch=master"><img src="https://codecov.io/gh/poissonconsulting/chk/branch/master/graph/badge.svg" alt="Codecov test coverage"></a></li>
-<li><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License: MIT"></a></li>
-</ul>
-</div>
-</div>
+  </div>
 </div>
 
 
