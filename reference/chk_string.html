@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Check/Validate String or Matches — chk_string • chk</title>
+<title>Check String — chk_string • chk</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -42,8 +42,9 @@
 
 
 
-<meta property="og:title" content="Check/Validate String or Matches — chk_string" />
-<meta property="og:description" content="Checks/validates if string or matches a regular expression." />
+<meta property="og:title" content="Check String — chk_string" />
+<meta property="og:description" content="Checks if string
+is.character(x) &amp;amp;&amp;amp; length(x) == 1L &amp;amp;&amp;amp; !anyNA(x)" />
 <meta property="og:image" content="/logo.png" />
 <meta name="twitter:card" content="summary" />
 
@@ -134,22 +135,19 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Check/Validate String or Matches</h1>
+    <h1>Check String</h1>
     <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/chk/blob/master/R/chk-string.R'><code>R/chk-string.R</code></a></small>
     <div class="hidden name"><code>chk_string.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Checks/validates if string or matches a regular expression.</p>
+    <p>Checks if string</p>
+<p><code>is.character(x) &amp;&amp; length(x) == 1L &amp;&amp; !anyNA(x)</code></p>
     </div>
 
     <pre class="usage"><span class='fu'>chk_string</span>(<span class='no'>x</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
 
-<span class='fu'>vld_string</span>(<span class='no'>x</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
-
-<span class='fu'>chk_match</span>(<span class='no'>x</span>, <span class='kw'>regexp</span> <span class='kw'>=</span> <span class='st'>".+"</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
-
-<span class='fu'>vld_match</span>(<span class='no'>x</span>, <span class='kw'>regexp</span> <span class='kw'>=</span> <span class='st'>".+"</span>)</pre>
+<span class='fu'>vld_string</span>(<span class='no'>x</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -162,38 +160,26 @@
       <th>x_name</th>
       <td><p>A string of the name of object x or NULL.</p></td>
     </tr>
-    <tr>
-      <th>regexp</th>
-      <td><p>A string of a regular expression.</p></td>
-    </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>The <code>chk_</code> functions throw an informative error if the test fails.
-The <code>vld_</code> functions return a flag indicating whether the test was met.</p>
+    <p>The <code>chk_</code> functions throw an informative error if the test fails.</p>
+<p>The <code>vld_</code> functions return a flag indicating whether the test was met.</p>
     <h2 class="hasAnchor" id="functions"><a class="anchor" href="#functions"></a>Functions</h2>
 
     
 <ul>
-<li><p><code>chk_string</code>: Check String</p>
-<p>Checks if non-missing character scalar using
-<code>vld_string()</code>.</p></li>
-<li><p><code>vld_string</code>: Validate String</p>
-<p>Validates non-missing character scalar using</p>
-<p><code>is.character(x) &amp;&amp; length(x) == 1L &amp;&amp; !anyNA(x)</code>.</p></li>
-<li><p><code>chk_match</code>: Check Matches</p>
-<p>Checks if all values match regular expression using
-<code>vld_match()</code>.</p></li>
-<li><p><code>vld_match</code>: Validate Matches</p>
-<p>Validates all values match regular expression using</p>
-<p><code><a href='https://rdrr.io/r/base/all.html'>all(grepl(regexp, x))</a></code>.</p>
-<p><code>regexp</code> should be a non-missing character scalar.</p></li>
+<li><p><code>vld_string</code>: Validate String</p></li>
 </ul>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code><a href='https://rdrr.io/r/base/all.html'>all()</a></code></p>
-<p><code><a href='https://rdrr.io/r/base/grep.html'>grepl()</a></code></p></div>
+    <div class='dont-index'><p>Other chk_scalars: 
+<code><a href='chk_datetime.html'>chk_datetime</a>()</code>,
+<code><a href='chk_date.html'>chk_date</a>()</code>,
+<code><a href='chk_number.html'>chk_number</a>()</code>,
+<code><a href='chk_scalar.html'>chk_scalar</a>()</code>,
+<code><a href='chk_whole_number.html'>chk_whole_number</a>()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
@@ -201,12 +187,7 @@ The <code>vld_</code> functions return a flag indicating whether the test was me
 <span class='fu'>chk_string</span>(<span class='st'>"1"</span>)
 <span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_string</span>(<span class='fl'>1</span>))</div><div class='output co'>#&gt; Error : `1` must be a string (non-missing character scalar).</div><div class='input'>
 <span class='co'># vld_string</span>
-<span class='fu'>vld_string</span>(<span class='st'>"1"</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_string</span>(<span class='st'>""</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_string</span>(<span class='fl'>1</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>vld_string</span>(<span class='fl'>NA_character_</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>vld_string</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"1"</span>, <span class='st'>"1"</span>))</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'>
-<span class='co'># chk_match</span>
-<span class='fu'>chk_match</span>(<span class='st'>"1"</span>)
-<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_match</span>(<span class='st'>"1"</span>, <span class='kw'>regexp</span> <span class='kw'>=</span> <span class='st'>"2"</span>))</div><div class='output co'>#&gt; Error : `"1"` must match regular expression '2'.</div><div class='input'>
-<span class='co'># vld_match</span>
-<span class='fu'>vld_match</span>(<span class='st'>"1"</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_match</span>(<span class='st'>"a"</span>, <span class='kw'>regexp</span> <span class='kw'>=</span> <span class='st'>"a"</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_match</span>(<span class='st'>""</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>vld_match</span>(<span class='st'>"1"</span>, <span class='kw'>regexp</span> <span class='kw'>=</span> <span class='st'>"2"</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>vld_match</span>(<span class='fl'>NA_character_</span>, <span class='kw'>regexp</span> <span class='kw'>=</span> <span class='st'>".*"</span>)</div><div class='output co'>#&gt; [1] TRUE</div></pre>
+<span class='fu'>vld_string</span>(<span class='st'>"1"</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_string</span>(<span class='st'>""</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_string</span>(<span class='fl'>1</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>vld_string</span>(<span class='fl'>NA_character_</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>vld_string</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"1"</span>, <span class='st'>"1"</span>))</div><div class='output co'>#&gt; [1] FALSE</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

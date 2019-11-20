@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Check/Validate ... Unused or Used — chk_unused • chk</title>
+<title>Check ... Unused — chk_unused • chk</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -42,8 +42,9 @@
 
 
 
-<meta property="og:title" content="Check/Validate ... Unused or Used — chk_unused" />
-<meta property="og:description" content="Checks/validates if ... is unused or used." />
+<meta property="og:title" content="Check ... Unused — chk_unused" />
+<meta property="og:description" content="Checks if ... is unused
+length(list(...)) == 0L" />
 <meta property="og:image" content="/logo.png" />
 <meta name="twitter:card" content="summary" />
 
@@ -134,22 +135,19 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Check/Validate ... Unused or Used</h1>
+    <h1>Check ... Unused</h1>
     <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/chk/blob/master/R/chk-unused.R'><code>R/chk-unused.R</code></a></small>
     <div class="hidden name"><code>chk_unused.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Checks/validates if ... is unused or used.</p>
+    <p>Checks if ... is unused</p>
+<p><code>length(list(...)) == 0L</code></p>
     </div>
 
     <pre class="usage"><span class='fu'>chk_unused</span>(<span class='no'>...</span>)
 
-<span class='fu'>vld_unused</span>(<span class='no'>...</span>)
-
-<span class='fu'>chk_used</span>(<span class='no'>...</span>)
-
-<span class='fu'>vld_used</span>(<span class='no'>...</span>)</pre>
+<span class='fu'>vld_unused</span>(<span class='no'>...</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -162,30 +160,18 @@
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>The <code>chk_</code> functions throw an informative error if the test fails.
-The <code>vld_</code> functions return a flag indicating whether the test was met.</p>
+    <p>The <code>chk_</code> functions throw an informative error if the test fails.</p>
+<p>The <code>vld_</code> functions return a flag indicating whether the test was met.</p>
     <h2 class="hasAnchor" id="functions"><a class="anchor" href="#functions"></a>Functions</h2>
 
     
 <ul>
-<li><p><code>chk_unused</code>: Check ... Unused</p>
-<p>Checks if is ... unused using
-<code>vld_unused()</code>.</p></li>
-<li><p><code>vld_unused</code>: Validate ... Unused</p>
-<p>Validates if is ... unused using</p>
-<p><code>length(list(...)) == 0L</code>.</p></li>
-<li><p><code>chk_used</code>: Check ... Used</p>
-<p>Checks if is ... used using
-<code>vld_unused()</code>.</p></li>
-<li><p><code>vld_used</code>: Validate ... Used</p>
-<p>Validates if ... used using</p>
-<p><code>length(list(...)) != 0L</code>.</p></li>
+<li><p><code>vld_unused</code>: Validate ... Unused</p></li>
 </ul>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code><a href='https://rdrr.io/r/base/length.html'>length()</a></code></p>
-<p><code><a href='https://rdrr.io/r/base/list.html'>list()</a></code></p>
-<p><code><a href='https://rdrr.io/r/base/dots.html'>...</a></code></p></div>
+    <div class='dont-index'><p>Other chk_ellipsis: 
+<code><a href='chk_used.html'>chk_used</a>()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
@@ -199,18 +185,7 @@ The <code>vld_</code> functions return a flag indicating whether the test was me
 <span class='no'>fun</span> <span class='kw'>&lt;-</span> <span class='kw'>function</span>(<span class='no'>x</span>, <span class='no'>...</span>) {
   <span class='fu'>vld_unused</span>(<span class='no'>...</span>)
 }
-<span class='fu'>fun</span>(<span class='fl'>1</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>fun</span>(<span class='fl'>1</span>, <span class='fl'>2</span>))</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'>
-<span class='co'># chk_used</span>
-<span class='no'>fun</span> <span class='kw'>&lt;-</span> <span class='kw'>function</span>(<span class='no'>x</span>, <span class='no'>...</span>) {
-  <span class='fu'>chk_used</span>(<span class='no'>...</span>)
-  <span class='no'>x</span>
-}
-<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>fun</span>(<span class='fl'>1</span>))</div><div class='output co'>#&gt; Error : `...` must be used.</div><div class='input'><span class='fu'>fun</span>(<span class='fl'>1</span>, <span class='fl'>2</span>)</div><div class='output co'>#&gt; [1] 1</div><div class='input'>
-<span class='co'># vld_used</span>
-<span class='no'>fun</span> <span class='kw'>&lt;-</span> <span class='kw'>function</span>(<span class='no'>x</span>, <span class='no'>...</span>) {
-  <span class='fu'>vld_used</span>(<span class='no'>...</span>)
-}
-<span class='fu'>fun</span>(<span class='fl'>1</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>fun</span>(<span class='fl'>1</span>, <span class='fl'>2</span>)</div><div class='output co'>#&gt; [1] TRUE</div></pre>
+<span class='fu'>fun</span>(<span class='fl'>1</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>fun</span>(<span class='fl'>1</span>, <span class='fl'>2</span>))</div><div class='output co'>#&gt; [1] FALSE</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Check File Exists — chk_file • chk</title>
+<title>Check Inherits from S4 Class — chk_s4_class • chk</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -42,9 +42,9 @@
 
 
 
-<meta property="og:title" content="Check File Exists — chk_file" />
-<meta property="og:description" content="Checks if file exists using
-vld_string(x) &amp;amp;&amp;amp; file.exists(x) &amp;amp;&amp;amp; !dir.exists(x)" />
+<meta property="og:title" content="Check Inherits from S4 Class — chk_s4_class" />
+<meta property="og:description" content="Checks inherits from S4 class using
+isS4(x) &amp;amp;&amp;amp; methods::is(x, class)" />
 <meta property="og:image" content="/logo.png" />
 <meta name="twitter:card" content="summary" />
 
@@ -135,19 +135,19 @@ vld_string(x) &amp;amp;&amp;amp; file.exists(x) &amp;amp;&amp;amp; !dir.exists(x
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Check File Exists</h1>
-    <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/chk/blob/master/R/chk-file.R'><code>R/chk-file.R</code></a></small>
-    <div class="hidden name"><code>chk_file.Rd</code></div>
+    <h1>Check Inherits from S4 Class</h1>
+    <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/chk/blob/master/R/chk-s4-class.R'><code>R/chk-s4-class.R</code></a></small>
+    <div class="hidden name"><code>chk_s4_class.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Checks if file exists using</p>
-<p><code>vld_string(x) &amp;&amp; file.exists(x) &amp;&amp; !dir.exists(x)</code></p>
+    <p>Checks inherits from S4 class using</p>
+<p><code>isS4(x) &amp;&amp; methods::is(x, class)</code></p>
     </div>
 
-    <pre class="usage"><span class='fu'>chk_file</span>(<span class='no'>x</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
+    <pre class="usage"><span class='fu'>chk_s4_class</span>(<span class='no'>x</span>, <span class='no'>class</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
 
-<span class='fu'>vld_file</span>(<span class='no'>x</span>)</pre>
+<span class='fu'>vld_s4_class</span>(<span class='no'>x</span>, <span class='no'>class</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -157,6 +157,10 @@ vld_string(x) &amp;amp;&amp;amp; file.exists(x) &amp;amp;&amp;amp; !dir.exists(x
       <td><p>The object to check.</p></td>
     </tr>
     <tr>
+      <th>class</th>
+      <td><p>A string specifying the class.</p></td>
+    </tr>
+    <tr>
       <th>x_name</th>
       <td><p>A string of the name of object x or NULL.</p></td>
     </tr>
@@ -164,26 +168,33 @@ vld_string(x) &amp;amp;&amp;amp; file.exists(x) &amp;amp;&amp;amp; !dir.exists(x
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>The <code>chk_</code> functions throw an informative error if the test fails.</p>
-<p>The <code>vld_</code> functions return a flag indicating whether the test was met.</p>
+    <p>The <code>chk_</code> function throws an informative error if the test fails.</p>
+<p>The <code>vld_</code> function returns a flag indicating whether the test was met.</p>
     <h2 class="hasAnchor" id="functions"><a class="anchor" href="#functions"></a>Functions</h2>
 
     
 <ul>
-<li><p><code>vld_file</code>: Validate File Exists</p></li>
+<li><p><code>vld_s4_class</code>: Validate Inherits from S4 Class</p></li>
 </ul>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p>Other chk_files: 
-<code><a href='chk_dir.html'>chk_dir</a>()</code>,
-<code><a href='chk_ext.html'>chk_ext</a>()</code></p></div>
+    <div class='dont-index'><p>Other chk_is: 
+<code><a href='chk_atomic.html'>chk_atomic</a>()</code>,
+<code><a href='chk_environment.html'>chk_environment</a>()</code>,
+<code><a href='chk_function.html'>chk_function</a>()</code>,
+<code><a href='chk_list.html'>chk_list</a>()</code>,
+<code><a href='chk_numeric.html'>chk_numeric</a>()</code>,
+<code><a href='chk_s3_class.html'>chk_s3_class</a>()</code>,
+<code><a href='chk_vector.html'>chk_vector</a>()</code>,
+<code><a href='chk_whole_numeric.html'>chk_whole_numeric</a>()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='co'># chk_file</span>
-<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_file</span>(<span class='fu'><a href='https://rdrr.io/r/base/tempfile.html'>tempfile</a></span>()))</div><div class='output co'>#&gt; Error : `tempfile()` must specify an existing file ('/tmp/RtmprDyQcU/file340e6dd67dc1' can't be found).</div><div class='input'>
-<span class='co'># vld_file</span>
-<span class='fu'>vld_file</span>(<span class='fu'><a href='https://rdrr.io/r/base/tempfile.html'>tempfile</a></span>())</div><div class='output co'>#&gt; [1] FALSE</div></pre>
+<span class='co'># chk_s4_class</span>
+<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_s4_class</span>(<span class='fl'>1</span>, <span class='st'>"numeric"</span>))</div><div class='output co'>#&gt; Error : `1` must inherit from S4 class 'numeric'.</div><div class='input'><span class='fu'>chk_s4_class</span>(<span class='fu'>getClass</span>(<span class='st'>"MethodDefinition"</span>), <span class='st'>"classRepresentation"</span>)
+
+<span class='co'># vld_s4_class</span>
+<span class='fu'>vld_s4_class</span>(<span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></span>(<span class='fl'>0</span>), <span class='st'>"numeric"</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>vld_s4_class</span>(<span class='fu'>getClass</span>(<span class='st'>"MethodDefinition"</span>), <span class='st'>"classRepresentation"</span>)</div><div class='output co'>#&gt; [1] TRUE</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

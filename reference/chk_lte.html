@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Check File Exists — chk_file • chk</title>
+<title>Check Less Than or Equal To — chk_lte • chk</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -42,9 +42,9 @@
 
 
 
-<meta property="og:title" content="Check File Exists — chk_file" />
-<meta property="og:description" content="Checks if file exists using
-vld_string(x) &amp;amp;&amp;amp; file.exists(x) &amp;amp;&amp;amp; !dir.exists(x)" />
+<meta property="og:title" content="Check Less Than or Equal To — chk_lte" />
+<meta property="og:description" content="Checks if all non-missing values are less than or equal to y using
+all(x[!is.na(x)] &amp;lt;= value)" />
 <meta property="og:image" content="/logo.png" />
 <meta name="twitter:card" content="summary" />
 
@@ -135,19 +135,19 @@ vld_string(x) &amp;amp;&amp;amp; file.exists(x) &amp;amp;&amp;amp; !dir.exists(x
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Check File Exists</h1>
-    <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/chk/blob/master/R/chk-file.R'><code>R/chk-file.R</code></a></small>
-    <div class="hidden name"><code>chk_file.Rd</code></div>
+    <h1>Check Less Than or Equal To</h1>
+    <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/chk/blob/master/R/chk-lte.R'><code>R/chk-lte.R</code></a></small>
+    <div class="hidden name"><code>chk_lte.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Checks if file exists using</p>
-<p><code>vld_string(x) &amp;&amp; file.exists(x) &amp;&amp; !dir.exists(x)</code></p>
+    <p>Checks if all non-missing values are less than or equal to y using</p>
+<p><code>all(x[!is.na(x)] &lt;= value)</code></p>
     </div>
 
-    <pre class="usage"><span class='fu'>chk_file</span>(<span class='no'>x</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
+    <pre class="usage"><span class='fu'>chk_lte</span>(<span class='no'>x</span>, <span class='kw'>value</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
 
-<span class='fu'>vld_file</span>(<span class='no'>x</span>)</pre>
+<span class='fu'>vld_lte</span>(<span class='no'>x</span>, <span class='kw'>value</span> <span class='kw'>=</span> <span class='fl'>0</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -157,6 +157,10 @@ vld_string(x) &amp;amp;&amp;amp; file.exists(x) &amp;amp;&amp;amp; !dir.exists(x
       <td><p>The object to check.</p></td>
     </tr>
     <tr>
+      <th>value</th>
+      <td><p>A non-missing scalar of a value.</p></td>
+    </tr>
+    <tr>
       <th>x_name</th>
       <td><p>A string of the name of object x or NULL.</p></td>
     </tr>
@@ -164,26 +168,29 @@ vld_string(x) &amp;amp;&amp;amp; file.exists(x) &amp;amp;&amp;amp; !dir.exists(x
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>The <code>chk_</code> functions throw an informative error if the test fails.</p>
-<p>The <code>vld_</code> functions return a flag indicating whether the test was met.</p>
+    <p>The <code>chk_</code> function throws an informative error if the test fails.</p>
+<p>The <code>vld_</code> function returns a flag indicating whether the test was met.</p>
     <h2 class="hasAnchor" id="functions"><a class="anchor" href="#functions"></a>Functions</h2>
 
     
 <ul>
-<li><p><code>vld_file</code>: Validate File Exists</p></li>
+<li><p><code>vld_lte</code>: Validate Less Than or Equal To</p></li>
 </ul>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p>Other chk_files: 
-<code><a href='chk_dir.html'>chk_dir</a>()</code>,
-<code><a href='chk_ext.html'>chk_ext</a>()</code></p></div>
+    <div class='dont-index'><p>Other chk_ranges: 
+<code><a href='chk_gte.html'>chk_gte</a>()</code>,
+<code><a href='chk_gt.html'>chk_gt</a>()</code>,
+<code><a href='chk_lt.html'>chk_lt</a>()</code>,
+<code><a href='chk_range.html'>chk_range</a>()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='co'># chk_file</span>
-<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_file</span>(<span class='fu'><a href='https://rdrr.io/r/base/tempfile.html'>tempfile</a></span>()))</div><div class='output co'>#&gt; Error : `tempfile()` must specify an existing file ('/tmp/RtmprDyQcU/file340e6dd67dc1' can't be found).</div><div class='input'>
-<span class='co'># vld_file</span>
-<span class='fu'>vld_file</span>(<span class='fu'><a href='https://rdrr.io/r/base/tempfile.html'>tempfile</a></span>())</div><div class='output co'>#&gt; [1] FALSE</div></pre>
+<span class='co'># chk_lte</span>
+<span class='fu'>chk_lte</span>(<span class='fl'>0</span>)
+<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_lte</span>(<span class='fl'>0.1</span>))</div><div class='output co'>#&gt; Error : `0.1` must be less than or equal to 0, not 0.1.</div><div class='input'>
+<span class='co'># vld_lte</span>
+<span class='fu'>vld_lte</span>(<span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></span>(<span class='fl'>0</span>))</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_lte</span>(<span class='fl'>0</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_lte</span>(<span class='fl'>0.1</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>vld_lte</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(-<span class='fl'>0.1</span>, -<span class='fl'>0.2</span>, <span class='fl'>NA</span>))</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_lte</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(-<span class='fl'>0.1</span>, -<span class='fl'>0.2</span>, <span class='fl'>NA</span>), <span class='kw'>value</span> <span class='kw'>=</span> -<span class='fl'>1</span>)</div><div class='output co'>#&gt; [1] FALSE</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

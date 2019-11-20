@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Check/Validate Range — chk_range • chk</title>
+<title>Checks range of non-missing values — chk_range • chk</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -42,8 +42,9 @@
 
 
 
-<meta property="og:title" content="Check/Validate Range — chk_range" />
-<meta property="og:description" content="Checks/validates range of non-missing values." />
+<meta property="og:title" content="Checks range of non-missing values — chk_range" />
+<meta property="og:description" content="Checks all non-missing values fall within range using
+all(x[!is.na(x)] &amp;gt;= range[1] &amp;amp; x[!is.na(x)] &amp;lt;= range[2])" />
 <meta property="og:image" content="/logo.png" />
 <meta name="twitter:card" content="summary" />
 
@@ -134,34 +135,19 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Check/Validate Range</h1>
+    <h1>Checks range of non-missing values</h1>
     <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/chk/blob/master/R/chk-range.R'><code>R/chk-range.R</code></a></small>
     <div class="hidden name"><code>chk_range.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Checks/validates range of non-missing values.</p>
+    <p>Checks all non-missing values fall within range using</p>
+<p><code>all(x[!is.na(x)] &gt;= range[1] &amp; x[!is.na(x)] &lt;= range[2])</code></p>
     </div>
 
     <pre class="usage"><span class='fu'>chk_range</span>(<span class='no'>x</span>, <span class='kw'>range</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0</span>, <span class='fl'>1</span>), <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
 
-<span class='fu'>vld_range</span>(<span class='no'>x</span>, <span class='kw'>range</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0</span>, <span class='fl'>1</span>))
-
-<span class='fu'>chk_lt</span>(<span class='no'>x</span>, <span class='kw'>value</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
-
-<span class='fu'>vld_lt</span>(<span class='no'>x</span>, <span class='kw'>value</span> <span class='kw'>=</span> <span class='fl'>0</span>)
-
-<span class='fu'>chk_lte</span>(<span class='no'>x</span>, <span class='kw'>value</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
-
-<span class='fu'>vld_lte</span>(<span class='no'>x</span>, <span class='kw'>value</span> <span class='kw'>=</span> <span class='fl'>0</span>)
-
-<span class='fu'>chk_gt</span>(<span class='no'>x</span>, <span class='kw'>value</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
-
-<span class='fu'>vld_gt</span>(<span class='no'>x</span>, <span class='kw'>value</span> <span class='kw'>=</span> <span class='fl'>0</span>)
-
-<span class='fu'>chk_gte</span>(<span class='no'>x</span>, <span class='kw'>value</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
-
-<span class='fu'>vld_gte</span>(<span class='no'>x</span>, <span class='kw'>value</span> <span class='kw'>=</span> <span class='fl'>0</span>)</pre>
+<span class='fu'>vld_range</span>(<span class='no'>x</span>, <span class='kw'>range</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0</span>, <span class='fl'>1</span>))</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -172,62 +158,31 @@
     </tr>
     <tr>
       <th>range</th>
-      <td><p>A vector of length 2 of the lower and upper permitted values.</p></td>
+      <td><p>A non-missing sorted vector of length 2 of the lower and upper permitted values.</p></td>
     </tr>
     <tr>
       <th>x_name</th>
       <td><p>A string of the name of object x or NULL.</p></td>
     </tr>
-    <tr>
-      <th>value</th>
-      <td><p>A non-missing scalar of a value.</p></td>
-    </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>The <code>chk_</code> functions throw an informative error if the test fails.
-The <code>vld_</code> functions return a flag indicating whether the test was met.</p>
+    <p>The <code>chk_</code> functions throw an informative error if the test fails.</p>
+<p>The <code>vld_</code> functions return a flag indicating whether the test was met.</p>
     <h2 class="hasAnchor" id="functions"><a class="anchor" href="#functions"></a>Functions</h2>
 
     
 <ul>
-<li><p><code>chk_range</code>: Check Range</p>
-<p>Checks if all non-missing values fall within range using
-<code>vld_range()</code>.</p></li>
-<li><p><code>vld_range</code>: Validate Range</p>
-<p>Validates all non-missing values fall within range using</p>
-<p><code>all(x[!is.na(x)] &gt;= range[1] &amp; x[!is.na(x)] &lt;= range[2])</code></p>
-<p>Range should be a non-missing sorted vector of length 2.</p></li>
-<li><p><code>chk_lt</code>: Check Less Than</p>
-<p>Checks if all non-missing values are less than value using
-<code>vld_lt()</code>.</p></li>
-<li><p><code>vld_lt</code>: Validate Less Than</p>
-<p>Validates all non-missing values are less than value using</p>
-<p><code>all(x[!is.na(x)] &lt; value))</code></p>
-<p><code>value</code> should be a non-missing scalar.</p></li>
-<li><p><code>chk_lte</code>: Check Less Than or Equal To</p>
-<p>Checks if all non-missing values are less than or equal to y using
-<code>vld_lte()</code>.</p></li>
-<li><p><code>vld_lte</code>: Validate Less Than or Equal To</p>
-<p>Validates all non-missing values are less than or equal to y using</p>
-<p><code>all(x[!is.na(x)] &lt;= value))</code></p>
-<p><code>value</code> should be a non-missing scalar.</p></li>
-<li><p><code>chk_gt</code>: Check Greater Than</p>
-<p>Checks if all non-missing values are greater than value using
-<code>vld_gt()</code>.</p></li>
-<li><p><code>vld_gt</code>: Validate Greater Than</p>
-<p>Validates all non-missing values are greater than value using</p>
-<p><code>all(x[!is.na(x)] &gt; value))</code>.</p>
-<p><code>value</code> should be a non-missing scalar.</p></li>
-<li><p><code>chk_gte</code>: Check Greater Than or Equal To</p>
-<p>Checks if all non-missing values are greater than or equal to y using
-<code>vld_gte()</code>.</p></li>
-<li><p><code>vld_gte</code>: Validate Greater Than or Equal To</p>
-<p>Validates all non-missing values are greater than or equal to y using:</p>
-<p><code>all(x[!is.na(x)] &gt;= value))</code>.</p>
-<p><code>value</code> should be a non-missing scalar.</p></li>
+<li><p><code>vld_range</code>: Validate Range</p></li>
 </ul>
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'><p>Other chk_ranges: 
+<code><a href='chk_gte.html'>chk_gte</a>()</code>,
+<code><a href='chk_gt.html'>chk_gt</a>()</code>,
+<code><a href='chk_lte.html'>chk_lte</a>()</code>,
+<code><a href='chk_lt.html'>chk_lt</a>()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
@@ -235,27 +190,7 @@ The <code>vld_</code> functions return a flag indicating whether the test was me
 <span class='fu'>chk_range</span>(<span class='fl'>0</span>)
 <span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_range</span>(-<span class='fl'>0.1</span>))</div><div class='output co'>#&gt; Error : `-0.1` must be between 0 and 1, not -0.1.</div><div class='input'>
 <span class='co'># vld_range</span>
-<span class='fu'>vld_range</span>(<span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></span>(<span class='fl'>0</span>))</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_range</span>(<span class='fl'>0</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_range</span>(-<span class='fl'>0.1</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>vld_range</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0.1</span>, <span class='fl'>0.2</span>, <span class='fl'>NA</span>))</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_range</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0.1</span>, <span class='fl'>0.2</span>, <span class='fl'>NA</span>), <span class='kw'>range</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0</span>, <span class='fl'>1</span>))</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
-<span class='co'># chk_lt</span>
-<span class='fu'>chk_lt</span>(-<span class='fl'>0.1</span>)
-<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_lt</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(-<span class='fl'>0.1</span>, <span class='fl'>0.2</span>)))</div><div class='output co'>#&gt; Error : `c(-0.1, 0.2)` must have values less than 0.</div><div class='input'>
-<span class='co'># vld_lt</span>
-<span class='fu'>vld_lt</span>(<span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></span>(<span class='fl'>0</span>))</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_lt</span>(<span class='fl'>0</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>vld_lt</span>(-<span class='fl'>0.1</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_lt</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(-<span class='fl'>0.1</span>, -<span class='fl'>0.2</span>, <span class='fl'>NA</span>))</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_lt</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(-<span class='fl'>0.1</span>, <span class='fl'>0.2</span>))</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>vld_lt</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(-<span class='fl'>0.1</span>, <span class='fl'>0.2</span>), <span class='kw'>value</span> <span class='kw'>=</span> <span class='fl'>1</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_lt</span>(<span class='st'>"a"</span>, <span class='kw'>value</span> <span class='kw'>=</span> <span class='st'>"b"</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
-<span class='co'># chk_lte</span>
-<span class='fu'>chk_lte</span>(<span class='fl'>0</span>)
-<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_lte</span>(<span class='fl'>0.1</span>))</div><div class='output co'>#&gt; Error : `0.1` must be less than or equal to 0, not 0.1.</div><div class='input'>
-<span class='co'># vld_lte</span>
-<span class='fu'>vld_lte</span>(<span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></span>(<span class='fl'>0</span>))</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_lte</span>(<span class='fl'>0</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_lte</span>(<span class='fl'>0.1</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>vld_lte</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(-<span class='fl'>0.1</span>, -<span class='fl'>0.2</span>, <span class='fl'>NA</span>))</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_lte</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(-<span class='fl'>0.1</span>, -<span class='fl'>0.2</span>, <span class='fl'>NA</span>), <span class='kw'>value</span> <span class='kw'>=</span> -<span class='fl'>1</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'>
-<span class='co'># chk_gt</span>
-<span class='fu'>chk_gt</span>(<span class='fl'>0.1</span>)
-<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_gt</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0.1</span>, -<span class='fl'>0.2</span>)))</div><div class='output co'>#&gt; Error : `c(0.1, -0.2)` must have values greater than 0.</div><div class='input'>
-<span class='co'># vld_gt</span>
-<span class='fu'>vld_gt</span>(<span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></span>(<span class='fl'>0</span>))</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_gt</span>(<span class='fl'>0</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>vld_gt</span>(<span class='fl'>0.1</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_gt</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0.1</span>, <span class='fl'>0.2</span>, <span class='fl'>NA</span>))</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_gt</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0.1</span>, -<span class='fl'>0.2</span>))</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>vld_gt</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(-<span class='fl'>0.1</span>, <span class='fl'>0.2</span>), <span class='kw'>value</span> <span class='kw'>=</span> -<span class='fl'>1</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_gt</span>(<span class='st'>"b"</span>, <span class='kw'>value</span> <span class='kw'>=</span> <span class='st'>"a"</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
-<span class='co'># chk_gte</span>
-<span class='fu'>chk_gte</span>(<span class='fl'>0</span>)
-<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_gte</span>(-<span class='fl'>0.1</span>))</div><div class='output co'>#&gt; Error : `-0.1` must be greater than or equal to 0, not -0.1.</div><div class='input'>
-<span class='co'># vld_gte</span>
-<span class='fu'>vld_gte</span>(<span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></span>(<span class='fl'>0</span>))</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_gte</span>(<span class='fl'>0</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_gte</span>(-<span class='fl'>0.1</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>vld_gte</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0.1</span>, <span class='fl'>0.2</span>, <span class='fl'>NA</span>))</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_gte</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0.1</span>, <span class='fl'>0.2</span>, <span class='fl'>NA</span>), <span class='kw'>value</span> <span class='kw'>=</span> <span class='fl'>1</span>)</div><div class='output co'>#&gt; [1] FALSE</div></pre>
+<span class='fu'>vld_range</span>(<span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></span>(<span class='fl'>0</span>))</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_range</span>(<span class='fl'>0</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_range</span>(-<span class='fl'>0.1</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>vld_range</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0.1</span>, <span class='fl'>0.2</span>, <span class='fl'>NA</span>))</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_range</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0.1</span>, <span class='fl'>0.2</span>, <span class='fl'>NA</span>), <span class='kw'>range</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0</span>, <span class='fl'>1</span>))</div><div class='output co'>#&gt; [1] TRUE</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -263,6 +198,7 @@ The <code>vld_</code> functions return a flag indicating whether the test was me
       <li><a href="#arguments">Arguments</a></li>
       <li><a href="#value">Value</a></li>
       <li><a href="#functions">Functions</a></li>
+      <li><a href="#see-also">See also</a></li>
       <li><a href="#examples">Examples</a></li>
     </ul>
 
