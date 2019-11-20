@@ -44,9 +44,7 @@
 
 <meta property="og:title" content="Check Subset — chk_subset" />
 <meta property="og:description" content="Checks if all values in values using
-all(x %in% values)
-but for efficiency the code is
-all(match(x, values, nomatch = 0) &amp;gt; 0)" />
+all(x %in% values)" />
 <meta property="og:image" content="/logo.png" />
 <meta name="twitter:card" content="summary" />
 
@@ -80,7 +78,7 @@ all(match(x, values, nomatch = 0) &amp;gt; 0)" />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">chk</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0.9001</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0.9002</span>
       </span>
     </div>
 
@@ -145,8 +143,6 @@ all(match(x, values, nomatch = 0) &amp;gt; 0)" />
     <div class="ref-description">
     <p>Checks if all values in values using</p>
 <p><code><a href='https://rdrr.io/r/base/all.html'>all(x %in% values)</a></code></p>
-<p>but for efficiency the code is</p>
-<p><code>all(match(x, values, nomatch = 0) &gt; 0)</code></p>
     </div>
 
     <pre class="usage"><span class='fu'>chk_subset</span>(<span class='no'>x</span>, <span class='no'>values</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
