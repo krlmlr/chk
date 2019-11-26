@@ -80,7 +80,7 @@ rlang::inform(), respectively." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">chk</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0.9002</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0.9003</span>
       </span>
     </div>
 
@@ -105,9 +105,6 @@ rlang::inform(), respectively." />
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
-    <li>
-      <a href="../articles/chk-benchmarking.html">Benchmarking chk</a>
-    </li>
     <li>
       <a href="../articles/chk-families.html">chk Families</a>
     </li>
@@ -174,8 +171,10 @@ the message and then
     </tr>
     <tr>
       <th>.subclass</th>
-      <td><p>Subclass of the condition. This allows your users
-to selectively handle the conditions signalled by your functions.</p></td>
+      <td><p>This argument was renamed to <code>class</code> in rlang
+0.4.2.  It will be deprecated in the next major version. This is
+for consistency with our conventions for class constructors
+documented in <a href='https://adv-r.hadley.nz/s3.html#s3-subclassing'>https://adv-r.hadley.nz/s3.html#s3-subclassing</a>.</p></td>
     </tr>
     </table>
 

@@ -2,7 +2,6 @@ pandoc: '2.2'
 pkgdown: 1.4.1
 pkgdown_sha: ~
 articles:
-  chk-benchmarking: chk-benchmarking.html
   chk-families: chk-families.html
   chk: chk.html
 
