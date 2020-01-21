@@ -140,33 +140,35 @@
     <p>Deprecated <code>chk_()</code> functions.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>chk_dirs</span>(<span class='no'>x</span>)
+    <pre class="usage"><span class='fu'>chk_count</span>(<span class='no'>x</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
+
+<span class='fu'>chk_dirs</span>(<span class='no'>x</span>)
 
 <span class='fu'>chk_files</span>(<span class='no'>x</span>)
 
-<span class='fu'>chk_length</span>(<span class='no'>x</span>, <span class='kw'>length</span> <span class='kw'>=</span> <span class='fl'>1L</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
-
-<span class='fu'>chk_count</span>(<span class='no'>x</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
-
-<span class='fu'>chk_proportion</span>(<span class='no'>x</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
+<span class='fu'>chk_has</span>(<span class='no'>x</span>, <span class='no'>values</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
 
 <span class='fu'>chk_in</span>(<span class='no'>x</span>, <span class='no'>values</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
-
-<span class='fu'>chk_has</span>(<span class='no'>x</span>, <span class='no'>values</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
 
 <span class='fu'>chk_is</span>(<span class='no'>x</span>, <span class='no'>class</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
 
 <span class='fu'>vld_is</span>(<span class='no'>x</span>, <span class='no'>class</span>)
 
+<span class='fu'>chk_length</span>(<span class='no'>x</span>, <span class='kw'>length</span> <span class='kw'>=</span> <span class='fl'>1L</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
+
 <span class='fu'>chk_no_missing</span>(<span class='no'>x</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
 
 <span class='fu'>vld_no_missing</span>(<span class='no'>x</span>)
 
-<span class='fu'>chk_on</span>()
-
 <span class='fu'>chk_off</span>()
 
-<span class='fu'>is_chk_on</span>()</pre>
+<span class='fu'>chk_on</span>()
+
+<span class='fu'>is_chk_on</span>()
+
+<span class='fu'>chk_proportion</span>(<span class='no'>x</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
+
+<span class='fu'>deparse_backtick</span>(<span class='no'>x</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -176,12 +178,16 @@
       <td><p>The object to check.</p></td>
     </tr>
     <tr>
-      <th>length</th>
-      <td><p>A count of the length.</p></td>
-    </tr>
-    <tr>
       <th>x_name</th>
       <td><p>A string of the name of object x or NULL.</p></td>
+    </tr>
+    <tr>
+      <th>class</th>
+      <td><p>A string of the class of the object.</p></td>
+    </tr>
+    <tr>
+      <th>length</th>
+      <td><p>A count of the length.</p></td>
     </tr>
     </table>
 
@@ -189,90 +195,59 @@
 
     
 <ul>
+<li><p><code>chk_count</code>: Check Count</p>
+<p><img src='figures/lifecycle-soft-deprecated.svg' alt='Soft-deprecated lifecycle' /></p>
+<p>Replace by <code><a href='chk_whole_number.html'>chk_whole_number</a>(x); <a href='chk_gte.html'>chk_gte</a>(x)</code></p></li>
 <li><p><code>chk_dirs</code>: Check Directories Exist</p>
 <p><img src='figures/lifecycle-soft-deprecated.svg' alt='Soft-deprecated lifecycle' /></p>
-<p>Checks if directories exist using:</p>
-<p><code><a href='https://rdrr.io/r/base/all.html'>all(dir.exists(x))</a></code></p>
-<p>Replace by <code><a href='chk_dir.html'>chk_dir()</a></code>.</p></li>
+<p>Replace with <code><a href='chk_all.html'>chk_all</a>(x, <a href='chk_dir.html'>chk_dir</a>)</code></p></li>
 <li><p><code>chk_files</code>: Check Files Exist</p>
 <p><img src='figures/lifecycle-soft-deprecated.svg' alt='Soft-deprecated lifecycle' /></p>
-<p>Checks if files exist using:</p>
-<p><code>all(file.exists(x) &amp;&amp; !dir.exists(x))</code></p>
-<p>Replace by <code><a href='chk_file.html'>chk_file()</a></code>.</p></li>
-<li><p><code>chk_length</code>: Check Length</p>
-<p><img src='figures/lifecycle-deprecated.svg' alt='Deprecated lifecycle' /></p>
-<p>Checks if is length length using:</p>
-<p><code>length(x) == length</code></p>
-<p><code>length</code> should be a count.</p>
-<p>Replace by <code>[chk_range](length(x))</code>.</p></li>
-<li><p><code>chk_count</code>: Check Count</p>
-<p><img src='figures/lifecycle-deprecated.svg' alt='Deprecated lifecycle' /></p>
-<p>Checks if non-missing non-negative integer scalar or double equivalent using:</p>
-<p><code>is.numeric(x) &amp;&amp; length(x) == 1L &amp;&amp; !anyNA(x) &amp;&amp; x &gt;= 0 &amp;&amp; vld_true(all.equal(x, as.integer(x)))</code></p>
-<p>Replace by <code><a href='chk_whole_number.html'>chk_whole_number()</a></code> and <code><a href='chk_gte.html'>chk_gte()</a></code>.</p></li>
-<li><p><code>chk_proportion</code>: Check Proportion</p>
-<p><img src='figures/lifecycle-deprecated.svg' alt='Deprecated lifecycle' /></p>
-<p>Checks if non-missing numeric scalar between 0 and 1 using:</p>
-<p><code>is.numeric(x) &amp;&amp; length(x) == 1L &amp;&amp; !anyNA(x) &amp;&amp; x &gt;= 0 &amp;&amp; x &lt;= 1</code></p>
-<p>Replace by <code><a href='chk_number.html'>chk_number()</a></code> and <code><a href='chk_range.html'>chk_range()</a></code>.</p></li>
-<li><p><code>chk_in</code>: Check In</p>
-<p><img src='figures/lifecycle-soft-deprecated.svg' alt='Soft-deprecated lifecycle' /></p>
-<p>Checks if all values in values using <code><a href='chk_subset.html'>chk_subset()</a></code>.</p>
-<p>Replace by <code><a href='chk_subset.html'>chk_subset()</a></code>.</p></li>
+<p>Replace with <code><a href='chk_all.html'>chk_all</a>(x, <a href='chk_file.html'>chk_file</a>)</code></p></li>
 <li><p><code>chk_has</code>: Check Has</p>
 <p><img src='figures/lifecycle-soft-deprecated.svg' alt='Soft-deprecated lifecycle' /></p>
-<p>Checks if includes all values using <code><a href='chk_superset.html'>chk_superset()</a></code>.</p>
-<p>Replace by <code><a href='chk_superset.html'>chk_superset()</a></code>.</p></li>
+<p>Replace by <code><a href='chk_superset.html'>chk_superset()</a></code></p></li>
+<li><p><code>chk_in</code>: Check In</p>
+<p><img src='figures/lifecycle-soft-deprecated.svg' alt='Soft-deprecated lifecycle' /></p>
+<p>Replace by <code><a href='chk_subset.html'>chk_subset()</a></code></p></li>
 <li><p><code>chk_is</code>: Check Is</p>
 <p><img src='figures/lifecycle-soft-deprecated.svg' alt='Soft-deprecated lifecycle' /></p>
-<p>Checks if inherits from class using <code>vld_is()</code>.</p>
-<p>Replace by <code><a href='chk_s3_class.html'>chk_s3_class()</a></code> or <code><a href='chk_s4_class.html'>chk_s4_class()</a></code>.</p></li>
+<p>Replace by <code><a href='chk_s3_class.html'>chk_s3_class()</a></code> or <code><a href='chk_s4_class.html'>chk_s4_class()</a></code></p></li>
 <li><p><code>vld_is</code>: Validate Is</p>
 <p><img src='figures/lifecycle-soft-deprecated.svg' alt='Soft-deprecated lifecycle' /></p>
-<p>Validates inherits from class using</p>
-<p><code><a href='https://rdrr.io/r/base/class.html'>inherits(x, class)</a></code></p>
-<p>Class should be a string.</p></li>
+<p>Replace by <code><a href='chk_s3_class.html'>vld_s3_class()</a></code> or <code><a href='chk_s4_class.html'>vld_s4_class()</a></code></p></li>
+<li><p><code>chk_length</code>: Check Length</p>
+<p><img src='figures/lifecycle-soft-deprecated.svg' alt='Soft-deprecated lifecycle' /></p>
+<p>Replace by <code><a href='chk_range.html'>chk_range</a>(length(x))</code></p></li>
 <li><p><code>chk_no_missing</code>: Check No Missing Values</p>
-<p>Checks if no missing values using
-<code>vld_no_missing()</code>.</p></li>
+<p><img src='figures/lifecycle-soft-deprecated.svg' alt='Soft-deprecated lifecycle' /></p>
+<p>Replace with <code><a href='chk_not_any_na.html'>chk_not_any_na()</a></code></p></li>
 <li><p><code>vld_no_missing</code>: Validate No Missing Values</p>
-<p>Validates no missing values using</p>
-<p><code>!anyNA(x)</code>.</p></li>
-<li><p><code>chk_on</code>: Turns checking on</p>
-<p><img src='figures/lifecycle-soft-deprecated.svg' alt='Soft-deprecated lifecycle' /></p></li>
+<p><img src='figures/lifecycle-soft-deprecated.svg' alt='Soft-deprecated lifecycle' /></p>
+<p>Replace with <code><a href='chk_not_any_na.html'>vld_not_any_na()</a></code></p></li>
 <li><p><code>chk_off</code>: Turns checking off</p>
-<p><img src='figures/lifecycle-soft-deprecated.svg' alt='Soft-deprecated lifecycle' /></p></li>
+<p><img src='figures/lifecycle-deprecated.svg' alt='Deprecated lifecycle' /></p>
+<p>This approach is no longer recommended</p></li>
+<li><p><code>chk_on</code>: Turns checking on</p>
+<p><img src='figures/lifecycle-deprecated.svg' alt='Deprecated lifecycle' /></p>
+<p>This approach is no longer recommended</p></li>
 <li><p><code>is_chk_on</code>: Tests checking on</p>
-<p><img src='figures/lifecycle-soft-deprecated.svg' alt='Soft-deprecated lifecycle' /></p></li>
+<p><img src='figures/lifecycle-deprecated.svg' alt='Deprecated lifecycle' /></p>
+<p>This approach is no longer recommended</p></li>
+<li><p><code>chk_proportion</code>: Check Proportion</p>
+<p><img src='figures/lifecycle-soft-deprecated.svg' alt='Soft-deprecated lifecycle' /></p>
+<p>Replace by <code><a href='chk_number.html'>chk_number</a>(x); <a href='chk_range.html'>chk_range</a>(x)</code></p></li>
+<li><p><code>deparse_backtick</code>: Deparse Backtick</p>
+<p><img src='figures/lifecycle-soft-deprecated.svg' alt='Soft-deprecated lifecycle' /></p>
+<p>Replace with <code><a href='deparse_backtick_chk.html'>deparse_backtick_chk()</a></code></p></li>
 </ul>
-    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code><a href='https://rdrr.io/r/base/NA.html'>anyNA()</a></code></p></div>
-
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'>
-<span class='co'># chk_is</span>
-<span class='fu'>chk_is</span>(<span class='fl'>1</span>, <span class='st'>"numeric"</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: `chk_is()` is deprecated as of lifecycle 0.2.0.</span>
-#&gt; <span class='warning'>Please use `chk_s3_class()` instead.</span>
-#&gt; <span class='warning'>This warning is displayed once per session.</span>
-#&gt; <span class='warning'>Call `lifecycle::last_warnings()` to see where this warning was generated.</span></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_is</span>(<span class='fl'>1</span>, <span class='st'>"character"</span>))</div><div class='output co'>#&gt; Error : `1` must inherit from class 'character'.</div><div class='input'>
-<span class='co'># vld_is</span>
-<span class='fu'>vld_is</span>(<span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></span>(<span class='fl'>0</span>), <span class='st'>"numeric"</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_is</span>(<span class='fl'>1</span>, <span class='st'>"numeric"</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_is</span>(<span class='fl'>NA_real_</span>, <span class='st'>"numeric"</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_is</span>(<span class='fl'>1</span>, <span class='st'>"character"</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>vld_is</span>(<span class='kw'>NULL</span>, <span class='st'>"numeric"</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'>
-<span class='co'># chk_no_missing</span>
-<span class='fu'>chk_no_missing</span>(<span class='fl'>1</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: `chk_no_missing()` is deprecated as of lifecycle 0.2.0.</span>
-#&gt; <span class='warning'>Please use `chk_not_any_na()` instead.</span>
-#&gt; <span class='warning'>This warning is displayed once per session.</span>
-#&gt; <span class='warning'>Call `lifecycle::last_warnings()` to see where this warning was generated.</span></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_no_missing</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>, <span class='fl'>NA</span>)))</div><div class='output co'>#&gt; Error : `c(1, NA)` must not have missing values.</div><div class='input'>
-<span class='co'># vld_no_missing</span>
-<span class='fu'>vld_no_missing</span>(<span class='fu'><a href='https://rdrr.io/r/base/character.html'>character</a></span>(<span class='fl'>0</span>))</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_no_missing</span>(<span class='fl'>1</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_no_missing</span>(<span class='fl'>1</span>:<span class='fl'>10</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_no_missing</span>(<span class='fl'>NA</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>vld_no_missing</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>, <span class='fl'>NA</span>))</div><div class='output co'>#&gt; [1] FALSE</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
       <li><a href="#functions">Functions</a></li>
-      <li><a href="#see-also">See also</a></li>
-      <li><a href="#examples">Examples</a></li>
     </ul>
 
   </div>
